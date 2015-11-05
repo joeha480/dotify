@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<obfl xmlns="http://www.daisy.org/ns/2011/obfl"
+      version="2011-1"
+      xml:lang="und"
+      hyphenate="false">
+   <meta>
+      <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">test_18</dc:title>
+      <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/"/>
+   </meta>
+   <layout-master name="body"
+                  page-width="40"
+                  page-height="25"
+                  duplex="true"
+                  page-number-variable="page">
+      <default-template>
+         <header/>
+         <footer/>
+      </default-template>
+   </layout-master>
+   <sequence master="body">
+      <block>1 ⠤⠤⠤ </block>
+      <block>2 ⠤⠤⠤ </block>
+      <block>i ⠤⠤⠤ </block>
+      <block>ii ⠤⠤⠤ </block>
+      <block>3 ⠤⠤⠤ </block>
+   </sequence>
+</obfl>

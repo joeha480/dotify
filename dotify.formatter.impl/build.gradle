@@ -42,11 +42,12 @@ ext.writeTestsOverviewFile = { folderPath, fileName ->
 	f.append('<?xml-stylesheet href="display.xslt" type="text/xsl" ?>\n')
 	f.append('<tests>\n')
 	FileTree list = fileTree(dir: folder)
-	list.include '*-input.obfl'
+	list.include '**/*-input.obfl'
 	list.each {
-		def exp = it.name.substring(0, it.name.length()-11) + '-expected.pef'
+		def relpath = it.path.substring(projectDir.path.length()+folderPath.length()+2)
+		def exp = relpath.substring(0, relpath.length()-11) + '-expected.pef'
 		if (new File(folder, exp).exists()) {
-			f.append('<test input="'+it.name+'" expected="' + exp + '"/>'+'\n')
+			f.append('<test input="'+relpath+'" expected="' + exp + '"/>'+'\n')
 		}
 	}
 	f.append('</tests>')
