@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<obfl xmlns="http://www.daisy.org/ns/2011/obfl"
-      version="2011-1"
-      xml:lang="und"
-      hyphenate="false">
+<obfl xmlns="http://www.daisy.org/ns/2011/obfl" version="2011-1" xml:lang="und" hyphenate="false">
    <meta>
       <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">test_09</dc:title>
       <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/"/>
@@ -14,9 +11,8 @@
       </default-template>
    </layout-master>
    <sequence master="a">
-      <block vertical-align="before" vertical-position="5">
-         <block> ⠤⠤⠤ </block>
-         <block> ⠤⠤⠤ </block>
+      <block vertical-align="before" vertical-position="5"><block>⠤⠤⠤ </block>
+         <block>⠤⠤⠤ </block>
       </block>
    </sequence>
 </obfl>

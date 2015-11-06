@@ -22,7 +22,7 @@
                <row rowgap="4">⠤⠤⠤⠤</row>
                <row rowgap="4">⠤⠤⠤⠤</row>
                <row rowgap="4">⠤⠤⠤⠤</row>
-               <row rowgap="0"/>
+               <row/>
             </page>
          </section>
       </volume>

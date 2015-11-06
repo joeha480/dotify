@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<obfl xmlns="http://www.daisy.org/ns/2011/obfl"
-      version="2011-1"
-      xml:lang="und"
-      hyphenate="false">
+<obfl xmlns="http://www.daisy.org/ns/2011/obfl" version="2011-1" xml:lang="und" hyphenate="false">
    <meta>
       <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">test_13</dc:title>
       <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/"/>
@@ -14,65 +11,55 @@
       </default-template>
    </layout-master>
    <sequence master="a">
-      <block margin-top="1" margin-bottom="1" row-spacing="2.0">
-								⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁<br/>
+      <block margin-top="1" margin-bottom="1" row-spacing="2.0">⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁<br/>
 								⠁<br/>
 								⠁<br/>
 								⠁<br/>
 								⠁
 							</block>
-      <block margin-top="1" margin-bottom="1" row-spacing="2.0">
-								⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁<br/>
+      <block margin-top="1" margin-bottom="1" row-spacing="2.0">⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁<br/>
 								⠁<br/>
 								⠁<br/>
 								⠁<br/>
 								⠁
 							</block>
-      <block margin-top="0" margin-bottom="1" row-spacing="2.0">
-								⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁<br/>
+      <block margin-top="0" margin-bottom="1" row-spacing="2.0">⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁<br/>
 								⠁<br/>
 								⠁<br/>
 								⠁<br/>
 								⠁
 							</block>
-      <block margin-top="0" margin-bottom="1" row-spacing="2.0">
-								⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁<br/>
+      <block margin-top="0" margin-bottom="1" row-spacing="2.0">⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁<br/>
 								⠁<br/>
 								⠁<br/>
 								⠁<br/>
 								⠁
 							</block>
-      <block margin-top="0" margin-bottom="0" row-spacing="2.0">
-								⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁<br/>
+      <block margin-top="0" margin-bottom="0" row-spacing="2.0">⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁<br/>
 								⠁<br/>
 								⠁<br/>
 								⠁<br/>
 								⠁
 							</block>
-      <block margin-top="0" margin-bottom="0" row-spacing="2.0">
-								⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁<br/>
+      <block margin-top="0" margin-bottom="0" row-spacing="2.0">⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁<br/>
 								⠁<br/>
 								⠁<br/>
 								⠁<br/>
 								⠁
 							</block>
-      <block margin-top="1" margin-bottom="0" row-spacing="2.0">
-								⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁<br/>
+      <block margin-top="1" margin-bottom="0" row-spacing="2.0">⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁<br/>
 								⠁<br/>
 								⠁<br/>
 								⠁<br/>
 								⠁
 							</block>
-      <block margin-top="1" row-spacing="1.0">
-         <block margin-top="0" row-spacing="2.0">
-									⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁<br/>
+      <block margin-top="1" row-spacing="1.0"><block margin-top="0" row-spacing="2.0">⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁<br/>
 									⠁<br/>
 									⠁<br/>
 									⠁<br/>
 									⠁
 								</block>
-         <block margin-top="1" row-spacing="2.0">
-									⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁<br/>
+         <block margin-top="1" row-spacing="2.0">⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁<br/>
 									⠁<br/>
 									⠁<br/>
 									⠁<br/>

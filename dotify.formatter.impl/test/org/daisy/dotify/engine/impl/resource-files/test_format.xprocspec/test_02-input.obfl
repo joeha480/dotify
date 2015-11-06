@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<obfl xmlns="http://www.daisy.org/ns/2011/obfl"
-      version="2011-1"
-      xml:lang="und"
-      hyphenate="false">
+<obfl xmlns="http://www.daisy.org/ns/2011/obfl" version="2011-1" xml:lang="und" hyphenate="false">
    <meta>
       <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">test_02</dc:title>
       <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/"/>
    </meta>
-   <layout-master name="a"
-                  page-width="20"
-                  page-height="5"
-                  duplex="true"
-                  page-number-variable="page">
+   <layout-master name="a" page-width="20" page-height="5" duplex="true" page-number-variable="page">
       <default-template>
          <header>
             <field>
@@ -38,27 +31,15 @@
       </default-template>
    </layout-master>
    <sequence master="a">
-      <block>
-              ⠤⠤⠤
+      <block>⠤⠤⠤
             </block>
-      <block break-before="page">
-         <marker class="print-page" value="⠤"/>
-              ⠤⠤⠤
+      <block break-before="page"><marker class="print-page" value="⠤"/>⠤⠤⠤
             </block>
-      <block break-before="page">
-         <marker class="print-page" value="⠤⠤"/>
-         <marker class="running-footer" value="⠤⠤"/>
-              ⠤⠤⠤
+      <block break-before="page"><marker class="print-page" value="⠤⠤"/><marker class="running-footer" value="⠤⠤"/>⠤⠤⠤
             </block>
-      <block break-before="page">
-         <marker class="print-page" value=""/>
-         <marker class="running-header" value="⠤⠤"/>
-              ⠤⠤⠤
+      <block break-before="page"><marker class="print-page" value=""/><marker class="running-header" value="⠤⠤"/>⠤⠤⠤
             </block>
-      <block break-before="page">
-         <marker class="print-page" value="⠤⠤⠤"/>
-         <marker class="running-footer" value=""/>
-              ⠤⠤⠤
+      <block break-before="page"><marker class="print-page" value="⠤⠤⠤"/><marker class="running-footer" value=""/>⠤⠤⠤
             </block>
    </sequence>
 </obfl>

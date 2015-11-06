@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<obfl xmlns="http://www.daisy.org/ns/2011/obfl"
-      version="2011-1"
-      xml:lang="und"
-      hyphenate="false">
+<obfl xmlns="http://www.daisy.org/ns/2011/obfl" version="2011-1" xml:lang="und" hyphenate="false">
    <meta>
       <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">test_38</dc:title>
       <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/"/>
    </meta>
-   <layout-master name="a"
-                  page-width="40"
-                  page-height="25"
-                  duplex="true"
-                  page-number-variable="page">
+   <layout-master name="a" page-width="40" page-height="25" duplex="true" page-number-variable="page">
       <default-template>
          <header/>
          <footer/>
@@ -20,6 +13,6 @@
    <sequence master="a">
       <block border-bottom-style="solid" border-bottom-align="outer"/>
       <block border-bottom-style="solid" border-bottom-align="outer"/>
-      <block border-bottom-style="solid" border-bottom-align="outer">   </block>
+      <block border-bottom-style="solid" border-bottom-align="outer">  </block>
    </sequence>
 </obfl>
