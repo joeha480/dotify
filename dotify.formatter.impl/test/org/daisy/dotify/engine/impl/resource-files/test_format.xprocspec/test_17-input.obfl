@@ -11,12 +11,7 @@
       </default-template>
    </layout-master>
    <sequence master="body">
-      <block><block first-line-indent="2">⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤
-              </block>
-         <block><leader pattern="⠐" position="100%" align="right"/>
-                ⠿
-              </block>
-         <block>⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤
+      <block><block first-line-indent="2" text-indent="4">⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤
               </block>
       </block>
    </sequence>

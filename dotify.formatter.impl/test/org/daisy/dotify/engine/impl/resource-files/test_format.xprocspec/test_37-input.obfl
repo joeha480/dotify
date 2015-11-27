@@ -5,21 +5,54 @@
       <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/"/>
    </meta>
    <layout-master name="a" page-width="40" page-height="25" duplex="true" page-number-variable="page">
+      <template use-when="(= (% $page 2) 1)">
+         <header>
+            <field>
+               <string value=""/>
+            </field>
+            <field>
+               <string value=""/>
+            </field>
+            <field>
+               <string value=""/>
+            </field>
+         </header>
+         <footer/>
+      </template>
+      <template use-when="(= (% $page 2) 0)">
+         <header>
+            <field>
+               <string value=""/>
+            </field>
+            <field>
+               <string value=""/>
+            </field>
+            <field>
+               <string value=""/>
+            </field>
+         </header>
+         <header>
+            <field>
+               <string value=""/>
+            </field>
+            <field>
+               <string value=""/>
+            </field>
+            <field>
+               <string value=""/>
+            </field>
+         </header>
+         <footer/>
+      </template>
       <default-template>
          <header/>
          <footer/>
       </default-template>
    </layout-master>
    <sequence master="a">
-      <block/>
-      <block>⠿</block>
-      <block/>
-      <block>⠿</block>
-      <block> </block>
-      <block>⠿ </block>
-      <block/>
-      <block>⠿</block>
-      <block margin-bottom="1"/>
-      <block>⠿</block>
+      <block>⠿⠿⠿⠿⠿⠿⠿⠿ ⠿⠿⠿⠿⠿⠿⠿⠿
+            </block>
+      <block break-before="page">⠿⠿⠿⠿⠿⠿⠿⠿ ⠿⠿⠿⠿⠿⠿⠿⠿
+            </block>
    </sequence>
 </obfl>

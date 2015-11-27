@@ -17,17 +17,6 @@
                <string value=""/>
             </field>
          </header>
-         <header>
-            <field>
-               <string value=""/>
-            </field>
-            <field>
-               <string value=""/>
-            </field>
-            <field>
-               <string value=""/>
-            </field>
-         </header>
          <footer/>
       </default-template>
    </layout-master>

@@ -78,6 +78,7 @@
 <test input="test_format.xprocspec\test_48-input.obfl" expected="test_format.xprocspec\test_48-expected.pef"/>
 <test input="test_format.xprocspec\test_49-input.obfl" expected="test_format.xprocspec\test_49-expected.pef"/>
 <test input="test_format.xprocspec\test_50-input.obfl" expected="test_format.xprocspec\test_50-expected.pef"/>
+<test input="test_format.xprocspec\test_51-input.obfl" expected="test_format.xprocspec\test_51-expected.pef"/>
 <test input="test_obfl-to-pef.xprocspec\test_01-input.obfl" expected="test_obfl-to-pef.xprocspec\test_01-expected.pef"/>
 <test input="test_obfl-to-pef.xprocspec\test_02-input.obfl" expected="test_obfl-to-pef.xprocspec\test_02-expected.pef"/>
 <test input="test_obfl-to-pef.xprocspec\test_03-input.obfl" expected="test_obfl-to-pef.xprocspec\test_03-expected.pef"/>
@@ -100,4 +101,7 @@
 <test input="test_obfl-to-pef.xprocspec\test_20-input.obfl" expected="test_obfl-to-pef.xprocspec\test_20-expected.pef"/>
 <test input="test_obfl-to-pef.xprocspec\test_21-input.obfl" expected="test_obfl-to-pef.xprocspec\test_21-expected.pef"/>
 <test input="test_obfl-to-pef.xprocspec\test_22-input.obfl" expected="test_obfl-to-pef.xprocspec\test_22-expected.pef"/>
+<test input="test_obfl-to-pef.xprocspec\test_23-input.obfl" expected="test_obfl-to-pef.xprocspec\test_23-expected.pef"/>
+<test input="test_obfl-to-pef.xprocspec\test_24-input.obfl" expected="test_obfl-to-pef.xprocspec\test_24-expected.pef"/>
+<test input="test_obfl-to-pef.xprocspec\test_25-input.obfl" expected="test_obfl-to-pef.xprocspec\test_25-expected.pef"/>
 </tests>

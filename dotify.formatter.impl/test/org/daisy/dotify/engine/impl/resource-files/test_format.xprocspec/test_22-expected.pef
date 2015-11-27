@@ -8,11 +8,12 @@
       </meta>
    </head>
    <body>
-      <volume rows="25" cols="40" rowgap="0" duplex="true">
+      <volume rows="8" cols="14" rowgap="0" duplex="true">
          <section>
             <page>
-               <row>⠤⠤⠤</row>
-               <row>⠤⠤⠤</row>
+               <row>⠼⠁</row>
+               <row>⠤⠤⠤⠤⠀⠿</row>
+               <row>⠤⠤⠤⠤</row>
             </page>
          </section>
       </volume>

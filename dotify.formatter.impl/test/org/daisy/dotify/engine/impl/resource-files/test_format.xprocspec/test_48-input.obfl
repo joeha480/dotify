@@ -4,22 +4,80 @@
       <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">test_48</dc:title>
       <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/"/>
    </meta>
-   <layout-master name="main" page-width="15" page-height="5" duplex="true" page-number-variable="page">
+   <layout-master name="a" page-width="20" page-height="6" duplex="true" page-number-variable="page">
+      <template use-when="(= (% $page 2) 1)">
+         <header/>
+         <footer>
+            <field>
+               <marker-reference marker="print-page/prev" direction="forward" scope="page-content" text-style="def:tmp_d2746e3"/>
+               <marker-reference marker="print-page" direction="backward" scope="sequence" text-style="ifndef:tmp_d2746e3"/>
+               <marker-reference marker="dash-print-page" direction="backward" scope="page-content"/>
+            </field>
+            <field>
+               <string value=""/>
+            </field>
+            <field>
+               <marker-reference marker="print-page/prev" direction="forward" scope="page-content" text-style="def:tmp_d2748e3" start-offset="-1"/>
+               <marker-reference marker="print-page" direction="backward" scope="sequence" text-style="ifndef:tmp_d2748e3" start-offset="-1"/>
+               <marker-reference marker="dash-print-page" direction="backward" scope="spread"/>
+            </field>
+         </footer>
+      </template>
+      <template use-when="(= (% $page 2) 0)">
+         <header/>
+         <footer>
+            <field>
+               <marker-reference marker="print-page/prev" direction="forward" scope="page-content" text-style="def:tmp_d2752e3"/>
+               <marker-reference marker="print-page" direction="backward" scope="sequence" text-style="ifndef:tmp_d2752e3"/>
+               <marker-reference marker="dash-print-page" direction="backward" scope="page-content"/>
+            </field>
+            <field>
+               <string value=""/>
+            </field>
+            <field>
+               <string value=""/>
+            </field>
+         </footer>
+      </template>
       <default-template>
          <header/>
          <footer/>
       </default-template>
    </layout-master>
-   <volume-template sheets-in-volume-max="1000">
-      <pre-content>
-         <sequence master="main">
-            <block>⠿⠿⠿
-                </block>
-         </sequence>
-      </pre-content>
-   </volume-template>
-   <sequence master="main">
-      <block>⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤
+   <sequence master="a">
+      <!-- begin right page -->
+      <block><marker class="print-page" value="1"/><marker class="dash-print-page" value="⠒1"/>⠁⠁⠁
             </block>
+      <block>⠁⠁⠁</block>
+      <block>⠁⠁⠁</block>
+      <block>⠁⠁⠁</block>
+      <block>⠁⠁⠁</block>
+      <!-- begin left page -->
+      <block><marker class="print-page/prev" value="1"/><marker class="print-page" value="2"/><marker class="dash-print-page/prev" value="⠒1"/><marker class="dash-print-page" value="⠒2"/>⠁⠁⠁
+            </block>
+      <block>⠁⠁⠁</block>
+      <block>⠁⠁⠁</block>
+      <block>⠁⠁⠁</block>
+      <block>⠁⠁⠁</block>
+      <!-- begin right page -->
+      <block>⠁⠁⠁</block>
+      <block>⠁⠁⠁</block>
+      <block>⠁⠁⠁</block>
+      <block>⠁⠁⠁</block>
+      <block><marker class="print-page/prev" value="2"/><marker class="print-page" value="3"/><marker class="dash-print-page/prev" value="⠒2"/><marker class="dash-print-page" value="⠒3"/>⠁⠁⠁
+            </block>
+      <!-- begin left page -->
+      <block><marker class="print-page/prev" value="3"/><marker class="print-page" value="4"/><marker class="dash-print-page/prev" value="⠒3"/><marker class="dash-print-page" value="⠒4"/>⠁⠁⠁
+            </block>
+      <block><marker class="print-page/prev" value="4"/><marker class="print-page" value="5"/><marker class="dash-print-page/prev" value="⠒4"/><marker class="dash-print-page" value="⠒5"/>⠁⠁⠁
+            </block>
+      <block>⠁⠁⠁</block>
+      <block>⠁⠁⠁</block>
+      <block>⠁⠁⠁</block>
+      <!-- begin right page -->
+      <block>⠁⠁⠁</block>
+      <block>⠁⠁⠁</block>
+      <block>⠁⠁⠁</block>
+      <block>⠁⠁⠁</block>
    </sequence>
 </obfl>

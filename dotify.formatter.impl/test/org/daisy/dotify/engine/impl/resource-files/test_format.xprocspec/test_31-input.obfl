@@ -11,7 +11,7 @@
       </default-template>
    </layout-master>
    <sequence master="a">
-      <block margin-bottom="1"><block row-spacing="2.0" align="center">⠿⠿⠿⠿⠿⠿⠿⠿ </block>
+      <block border-bottom-style="solid" border-bottom-align="center"><block row-spacing="2.0">⠿⠿⠿⠿⠿⠿⠿⠿ </block>
       </block>
       <block>⠿⠿⠿⠿⠿⠿⠿⠿ </block>
    </sequence>

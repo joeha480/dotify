@@ -8,7 +8,18 @@
       <default-template>
          <header>
             <field>
-               <string value="⠆"/>
+               <string value=""/>
+            </field>
+            <field>
+               <string value=""/>
+            </field>
+            <field>
+               <string value=""/>
+            </field>
+         </header>
+         <header>
+            <field>
+               <string value=""/>
             </field>
             <field>
                <string value=""/>

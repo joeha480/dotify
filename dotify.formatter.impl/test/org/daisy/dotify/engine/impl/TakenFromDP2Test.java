@@ -126,6 +126,23 @@ public class TakenFromDP2Test extends AbstractFormatterEngineTest {
 		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_22-input.obfl",
 		        "resource-files/test_obfl-to-pef.xprocspec/test_22-expected.pef", false);
 	}
+	@Ignore // pagination bugs
+	@Test
+	public void testObflToPef_23() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_23-input.obfl",
+		        "resource-files/test_obfl-to-pef.xprocspec/test_23-expected.pef", false);
+	}
+	@Test
+	public void testObflToPef_24() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_24-input.obfl",
+		        "resource-files/test_obfl-to-pef.xprocspec/test_24-expected.pef", false);
+	}
+	@Ignore // pagination bugs
+	@Test
+	public void testObflToPef_25() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_25-input.obfl",
+		        "resource-files/test_obfl-to-pef.xprocspec/test_25-expected.pef", false);
+	}
 	@Test
 	public void testFormat_01() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/test_format.xprocspec/test_01-input.obfl",
@@ -223,7 +240,6 @@ public class TakenFromDP2Test extends AbstractFormatterEngineTest {
 		testPEF("resource-files/test_format.xprocspec/test_18-input.obfl",
 		        "resource-files/test_format.xprocspec/test_18-expected.pef", false);
 	}
-	@Ignore // leader issue
 	@Test
 	public void testFormat_19() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/test_format.xprocspec/test_19-input.obfl",
@@ -235,13 +251,14 @@ public class TakenFromDP2Test extends AbstractFormatterEngineTest {
 		testPEF("resource-files/test_format.xprocspec/test_20-input.obfl",
 		        "resource-files/test_format.xprocspec/test_20-expected.pef", false);
 	}
-	@Ignore // reference (<page-number ref-id="foo">) to inline element (<span id="foo">)
-	        // not sure whether this is a bug?
+	@Ignore // leader issue
 	@Test
 	public void testFormat_21() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/test_format.xprocspec/test_21-input.obfl",
 		        "resource-files/test_format.xprocspec/test_21-expected.pef", false);
 	}
+	@Ignore // reference (<page-number ref-id="foo">) to inline element (<span id="foo">)
+	        // not sure whether this is a bug?
 	@Test
 	public void testFormat_22() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/test_format.xprocspec/test_22-input.obfl",
@@ -367,12 +384,12 @@ public class TakenFromDP2Test extends AbstractFormatterEngineTest {
 		testPEF("resource-files/test_format.xprocspec/test_46-input.obfl",
 		        "resource-files/test_format.xprocspec/test_46-expected.pef", false);
 	}
-	@Ignore // depends on org.daisy.pipeline.braille.dotify.impl.BrailleFilterFactoryImpl
 	@Test
 	public void testFormat_47() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/test_format.xprocspec/test_47-input.obfl",
 		        "resource-files/test_format.xprocspec/test_47-expected.pef", false);
 	}
+	@Ignore // depends on org.daisy.pipeline.braille.dotify.impl.BrailleFilterFactoryImpl
 	@Test
 	public void testFormat_48() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/test_format.xprocspec/test_48-input.obfl",
@@ -383,10 +400,15 @@ public class TakenFromDP2Test extends AbstractFormatterEngineTest {
 		testPEF("resource-files/test_format.xprocspec/test_49-input.obfl",
 		        "resource-files/test_format.xprocspec/test_49-expected.pef", false);
 	}
-	@Ignore // implementation does not support different target volume size
 	@Test
 	public void testFormat_50() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/test_format.xprocspec/test_50-input.obfl",
 		        "resource-files/test_format.xprocspec/test_50-expected.pef", false);
+	}
+	@Ignore // implementation does not support different target volume size
+	@Test
+	public void testFormat_51() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_format.xprocspec/test_51-input.obfl",
+		        "resource-files/test_format.xprocspec/test_51-expected.pef", false);
 	}
 }

@@ -18,17 +18,6 @@
                <string value=""/>
             </field>
          </footer>
-         <footer>
-            <field>
-               <string value=""/>
-            </field>
-            <field>
-               <string value=""/>
-            </field>
-            <field>
-               <string value=""/>
-            </field>
-         </footer>
       </default-template>
    </layout-master>
    <sequence master="a">

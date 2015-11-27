@@ -9,7 +9,18 @@
          <header/>
          <footer>
             <field>
-               <string value="⠆"/>
+               <string value=""/>
+            </field>
+            <field>
+               <string value=""/>
+            </field>
+            <field>
+               <string value=""/>
+            </field>
+         </footer>
+         <footer>
+            <field>
+               <string value=""/>
             </field>
             <field>
                <string value=""/>

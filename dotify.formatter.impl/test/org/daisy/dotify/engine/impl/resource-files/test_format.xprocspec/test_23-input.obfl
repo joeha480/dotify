@@ -11,7 +11,7 @@
       </default-template>
    </layout-master>
    <sequence master="a">
-      <block vertical-align="before" vertical-position="5">⠤⠤⠤
+      <block>⠤⠤⠤<br/>⠤⠤⠤
             </block>
    </sequence>
 </obfl>

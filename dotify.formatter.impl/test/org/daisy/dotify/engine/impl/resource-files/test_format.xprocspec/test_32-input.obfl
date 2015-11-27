@@ -6,22 +6,13 @@
    </meta>
    <layout-master name="a" page-width="40" page-height="25" duplex="true" page-number-variable="page">
       <default-template>
-         <header>
-            <field>
-               <string value=""/>
-            </field>
-            <field>
-               <string value=""/>
-            </field>
-            <field>
-               <string value=""/>
-            </field>
-         </header>
+         <header/>
          <footer/>
       </default-template>
    </layout-master>
    <sequence master="a">
-      <block>⠿⠿⠿⠿⠿⠿⠿⠿ ⠿⠿⠿⠿⠿⠿⠿⠿
-            </block>
+      <block margin-bottom="1"><block row-spacing="2.0" align="center">⠿⠿⠿⠿⠿⠿⠿⠿ </block>
+      </block>
+      <block>⠿⠿⠿⠿⠿⠿⠿⠿ </block>
    </sequence>
 </obfl>

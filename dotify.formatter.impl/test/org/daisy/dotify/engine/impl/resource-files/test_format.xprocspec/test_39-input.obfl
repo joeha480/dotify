@@ -11,10 +11,8 @@
       </default-template>
    </layout-master>
    <sequence master="a">
-      <block><page-number ref-id="foo" number-format="default"/>
-      </block>
-      <block/>
-      <block id="foo">⠿
-            </block>
+      <block border-bottom-style="solid" border-bottom-align="outer"/>
+      <block border-bottom-style="solid" border-bottom-align="outer"/>
+      <block border-bottom-style="solid" border-bottom-align="outer">  </block>
    </sequence>
 </obfl>

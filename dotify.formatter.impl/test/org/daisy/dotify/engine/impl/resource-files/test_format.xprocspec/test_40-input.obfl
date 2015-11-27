@@ -4,20 +4,17 @@
       <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">test_40</dc:title>
       <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/"/>
    </meta>
-   <layout-master name="body" page-width="12" page-height="8" duplex="true" page-number-variable="page">
+   <layout-master name="a" page-width="40" page-height="25" duplex="true" page-number-variable="page">
       <default-template>
          <header/>
          <footer/>
       </default-template>
    </layout-master>
-   <sequence master="body">
-      <block>⠿⠿⠿­⠿⠿⠿ ⠿⠿⠿­⠿⠿⠿
-            </block>
-      <block hyphenate="false">⠿⠿⠿⠿⠿⠿ ⠿⠿⠿⠿⠿⠿
-            </block>
-      <block>1 ⠿⠿⠿
-            </block>
-      <block>⠂ ⠿⠿⠿
+   <sequence master="a">
+      <block><page-number ref-id="foo" number-format="default"/>
+      </block>
+      <block/>
+      <block id="foo">⠿
             </block>
    </sequence>
 </obfl>

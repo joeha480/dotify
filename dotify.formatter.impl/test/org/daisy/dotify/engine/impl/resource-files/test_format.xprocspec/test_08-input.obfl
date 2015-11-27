@@ -11,7 +11,27 @@
       </default-template>
    </layout-master>
    <sequence master="body">
-      <block>⠤⠤⠤ </block>
-      <block break-before="page">⠤⠤⠤ </block>
+      <block><block>⠿⠿⠿⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿⠿⠿⠿
+              </block>
+         <block orphans="3" border-top-style="solid" border-top-align="center" border-bottom-style="solid" border-bottom-align="center">⠿⠿⠿⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿⠿⠿⠿
+              </block>
+      </block>
+   </sequence>
+   <sequence master="body">
+      <block><block>⠿⠿⠿⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿⠿⠿⠿
+              </block>
+         <block widows="3" border-top-style="solid" border-top-align="center" border-bottom-style="solid" border-bottom-align="center">⠿⠿⠿⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿⠿⠿⠿
+              </block>
+      </block>
    </sequence>
 </obfl>

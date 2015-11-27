@@ -2350,8 +2350,30 @@
     &lt;/default-template&gt;
   &lt;/layout-master&gt;
   &lt;sequence master="body"&gt;
-    &lt;block&gt;⠤⠤⠤ &lt;/block&gt;
-    &lt;block break-before="page"&gt;⠤⠤⠤ &lt;/block&gt;
+    &lt;block&gt;
+      &lt;block&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+      &lt;block orphans="3" border-top-style="solid" border-top-align="center" border-bottom-style="solid" border-bottom-align="center"&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="body"&gt;
+    &lt;block&gt;
+      &lt;block&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+      &lt;block widows="3" border-top-style="solid" border-top-align="center" border-bottom-style="solid" border-bottom-align="center"&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
 <h2>test_format.xprocspec\test_08-expected.pef</h2>
@@ -2368,10 +2390,32 @@
     &lt;volume rows="6" cols="10" rowgap="0" duplex="true"&gt;
       &lt;section&gt;
         &lt;page&gt;
-          &lt;row&gt;⠤⠤⠤&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
         &lt;/page&gt;
         &lt;page&gt;
-          &lt;row&gt;⠤⠤⠤&lt;/row&gt;
+          &lt;row&gt;⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
     &lt;/volume&gt;
@@ -2387,19 +2431,15 @@
     &lt;dc:title&gt;test_09&lt;/dc:title&gt;
     &lt;dc:description/&gt;
   &lt;/meta&gt;
-  &lt;layout-master name="body" page-width="20" page-height="15" duplex="true" page-number-variable="page"&gt;
+  &lt;layout-master name="body" page-width="10" page-height="6" duplex="true" page-number-variable="page"&gt;
     &lt;default-template&gt;
       &lt;header/&gt;
       &lt;footer/&gt;
     &lt;/default-template&gt;
   &lt;/layout-master&gt;
   &lt;sequence master="body"&gt;
-    &lt;block&gt;⠿⠿⠿⠿
-            &lt;/block&gt;
-    &lt;block break-before="page" align="center" border-top-style="solid" border-top-align="inner" border-bottom-style="solid" border-bottom-align="inner"&gt;
-      &lt;block align="center" margin-top="1" margin-bottom="1"&gt;⠿⠿⠿⠿
-              &lt;/block&gt;
-    &lt;/block&gt;
+    &lt;block&gt;⠤⠤⠤ &lt;/block&gt;
+    &lt;block break-before="page"&gt;⠤⠤⠤ &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
 <h2>test_format.xprocspec\test_09-expected.pef</h2>
@@ -2413,17 +2453,13 @@
     &lt;/meta&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;volume rows="15" cols="20" rowgap="0" duplex="true"&gt;
+    &lt;volume rows="6" cols="10" rowgap="0" duplex="true"&gt;
       &lt;section&gt;
         &lt;page&gt;
-          &lt;row&gt;⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤&lt;/row&gt;
         &lt;/page&gt;
         &lt;page&gt;
-          &lt;row&gt;⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤&lt;/row&gt;
-          &lt;row/&gt;
-          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠿⠿⠿⠿&lt;/row&gt;
-          &lt;row/&gt;
-          &lt;row&gt;⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
     &lt;/volume&gt;
@@ -2446,6 +2482,58 @@
     &lt;/default-template&gt;
   &lt;/layout-master&gt;
   &lt;sequence master="body"&gt;
+    &lt;block&gt;⠿⠿⠿⠿
+            &lt;/block&gt;
+    &lt;block break-before="page" align="center" border-top-style="solid" border-top-align="inner" border-bottom-style="solid" border-bottom-align="inner"&gt;
+      &lt;block align="center" margin-top="1" margin-bottom="1"&gt;⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;/block&gt;
+  &lt;/sequence&gt;
+&lt;/obfl&gt;</pre>
+<h2>test_format.xprocspec\test_10-expected.pef</h2>
+<pre>
+&lt;pef version="2008-1"&gt;
+  &lt;head&gt;
+    &lt;meta&gt;
+      &lt;dc:title&gt;test_10&lt;/dc:title&gt;
+      &lt;dc:description/&gt;
+      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
+    &lt;/meta&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;volume rows="15" cols="20" rowgap="0" duplex="true"&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤&lt;/row&gt;
+          &lt;row/&gt;
+          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row/&gt;
+          &lt;row&gt;⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+    &lt;/volume&gt;
+  &lt;/body&gt;
+&lt;/pef&gt;</pre>
+<h1 id="test_format.xprocspec\test_11-input.obfl">test_11<a href="#test_format.xprocspec\test_11-input.obfl" class="internal"> &para;</a>
+</h1>
+<p></p>
+<h2>test_format.xprocspec\test_11-input.obfl</h2>
+<pre>
+&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
+  &lt;meta&gt;
+    &lt;dc:title&gt;test_11&lt;/dc:title&gt;
+    &lt;dc:description/&gt;
+  &lt;/meta&gt;
+  &lt;layout-master name="body" page-width="20" page-height="15" duplex="true" page-number-variable="page"&gt;
+    &lt;default-template&gt;
+      &lt;header/&gt;
+      &lt;footer/&gt;
+    &lt;/default-template&gt;
+  &lt;/layout-master&gt;
+  &lt;sequence master="body"&gt;
     &lt;block align="center" margin-left="1" margin-right="1" margin-top="1" margin-bottom="1" border-left-style="solid" border-left-align="outer" border-right-style="solid" border-right-align="outer" border-top-style="solid" border-top-align="inner" border-bottom-style="solid" border-bottom-align="inner"&gt;
       &lt;block align="center" margin-top="1" margin-bottom="1"&gt;
         &lt;block align="center" margin-left="2" margin-right="2" border-left-style="solid" border-left-align="outer" border-right-style="solid" border-right-align="outer" border-top-style="solid" border-top-align="inner" border-bottom-style="solid" border-bottom-align="inner"&gt;
@@ -2456,12 +2544,12 @@
     &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
-<h2>test_format.xprocspec\test_10-expected.pef</h2>
+<h2>test_format.xprocspec\test_11-expected.pef</h2>
 <pre>
 &lt;pef version="2008-1"&gt;
   &lt;head&gt;
     &lt;meta&gt;
-      &lt;dc:title&gt;test_10&lt;/dc:title&gt;
+      &lt;dc:title&gt;test_11&lt;/dc:title&gt;
       &lt;dc:description/&gt;
       &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
     &lt;/meta&gt;
@@ -2486,14 +2574,14 @@
     &lt;/volume&gt;
   &lt;/body&gt;
 &lt;/pef&gt;</pre>
-<h1 id="test_format.xprocspec\test_11-input.obfl">test_11<a href="#test_format.xprocspec\test_11-input.obfl" class="internal"> &para;</a>
+<h1 id="test_format.xprocspec\test_12-input.obfl">test_12<a href="#test_format.xprocspec\test_12-input.obfl" class="internal"> &para;</a>
 </h1>
 <p></p>
-<h2>test_format.xprocspec\test_11-input.obfl</h2>
+<h2>test_format.xprocspec\test_12-input.obfl</h2>
 <pre>
 &lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
   &lt;meta&gt;
-    &lt;dc:title&gt;test_11&lt;/dc:title&gt;
+    &lt;dc:title&gt;test_12&lt;/dc:title&gt;
     &lt;dc:description/&gt;
   &lt;/meta&gt;
   &lt;layout-master name="body" page-width="20" page-height="15" duplex="true" page-number-variable="page"&gt;
@@ -2507,12 +2595,12 @@
             &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
-<h2>test_format.xprocspec\test_11-expected.pef</h2>
+<h2>test_format.xprocspec\test_12-expected.pef</h2>
 <pre>
 &lt;pef version="2008-1"&gt;
   &lt;head&gt;
     &lt;meta&gt;
-      &lt;dc:title&gt;test_11&lt;/dc:title&gt;
+      &lt;dc:title&gt;test_12&lt;/dc:title&gt;
       &lt;dc:description/&gt;
       &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
     &lt;/meta&gt;
@@ -2529,14 +2617,14 @@
     &lt;/volume&gt;
   &lt;/body&gt;
 &lt;/pef&gt;</pre>
-<h1 id="test_format.xprocspec\test_12-input.obfl">test_12<a href="#test_format.xprocspec\test_12-input.obfl" class="internal"> &para;</a>
+<h1 id="test_format.xprocspec\test_13-input.obfl">test_13<a href="#test_format.xprocspec\test_13-input.obfl" class="internal"> &para;</a>
 </h1>
 <p></p>
-<h2>test_format.xprocspec\test_12-input.obfl</h2>
+<h2>test_format.xprocspec\test_13-input.obfl</h2>
 <pre>
 &lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
   &lt;meta&gt;
-    &lt;dc:title&gt;test_12&lt;/dc:title&gt;
+    &lt;dc:title&gt;test_13&lt;/dc:title&gt;
     &lt;dc:description/&gt;
   &lt;/meta&gt;
   &lt;layout-master name="body" page-width="30" page-height="2" duplex="true" page-number-variable="page"&gt;
@@ -2553,49 +2641,6 @@
             &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
-<h2>test_format.xprocspec\test_12-expected.pef</h2>
-<pre>
-&lt;pef version="2008-1"&gt;
-  &lt;head&gt;
-    &lt;meta&gt;
-      &lt;dc:title&gt;test_12&lt;/dc:title&gt;
-      &lt;dc:description/&gt;
-      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
-    &lt;/meta&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;volume rows="2" cols="30" rowgap="0" duplex="true"&gt;
-      &lt;section&gt;
-        &lt;page&gt;
-          &lt;row&gt;⠤⠤⠤⠆⠀⠤⠤⠤⠆⠀⠤⠤⠤⠆⠀⠤⠤⠤&lt;/row&gt;
-        &lt;/page&gt;
-      &lt;/section&gt;
-    &lt;/volume&gt;
-  &lt;/body&gt;
-&lt;/pef&gt;</pre>
-<h1 id="test_format.xprocspec\test_13-input.obfl">test_13<a href="#test_format.xprocspec\test_13-input.obfl" class="internal"> &para;</a>
-</h1>
-<p></p>
-<h2>test_format.xprocspec\test_13-input.obfl</h2>
-<pre>
-&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
-  &lt;meta&gt;
-    &lt;dc:title&gt;test_13&lt;/dc:title&gt;
-    &lt;dc:description/&gt;
-  &lt;/meta&gt;
-  &lt;layout-master name="body" page-width="40" page-height="25" duplex="true" page-number-variable="page"&gt;
-    &lt;default-template&gt;
-      &lt;header/&gt;
-      &lt;footer/&gt;
-    &lt;/default-template&gt;
-  &lt;/layout-master&gt;
-  &lt;sequence master="body"&gt;
-    &lt;block&gt;
-      &lt;block margin-left="2"&gt;⠤⠤⠤
-              &lt;/block&gt;
-    &lt;/block&gt;
-  &lt;/sequence&gt;
-&lt;/obfl&gt;</pre>
 <h2>test_format.xprocspec\test_13-expected.pef</h2>
 <pre>
 &lt;pef version="2008-1"&gt;
@@ -2607,10 +2652,10 @@
     &lt;/meta&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;volume rows="25" cols="40" rowgap="0" duplex="true"&gt;
+    &lt;volume rows="2" cols="30" rowgap="0" duplex="true"&gt;
       &lt;section&gt;
         &lt;page&gt;
-          &lt;row&gt;⠀⠀⠤⠤⠤&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠆⠀⠤⠤⠤⠆⠀⠤⠤⠤⠆⠀⠤⠤⠤&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
     &lt;/volume&gt;
@@ -2669,15 +2714,17 @@
     &lt;dc:title&gt;test_15&lt;/dc:title&gt;
     &lt;dc:description/&gt;
   &lt;/meta&gt;
-  &lt;layout-master name="body" page-width="15" page-height="5" duplex="true" page-number-variable="page"&gt;
+  &lt;layout-master name="body" page-width="40" page-height="25" duplex="true" page-number-variable="page"&gt;
     &lt;default-template&gt;
       &lt;header/&gt;
       &lt;footer/&gt;
     &lt;/default-template&gt;
   &lt;/layout-master&gt;
   &lt;sequence master="body"&gt;
-    &lt;block first-line-indent="2"&gt;⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤
-            &lt;/block&gt;
+    &lt;block&gt;
+      &lt;block margin-left="2"&gt;⠤⠤⠤
+              &lt;/block&gt;
+    &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
 <h2>test_format.xprocspec\test_15-expected.pef</h2>
@@ -2691,11 +2738,10 @@
     &lt;/meta&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;volume rows="5" cols="15" rowgap="0" duplex="true"&gt;
+    &lt;volume rows="25" cols="40" rowgap="0" duplex="true"&gt;
       &lt;section&gt;
         &lt;page&gt;
-          &lt;row&gt;⠀⠀⠤⠤⠤⠀⠤⠤⠤⠀⠤⠤⠤&lt;/row&gt;
-          &lt;row&gt;⠤⠤⠤⠀⠤⠤⠤&lt;/row&gt;
+          &lt;row&gt;⠀⠀⠤⠤⠤&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
     &lt;/volume&gt;
@@ -2718,10 +2764,8 @@
     &lt;/default-template&gt;
   &lt;/layout-master&gt;
   &lt;sequence master="body"&gt;
-    &lt;block&gt;
-      &lt;block first-line-indent="2" text-indent="4"&gt;⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤
-              &lt;/block&gt;
-    &lt;/block&gt;
+    &lt;block first-line-indent="2"&gt;⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤
+            &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
 <h2>test_format.xprocspec\test_16-expected.pef</h2>
@@ -2739,7 +2783,7 @@
       &lt;section&gt;
         &lt;page&gt;
           &lt;row&gt;⠀⠀⠤⠤⠤⠀⠤⠤⠤⠀⠤⠤⠤&lt;/row&gt;
-          &lt;row&gt;⠀⠀⠀⠀⠤⠤⠤⠀⠤⠤⠤&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠀⠤⠤⠤&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
     &lt;/volume&gt;
@@ -2763,14 +2807,7 @@
   &lt;/layout-master&gt;
   &lt;sequence master="body"&gt;
     &lt;block&gt;
-      &lt;block first-line-indent="2"&gt;⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤
-              &lt;/block&gt;
-      &lt;block&gt;
-        &lt;leader pattern="⠐" position="100%" align="right"/&gt;
-                ⠿
-              
-      &lt;/block&gt;
-      &lt;block&gt;⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤
+      &lt;block first-line-indent="2" text-indent="4"&gt;⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤
               &lt;/block&gt;
     &lt;/block&gt;
   &lt;/sequence&gt;
@@ -2790,10 +2827,7 @@
       &lt;section&gt;
         &lt;page&gt;
           &lt;row&gt;⠀⠀⠤⠤⠤⠀⠤⠤⠤⠀⠤⠤⠤&lt;/row&gt;
-          &lt;row&gt;⠤⠤⠤⠀⠤⠤⠤&lt;/row&gt;
-          &lt;row&gt;⠐⠐⠐⠐⠐⠐⠐⠐⠐⠐⠐⠐⠐⠀⠿&lt;/row&gt;
-          &lt;row&gt;⠤⠤⠤⠀⠤⠤⠤⠀⠤⠤⠤⠀⠤⠤⠤&lt;/row&gt;
-          &lt;row&gt;⠤⠤⠤&lt;/row&gt;
+          &lt;row&gt;⠀⠀⠀⠀⠤⠤⠤⠀⠤⠤⠤&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
     &lt;/volume&gt;
@@ -2807,6 +2841,60 @@
 &lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
   &lt;meta&gt;
     &lt;dc:title&gt;test_18&lt;/dc:title&gt;
+    &lt;dc:description/&gt;
+  &lt;/meta&gt;
+  &lt;layout-master name="body" page-width="15" page-height="5" duplex="true" page-number-variable="page"&gt;
+    &lt;default-template&gt;
+      &lt;header/&gt;
+      &lt;footer/&gt;
+    &lt;/default-template&gt;
+  &lt;/layout-master&gt;
+  &lt;sequence master="body"&gt;
+    &lt;block&gt;
+      &lt;block first-line-indent="2"&gt;⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤
+              &lt;/block&gt;
+      &lt;block&gt;
+        &lt;leader pattern="⠐" position="100%" align="right"/&gt;
+                ⠿
+              
+      &lt;/block&gt;
+      &lt;block&gt;⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤ ⠤⠤⠤
+              &lt;/block&gt;
+    &lt;/block&gt;
+  &lt;/sequence&gt;
+&lt;/obfl&gt;</pre>
+<h2>test_format.xprocspec\test_18-expected.pef</h2>
+<pre>
+&lt;pef version="2008-1"&gt;
+  &lt;head&gt;
+    &lt;meta&gt;
+      &lt;dc:title&gt;test_18&lt;/dc:title&gt;
+      &lt;dc:description/&gt;
+      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
+    &lt;/meta&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;volume rows="5" cols="15" rowgap="0" duplex="true"&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠀⠀⠤⠤⠤⠀⠤⠤⠤⠀⠤⠤⠤&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠀⠤⠤⠤&lt;/row&gt;
+          &lt;row&gt;⠐⠐⠐⠐⠐⠐⠐⠐⠐⠐⠐⠐⠐⠀⠿&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠀⠤⠤⠤⠀⠤⠤⠤⠀⠤⠤⠤&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+    &lt;/volume&gt;
+  &lt;/body&gt;
+&lt;/pef&gt;</pre>
+<h1 id="test_format.xprocspec\test_19-input.obfl">test_19<a href="#test_format.xprocspec\test_19-input.obfl" class="internal"> &para;</a>
+</h1>
+<p></p>
+<h2>test_format.xprocspec\test_19-input.obfl</h2>
+<pre>
+&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
+  &lt;meta&gt;
+    &lt;dc:title&gt;test_19&lt;/dc:title&gt;
     &lt;dc:description/&gt;
   &lt;/meta&gt;
   &lt;layout-master name="body" page-width="40" page-height="25" duplex="true" page-number-variable="page"&gt;
@@ -2823,12 +2911,12 @@
     &lt;block&gt;3 ⠤⠤⠤ &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
-<h2>test_format.xprocspec\test_18-expected.pef</h2>
+<h2>test_format.xprocspec\test_19-expected.pef</h2>
 <pre>
 &lt;pef version="2008-1"&gt;
   &lt;head&gt;
     &lt;meta&gt;
-      &lt;dc:title&gt;test_18&lt;/dc:title&gt;
+      &lt;dc:title&gt;test_19&lt;/dc:title&gt;
       &lt;dc:description/&gt;
       &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
     &lt;/meta&gt;
@@ -2847,14 +2935,14 @@
     &lt;/volume&gt;
   &lt;/body&gt;
 &lt;/pef&gt;</pre>
-<h1 id="test_format.xprocspec\test_19-input.obfl">test_19<a href="#test_format.xprocspec\test_19-input.obfl" class="internal"> &para;</a>
+<h1 id="test_format.xprocspec\test_20-input.obfl">test_20<a href="#test_format.xprocspec\test_20-input.obfl" class="internal"> &para;</a>
 </h1>
 <p></p>
-<h2>test_format.xprocspec\test_19-input.obfl</h2>
+<h2>test_format.xprocspec\test_20-input.obfl</h2>
 <pre>
 &lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
   &lt;meta&gt;
-    &lt;dc:title&gt;test_19&lt;/dc:title&gt;
+    &lt;dc:title&gt;test_20&lt;/dc:title&gt;
     &lt;dc:description/&gt;
   &lt;/meta&gt;
   &lt;layout-master name="body" page-width="14" page-height="8" duplex="true" page-number-variable="page"&gt;
@@ -2914,12 +3002,12 @@
             &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
-<h2>test_format.xprocspec\test_19-expected.pef</h2>
+<h2>test_format.xprocspec\test_20-expected.pef</h2>
 <pre>
 &lt;pef version="2008-1"&gt;
   &lt;head&gt;
     &lt;meta&gt;
-      &lt;dc:title&gt;test_19&lt;/dc:title&gt;
+      &lt;dc:title&gt;test_20&lt;/dc:title&gt;
       &lt;dc:description/&gt;
       &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
     &lt;/meta&gt;
@@ -2971,14 +3059,14 @@
     &lt;/volume&gt;
   &lt;/body&gt;
 &lt;/pef&gt;</pre>
-<h1 id="test_format.xprocspec\test_20-input.obfl">test_20<a href="#test_format.xprocspec\test_20-input.obfl" class="internal"> &para;</a>
+<h1 id="test_format.xprocspec\test_21-input.obfl">test_21<a href="#test_format.xprocspec\test_21-input.obfl" class="internal"> &para;</a>
 </h1>
 <p></p>
-<h2>test_format.xprocspec\test_20-input.obfl</h2>
+<h2>test_format.xprocspec\test_21-input.obfl</h2>
 <pre>
 &lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
   &lt;meta&gt;
-    &lt;dc:title&gt;test_20&lt;/dc:title&gt;
+    &lt;dc:title&gt;test_21&lt;/dc:title&gt;
     &lt;dc:description/&gt;
   &lt;/meta&gt;
   &lt;layout-master name="body" page-width="15" page-height="5" duplex="true" page-number-variable="page"&gt;
@@ -3039,12 +3127,12 @@
     &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
-<h2>test_format.xprocspec\test_20-expected.pef</h2>
+<h2>test_format.xprocspec\test_21-expected.pef</h2>
 <pre>
 &lt;pef version="2008-1"&gt;
   &lt;head&gt;
     &lt;meta&gt;
-      &lt;dc:title&gt;test_20&lt;/dc:title&gt;
+      &lt;dc:title&gt;test_21&lt;/dc:title&gt;
       &lt;dc:description/&gt;
       &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
     &lt;/meta&gt;
@@ -3084,14 +3172,14 @@
     &lt;/volume&gt;
   &lt;/body&gt;
 &lt;/pef&gt;</pre>
-<h1 id="test_format.xprocspec\test_21-input.obfl">test_21<a href="#test_format.xprocspec\test_21-input.obfl" class="internal"> &para;</a>
+<h1 id="test_format.xprocspec\test_22-input.obfl">test_22<a href="#test_format.xprocspec\test_22-input.obfl" class="internal"> &para;</a>
 </h1>
 <p></p>
-<h2>test_format.xprocspec\test_21-input.obfl</h2>
+<h2>test_format.xprocspec\test_22-input.obfl</h2>
 <pre>
 &lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
   &lt;meta&gt;
-    &lt;dc:title&gt;test_21&lt;/dc:title&gt;
+    &lt;dc:title&gt;test_22&lt;/dc:title&gt;
     &lt;dc:description/&gt;
   &lt;/meta&gt;
   &lt;layout-master name="body" page-width="14" page-height="8" duplex="true" page-number-variable="page"&gt;
@@ -3114,51 +3202,6 @@
             &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
-<h2>test_format.xprocspec\test_21-expected.pef</h2>
-<pre>
-&lt;pef version="2008-1"&gt;
-  &lt;head&gt;
-    &lt;meta&gt;
-      &lt;dc:title&gt;test_21&lt;/dc:title&gt;
-      &lt;dc:description/&gt;
-      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
-    &lt;/meta&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;volume rows="8" cols="14" rowgap="0" duplex="true"&gt;
-      &lt;section&gt;
-        &lt;page&gt;
-          &lt;row&gt;⠼⠁&lt;/row&gt;
-          &lt;row&gt;⠤⠤⠤⠤⠀⠿&lt;/row&gt;
-          &lt;row&gt;⠤⠤⠤⠤&lt;/row&gt;
-        &lt;/page&gt;
-      &lt;/section&gt;
-    &lt;/volume&gt;
-  &lt;/body&gt;
-&lt;/pef&gt;</pre>
-<h1 id="test_format.xprocspec\test_22-input.obfl">test_22<a href="#test_format.xprocspec\test_22-input.obfl" class="internal"> &para;</a>
-</h1>
-<p></p>
-<h2>test_format.xprocspec\test_22-input.obfl</h2>
-<pre>
-&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
-  &lt;meta&gt;
-    &lt;dc:title&gt;test_22&lt;/dc:title&gt;
-    &lt;dc:description/&gt;
-  &lt;/meta&gt;
-  &lt;layout-master name="a" page-width="40" page-height="25" duplex="true" page-number-variable="page"&gt;
-    &lt;default-template&gt;
-      &lt;header/&gt;
-      &lt;footer/&gt;
-    &lt;/default-template&gt;
-  &lt;/layout-master&gt;
-  &lt;sequence master="a"&gt;
-    &lt;block&gt;⠤⠤⠤
-      &lt;br/&gt;⠤⠤⠤
-            
-    &lt;/block&gt;
-  &lt;/sequence&gt;
-&lt;/obfl&gt;</pre>
 <h2>test_format.xprocspec\test_22-expected.pef</h2>
 <pre>
 &lt;pef version="2008-1"&gt;
@@ -3170,11 +3213,12 @@
     &lt;/meta&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;volume rows="25" cols="40" rowgap="0" duplex="true"&gt;
+    &lt;volume rows="8" cols="14" rowgap="0" duplex="true"&gt;
       &lt;section&gt;
         &lt;page&gt;
-          &lt;row&gt;⠤⠤⠤&lt;/row&gt;
-          &lt;row&gt;⠤⠤⠤&lt;/row&gt;
+          &lt;row&gt;⠼⠁&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠤⠀⠿&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠤&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
     &lt;/volume&gt;
@@ -3197,8 +3241,10 @@
     &lt;/default-template&gt;
   &lt;/layout-master&gt;
   &lt;sequence master="a"&gt;
-    &lt;block vertical-align="before" vertical-position="5"&gt;⠤⠤⠤
-            &lt;/block&gt;
+    &lt;block&gt;⠤⠤⠤
+      &lt;br/&gt;⠤⠤⠤
+            
+    &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
 <h2>test_format.xprocspec\test_23-expected.pef</h2>
@@ -3207,6 +3253,48 @@
   &lt;head&gt;
     &lt;meta&gt;
       &lt;dc:title&gt;test_23&lt;/dc:title&gt;
+      &lt;dc:description/&gt;
+      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
+    &lt;/meta&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;volume rows="25" cols="40" rowgap="0" duplex="true"&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠤⠤⠤&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+    &lt;/volume&gt;
+  &lt;/body&gt;
+&lt;/pef&gt;</pre>
+<h1 id="test_format.xprocspec\test_24-input.obfl">test_24<a href="#test_format.xprocspec\test_24-input.obfl" class="internal"> &para;</a>
+</h1>
+<p></p>
+<h2>test_format.xprocspec\test_24-input.obfl</h2>
+<pre>
+&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
+  &lt;meta&gt;
+    &lt;dc:title&gt;test_24&lt;/dc:title&gt;
+    &lt;dc:description/&gt;
+  &lt;/meta&gt;
+  &lt;layout-master name="a" page-width="40" page-height="25" duplex="true" page-number-variable="page"&gt;
+    &lt;default-template&gt;
+      &lt;header/&gt;
+      &lt;footer/&gt;
+    &lt;/default-template&gt;
+  &lt;/layout-master&gt;
+  &lt;sequence master="a"&gt;
+    &lt;block vertical-align="before" vertical-position="5"&gt;⠤⠤⠤
+            &lt;/block&gt;
+  &lt;/sequence&gt;
+&lt;/obfl&gt;</pre>
+<h2>test_format.xprocspec\test_24-expected.pef</h2>
+<pre>
+&lt;pef version="2008-1"&gt;
+  &lt;head&gt;
+    &lt;meta&gt;
+      &lt;dc:title&gt;test_24&lt;/dc:title&gt;
       &lt;dc:description/&gt;
       &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
     &lt;/meta&gt;
@@ -3225,14 +3313,14 @@
     &lt;/volume&gt;
   &lt;/body&gt;
 &lt;/pef&gt;</pre>
-<h1 id="test_format.xprocspec\test_24-input.obfl">test_24<a href="#test_format.xprocspec\test_24-input.obfl" class="internal"> &para;</a>
+<h1 id="test_format.xprocspec\test_25-input.obfl">test_25<a href="#test_format.xprocspec\test_25-input.obfl" class="internal"> &para;</a>
 </h1>
 <p></p>
-<h2>test_format.xprocspec\test_24-input.obfl</h2>
+<h2>test_format.xprocspec\test_25-input.obfl</h2>
 <pre>
 &lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
   &lt;meta&gt;
-    &lt;dc:title&gt;test_24&lt;/dc:title&gt;
+    &lt;dc:title&gt;test_25&lt;/dc:title&gt;
     &lt;dc:description/&gt;
   &lt;/meta&gt;
   &lt;layout-master name="a" page-width="12" page-height="5" duplex="true" page-number-variable="page"&gt;
@@ -3246,12 +3334,12 @@
             &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
-<h2>test_format.xprocspec\test_24-expected.pef</h2>
+<h2>test_format.xprocspec\test_25-expected.pef</h2>
 <pre>
 &lt;pef version="2008-1"&gt;
   &lt;head&gt;
     &lt;meta&gt;
-      &lt;dc:title&gt;test_24&lt;/dc:title&gt;
+      &lt;dc:title&gt;test_25&lt;/dc:title&gt;
       &lt;dc:description/&gt;
       &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
     &lt;/meta&gt;
@@ -3267,14 +3355,14 @@
     &lt;/volume&gt;
   &lt;/body&gt;
 &lt;/pef&gt;</pre>
-<h1 id="test_format.xprocspec\test_25-input.obfl">test_25<a href="#test_format.xprocspec\test_25-input.obfl" class="internal"> &para;</a>
+<h1 id="test_format.xprocspec\test_26-input.obfl">test_26<a href="#test_format.xprocspec\test_26-input.obfl" class="internal"> &para;</a>
 </h1>
 <p></p>
-<h2>test_format.xprocspec\test_25-input.obfl</h2>
+<h2>test_format.xprocspec\test_26-input.obfl</h2>
 <pre>
 &lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
   &lt;meta&gt;
-    &lt;dc:title&gt;test_25&lt;/dc:title&gt;
+    &lt;dc:title&gt;test_26&lt;/dc:title&gt;
     &lt;dc:description/&gt;
   &lt;/meta&gt;
   &lt;layout-master name="body" page-width="20" page-height="15" duplex="true" page-number-variable="page"&gt;
@@ -3290,50 +3378,6 @@
             &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
-<h2>test_format.xprocspec\test_25-expected.pef</h2>
-<pre>
-&lt;pef version="2008-1"&gt;
-  &lt;head&gt;
-    &lt;meta&gt;
-      &lt;dc:title&gt;test_25&lt;/dc:title&gt;
-      &lt;dc:description/&gt;
-      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
-    &lt;/meta&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;volume rows="15" cols="20" rowgap="0" duplex="true"&gt;
-      &lt;section&gt;
-        &lt;page&gt;
-          &lt;row&gt;⠿⠿⠿⠿&lt;/row&gt;
-          &lt;row/&gt;
-          &lt;row&gt;⠿⠿⠿⠿&lt;/row&gt;
-        &lt;/page&gt;
-      &lt;/section&gt;
-    &lt;/volume&gt;
-  &lt;/body&gt;
-&lt;/pef&gt;</pre>
-<h1 id="test_format.xprocspec\test_26-input.obfl">test_26<a href="#test_format.xprocspec\test_26-input.obfl" class="internal"> &para;</a>
-</h1>
-<p></p>
-<h2>test_format.xprocspec\test_26-input.obfl</h2>
-<pre>
-&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
-  &lt;meta&gt;
-    &lt;dc:title&gt;test_26&lt;/dc:title&gt;
-    &lt;dc:description/&gt;
-  &lt;/meta&gt;
-  &lt;layout-master name="a" page-width="40" page-height="25" duplex="true" page-number-variable="page"&gt;
-    &lt;default-template&gt;
-      &lt;header/&gt;
-      &lt;footer/&gt;
-    &lt;/default-template&gt;
-  &lt;/layout-master&gt;
-  &lt;sequence master="a"&gt;
-    &lt;block margin-bottom="1"&gt;⠿ &lt;/block&gt;
-    &lt;block margin-bottom="1"/&gt;
-    &lt;block margin-top="1"&gt;⠿ &lt;/block&gt;
-  &lt;/sequence&gt;
-&lt;/obfl&gt;</pre>
 <h2>test_format.xprocspec\test_26-expected.pef</h2>
 <pre>
 &lt;pef version="2008-1"&gt;
@@ -3345,12 +3389,12 @@
     &lt;/meta&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;volume rows="25" cols="40" rowgap="0" duplex="true"&gt;
+    &lt;volume rows="15" cols="20" rowgap="0" duplex="true"&gt;
       &lt;section&gt;
         &lt;page&gt;
-          &lt;row&gt;⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿&lt;/row&gt;
           &lt;row/&gt;
-          &lt;row&gt;⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
     &lt;/volume&gt;
@@ -3373,10 +3417,9 @@
     &lt;/default-template&gt;
   &lt;/layout-master&gt;
   &lt;sequence master="a"&gt;
-    &lt;block row-spacing="2.0"&gt;⠿⠿⠿⠿⠿⠿⠿⠿ ⠿⠿⠿⠿⠿⠿⠿⠿&lt;/block&gt;
-    &lt;block row-spacing="2.0"&gt;⠿⠿⠿⠿⠿⠿⠿⠿ ⠿⠿⠿⠿⠿⠿⠿⠿&lt;/block&gt;
-    &lt;block row-spacing="2.0"&gt;⠿⠿⠿⠿⠿⠿⠿⠿ ⠿⠿⠿⠿⠿⠿⠿⠿&lt;/block&gt;
-    &lt;block row-spacing="2.0"&gt;⠿⠿⠿⠿⠿⠿⠿⠿ ⠿⠿⠿⠿⠿⠿⠿⠿&lt;/block&gt;
+    &lt;block margin-bottom="1"&gt;⠿ &lt;/block&gt;
+    &lt;block margin-bottom="1"/&gt;
+    &lt;block margin-top="1"&gt;⠿ &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
 <h2>test_format.xprocspec\test_27-expected.pef</h2>
@@ -3393,10 +3436,9 @@
     &lt;volume rows="25" cols="40" rowgap="0" duplex="true"&gt;
       &lt;section&gt;
         &lt;page&gt;
-          &lt;row rowgap="4"&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
-          &lt;row rowgap="4"&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
-          &lt;row rowgap="4"&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
-          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿&lt;/row&gt;
+          &lt;row/&gt;
+          &lt;row&gt;⠿&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
     &lt;/volume&gt;
@@ -3465,15 +3507,10 @@
     &lt;/default-template&gt;
   &lt;/layout-master&gt;
   &lt;sequence master="a"&gt;
-    &lt;block margin-bottom="1"&gt;
-      &lt;block row-spacing="2.0"&gt;⠿⠿⠿⠿⠿⠿⠿⠿ ⠿⠿⠿⠿⠿⠿⠿⠿&lt;/block&gt;
-    &lt;/block&gt;
-    &lt;block margin-top="1" margin-bottom="1"&gt;
-      &lt;block row-spacing="2.0"&gt;⠿⠿⠿⠿⠿⠿⠿⠿ ⠿⠿⠿⠿⠿⠿⠿⠿&lt;/block&gt;
-    &lt;/block&gt;
-    &lt;block margin-top="1"&gt;
-      &lt;block row-spacing="2.0"&gt;⠿⠿⠿⠿⠿⠿⠿⠿ ⠿⠿⠿⠿⠿⠿⠿⠿&lt;/block&gt;
-    &lt;/block&gt;
+    &lt;block row-spacing="2.0"&gt;⠿⠿⠿⠿⠿⠿⠿⠿ ⠿⠿⠿⠿⠿⠿⠿⠿&lt;/block&gt;
+    &lt;block row-spacing="2.0"&gt;⠿⠿⠿⠿⠿⠿⠿⠿ ⠿⠿⠿⠿⠿⠿⠿⠿&lt;/block&gt;
+    &lt;block row-spacing="2.0"&gt;⠿⠿⠿⠿⠿⠿⠿⠿ ⠿⠿⠿⠿⠿⠿⠿⠿&lt;/block&gt;
+    &lt;block row-spacing="2.0"&gt;⠿⠿⠿⠿⠿⠿⠿⠿ ⠿⠿⠿⠿⠿⠿⠿⠿&lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
 <h2>test_format.xprocspec\test_29-expected.pef</h2>
@@ -3491,9 +3528,8 @@
       &lt;section&gt;
         &lt;page&gt;
           &lt;row rowgap="4"&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
-          &lt;row/&gt;
           &lt;row rowgap="4"&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
-          &lt;row/&gt;
+          &lt;row rowgap="4"&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
           &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
@@ -3517,10 +3553,15 @@
     &lt;/default-template&gt;
   &lt;/layout-master&gt;
   &lt;sequence master="a"&gt;
-    &lt;block border-bottom-style="solid" border-bottom-align="center"&gt;
-      &lt;block row-spacing="2.0"&gt;⠿⠿⠿⠿⠿⠿⠿⠿ &lt;/block&gt;
+    &lt;block margin-bottom="1"&gt;
+      &lt;block row-spacing="2.0"&gt;⠿⠿⠿⠿⠿⠿⠿⠿ ⠿⠿⠿⠿⠿⠿⠿⠿&lt;/block&gt;
     &lt;/block&gt;
-    &lt;block&gt;⠿⠿⠿⠿⠿⠿⠿⠿ &lt;/block&gt;
+    &lt;block margin-top="1" margin-bottom="1"&gt;
+      &lt;block row-spacing="2.0"&gt;⠿⠿⠿⠿⠿⠿⠿⠿ ⠿⠿⠿⠿⠿⠿⠿⠿&lt;/block&gt;
+    &lt;/block&gt;
+    &lt;block margin-top="1"&gt;
+      &lt;block row-spacing="2.0"&gt;⠿⠿⠿⠿⠿⠿⠿⠿ ⠿⠿⠿⠿⠿⠿⠿⠿&lt;/block&gt;
+    &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
 <h2>test_format.xprocspec\test_30-expected.pef</h2>
@@ -3534,12 +3575,14 @@
     &lt;/meta&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;volume cols="40" rows="25" rowgap="0" duplex="true"&gt;
+    &lt;volume rows="25" cols="40" rowgap="0" duplex="true"&gt;
       &lt;section&gt;
         &lt;page&gt;
-          &lt;row rowgap="4"&gt;⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
-          &lt;row&gt;⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒&lt;/row&gt;
-          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row rowgap="4"&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row/&gt;
+          &lt;row rowgap="4"&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row/&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
     &lt;/volume&gt;
@@ -3562,8 +3605,8 @@
     &lt;/default-template&gt;
   &lt;/layout-master&gt;
   &lt;sequence master="a"&gt;
-    &lt;block margin-bottom="1"&gt;
-      &lt;block row-spacing="2.0" align="center"&gt;⠿⠿⠿⠿⠿⠿⠿⠿ &lt;/block&gt;
+    &lt;block border-bottom-style="solid" border-bottom-align="center"&gt;
+      &lt;block row-spacing="2.0"&gt;⠿⠿⠿⠿⠿⠿⠿⠿ &lt;/block&gt;
     &lt;/block&gt;
     &lt;block&gt;⠿⠿⠿⠿⠿⠿⠿⠿ &lt;/block&gt;
   &lt;/sequence&gt;
@@ -3582,8 +3625,8 @@
     &lt;volume cols="40" rows="25" rowgap="0" duplex="true"&gt;
       &lt;section&gt;
         &lt;page&gt;
-          &lt;row rowgap="4"&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
-          &lt;row/&gt;
+          &lt;row rowgap="4"&gt;⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒&lt;/row&gt;
           &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
@@ -3602,23 +3645,15 @@
   &lt;/meta&gt;
   &lt;layout-master name="a" page-width="40" page-height="25" duplex="true" page-number-variable="page"&gt;
     &lt;default-template&gt;
-      &lt;header&gt;
-        &lt;field&gt;
-          &lt;string value=""/&gt;
-        &lt;/field&gt;
-        &lt;field&gt;
-          &lt;string value=""/&gt;
-        &lt;/field&gt;
-        &lt;field&gt;
-          &lt;string value=""/&gt;
-        &lt;/field&gt;
-      &lt;/header&gt;
+      &lt;header/&gt;
       &lt;footer/&gt;
     &lt;/default-template&gt;
   &lt;/layout-master&gt;
   &lt;sequence master="a"&gt;
-    &lt;block&gt;⠿⠿⠿⠿⠿⠿⠿⠿ ⠿⠿⠿⠿⠿⠿⠿⠿
-            &lt;/block&gt;
+    &lt;block margin-bottom="1"&gt;
+      &lt;block row-spacing="2.0" align="center"&gt;⠿⠿⠿⠿⠿⠿⠿⠿ &lt;/block&gt;
+    &lt;/block&gt;
+    &lt;block&gt;⠿⠿⠿⠿⠿⠿⠿⠿ &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
 <h2>test_format.xprocspec\test_32-expected.pef</h2>
@@ -3632,11 +3667,12 @@
     &lt;/meta&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;volume rows="25" cols="40" rowgap="0" duplex="true"&gt;
+    &lt;volume cols="40" rows="25" rowgap="0" duplex="true"&gt;
       &lt;section&gt;
         &lt;page&gt;
-          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
-          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row rowgap="4"&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row/&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
     &lt;/volume&gt;
@@ -3654,17 +3690,6 @@
   &lt;/meta&gt;
   &lt;layout-master name="a" page-width="40" page-height="25" duplex="true" page-number-variable="page"&gt;
     &lt;default-template&gt;
-      &lt;header&gt;
-        &lt;field&gt;
-          &lt;string value=""/&gt;
-        &lt;/field&gt;
-        &lt;field&gt;
-          &lt;string value=""/&gt;
-        &lt;/field&gt;
-        &lt;field&gt;
-          &lt;string value=""/&gt;
-        &lt;/field&gt;
-      &lt;/header&gt;
       &lt;header&gt;
         &lt;field&gt;
           &lt;string value=""/&gt;
@@ -3699,7 +3724,6 @@
       &lt;section&gt;
         &lt;page&gt;
           &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
-          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
           &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
@@ -3720,7 +3744,18 @@
     &lt;default-template&gt;
       &lt;header&gt;
         &lt;field&gt;
-          &lt;string value="⠆"/&gt;
+          &lt;string value=""/&gt;
+        &lt;/field&gt;
+        &lt;field&gt;
+          &lt;string value=""/&gt;
+        &lt;/field&gt;
+        &lt;field&gt;
+          &lt;string value=""/&gt;
+        &lt;/field&gt;
+      &lt;/header&gt;
+      &lt;header&gt;
+        &lt;field&gt;
+          &lt;string value=""/&gt;
         &lt;/field&gt;
         &lt;field&gt;
           &lt;string value=""/&gt;
@@ -3751,7 +3786,8 @@
     &lt;volume rows="25" cols="40" rowgap="0" duplex="true"&gt;
       &lt;section&gt;
         &lt;page&gt;
-          &lt;row&gt;⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
           &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
@@ -3773,17 +3809,6 @@
       &lt;header&gt;
         &lt;field&gt;
           &lt;string value="⠆"/&gt;
-        &lt;/field&gt;
-        &lt;field&gt;
-          &lt;string value=""/&gt;
-        &lt;/field&gt;
-        &lt;field&gt;
-          &lt;string value=""/&gt;
-        &lt;/field&gt;
-      &lt;/header&gt;
-      &lt;header&gt;
-        &lt;field&gt;
-          &lt;string value=""/&gt;
         &lt;/field&gt;
         &lt;field&gt;
           &lt;string value=""/&gt;
@@ -3815,7 +3840,6 @@
       &lt;section&gt;
         &lt;page&gt;
           &lt;row&gt;⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
-          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
           &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
@@ -3830,6 +3854,70 @@
 &lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
   &lt;meta&gt;
     &lt;dc:title&gt;test_36&lt;/dc:title&gt;
+    &lt;dc:description/&gt;
+  &lt;/meta&gt;
+  &lt;layout-master name="a" page-width="40" page-height="25" duplex="true" page-number-variable="page"&gt;
+    &lt;default-template&gt;
+      &lt;header&gt;
+        &lt;field&gt;
+          &lt;string value="⠆"/&gt;
+        &lt;/field&gt;
+        &lt;field&gt;
+          &lt;string value=""/&gt;
+        &lt;/field&gt;
+        &lt;field&gt;
+          &lt;string value=""/&gt;
+        &lt;/field&gt;
+      &lt;/header&gt;
+      &lt;header&gt;
+        &lt;field&gt;
+          &lt;string value=""/&gt;
+        &lt;/field&gt;
+        &lt;field&gt;
+          &lt;string value=""/&gt;
+        &lt;/field&gt;
+        &lt;field&gt;
+          &lt;string value=""/&gt;
+        &lt;/field&gt;
+      &lt;/header&gt;
+      &lt;footer/&gt;
+    &lt;/default-template&gt;
+  &lt;/layout-master&gt;
+  &lt;sequence master="a"&gt;
+    &lt;block&gt;⠿⠿⠿⠿⠿⠿⠿⠿ ⠿⠿⠿⠿⠿⠿⠿⠿
+            &lt;/block&gt;
+  &lt;/sequence&gt;
+&lt;/obfl&gt;</pre>
+<h2>test_format.xprocspec\test_36-expected.pef</h2>
+<pre>
+&lt;pef version="2008-1"&gt;
+  &lt;head&gt;
+    &lt;meta&gt;
+      &lt;dc:title&gt;test_36&lt;/dc:title&gt;
+      &lt;dc:description/&gt;
+      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
+    &lt;/meta&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;volume rows="25" cols="40" rowgap="0" duplex="true"&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+    &lt;/volume&gt;
+  &lt;/body&gt;
+&lt;/pef&gt;</pre>
+<h1 id="test_format.xprocspec\test_37-input.obfl">test_37<a href="#test_format.xprocspec\test_37-input.obfl" class="internal"> &para;</a>
+</h1>
+<p></p>
+<h2>test_format.xprocspec\test_37-input.obfl</h2>
+<pre>
+&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
+  &lt;meta&gt;
+    &lt;dc:title&gt;test_37&lt;/dc:title&gt;
     &lt;dc:description/&gt;
   &lt;/meta&gt;
   &lt;layout-master name="a" page-width="40" page-height="25" duplex="true" page-number-variable="page"&gt;
@@ -3884,61 +3972,6 @@
             &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
-<h2>test_format.xprocspec\test_36-expected.pef</h2>
-<pre>
-&lt;pef version="2008-1"&gt;
-  &lt;head&gt;
-    &lt;meta&gt;
-      &lt;dc:title&gt;test_36&lt;/dc:title&gt;
-      &lt;dc:description/&gt;
-      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
-    &lt;/meta&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;volume rows="25" cols="40" rowgap="0" duplex="true"&gt;
-      &lt;section&gt;
-        &lt;page&gt;
-          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
-          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
-        &lt;/page&gt;
-        &lt;page&gt;
-          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
-          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
-          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
-        &lt;/page&gt;
-      &lt;/section&gt;
-    &lt;/volume&gt;
-  &lt;/body&gt;
-&lt;/pef&gt;</pre>
-<h1 id="test_format.xprocspec\test_37-input.obfl">test_37<a href="#test_format.xprocspec\test_37-input.obfl" class="internal"> &para;</a>
-</h1>
-<p></p>
-<h2>test_format.xprocspec\test_37-input.obfl</h2>
-<pre>
-&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
-  &lt;meta&gt;
-    &lt;dc:title&gt;test_37&lt;/dc:title&gt;
-    &lt;dc:description/&gt;
-  &lt;/meta&gt;
-  &lt;layout-master name="a" page-width="40" page-height="25" duplex="true" page-number-variable="page"&gt;
-    &lt;default-template&gt;
-      &lt;header/&gt;
-      &lt;footer/&gt;
-    &lt;/default-template&gt;
-  &lt;/layout-master&gt;
-  &lt;sequence master="a"&gt;
-    &lt;block/&gt;
-    &lt;block&gt;⠿&lt;/block&gt;
-    &lt;block/&gt;
-    &lt;block&gt;⠿&lt;/block&gt;
-    &lt;block&gt;&nbsp;&lt;/block&gt;
-    &lt;block&gt;⠿ &lt;/block&gt;
-    &lt;block/&gt;
-    &lt;block&gt;⠿&lt;/block&gt;
-    &lt;block margin-bottom="1"/&gt;
-    &lt;block&gt;⠿&lt;/block&gt;
-  &lt;/sequence&gt;
-&lt;/obfl&gt;</pre>
 <h2>test_format.xprocspec\test_37-expected.pef</h2>
 <pre>
 &lt;pef version="2008-1"&gt;
@@ -3953,13 +3986,13 @@
     &lt;volume rows="25" cols="40" rowgap="0" duplex="true"&gt;
       &lt;section&gt;
         &lt;page&gt;
-          &lt;row&gt;⠿&lt;/row&gt;
-          &lt;row&gt;⠿&lt;/row&gt;
-          &lt;row&gt;⠀&lt;/row&gt;
-          &lt;row&gt;⠿&lt;/row&gt;
-          &lt;row&gt;⠿&lt;/row&gt;
-          &lt;row/&gt;
-          &lt;row&gt;⠿&lt;/row&gt;
+          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠿⠿⠿&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
     &lt;/volume&gt;
@@ -3982,9 +4015,16 @@
     &lt;/default-template&gt;
   &lt;/layout-master&gt;
   &lt;sequence master="a"&gt;
-    &lt;block border-bottom-style="solid" border-bottom-align="outer"/&gt;
-    &lt;block border-bottom-style="solid" border-bottom-align="outer"/&gt;
-    &lt;block border-bottom-style="solid" border-bottom-align="outer"&gt;&nbsp; &lt;/block&gt;
+    &lt;block/&gt;
+    &lt;block&gt;⠿&lt;/block&gt;
+    &lt;block/&gt;
+    &lt;block&gt;⠿&lt;/block&gt;
+    &lt;block&gt;&nbsp;&lt;/block&gt;
+    &lt;block&gt;⠿ &lt;/block&gt;
+    &lt;block/&gt;
+    &lt;block&gt;⠿&lt;/block&gt;
+    &lt;block margin-bottom="1"/&gt;
+    &lt;block&gt;⠿&lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
 <h2>test_format.xprocspec\test_38-expected.pef</h2>
@@ -4001,10 +4041,13 @@
     &lt;volume rows="25" cols="40" rowgap="0" duplex="true"&gt;
       &lt;section&gt;
         &lt;page&gt;
-          &lt;row&gt;⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤&lt;/row&gt;
-          &lt;row&gt;⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤&lt;/row&gt;
+          &lt;row&gt;⠿&lt;/row&gt;
+          &lt;row&gt;⠿&lt;/row&gt;
           &lt;row&gt;⠀&lt;/row&gt;
-          &lt;row&gt;⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤&lt;/row&gt;
+          &lt;row&gt;⠿&lt;/row&gt;
+          &lt;row&gt;⠿&lt;/row&gt;
+          &lt;row/&gt;
+          &lt;row&gt;⠿&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
     &lt;/volume&gt;
@@ -4027,12 +4070,9 @@
     &lt;/default-template&gt;
   &lt;/layout-master&gt;
   &lt;sequence master="a"&gt;
-    &lt;block&gt;
-      &lt;page-number ref-id="foo" number-format="default"/&gt;
-    &lt;/block&gt;
-    &lt;block/&gt;
-    &lt;block id="foo"&gt;⠿
-            &lt;/block&gt;
+    &lt;block border-bottom-style="solid" border-bottom-align="outer"/&gt;
+    &lt;block border-bottom-style="solid" border-bottom-align="outer"/&gt;
+    &lt;block border-bottom-style="solid" border-bottom-align="outer"&gt;&nbsp; &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
 <h2>test_format.xprocspec\test_39-expected.pef</h2>
@@ -4049,8 +4089,10 @@
     &lt;volume rows="25" cols="40" rowgap="0" duplex="true"&gt;
       &lt;section&gt;
         &lt;page&gt;
-          &lt;row&gt;⠼⠁&lt;/row&gt;
-          &lt;row&gt;⠿&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤&lt;/row&gt;
+          &lt;row&gt;⠀&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
     &lt;/volume&gt;
@@ -4064,6 +4106,52 @@
 &lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
   &lt;meta&gt;
     &lt;dc:title&gt;test_40&lt;/dc:title&gt;
+    &lt;dc:description/&gt;
+  &lt;/meta&gt;
+  &lt;layout-master name="a" page-width="40" page-height="25" duplex="true" page-number-variable="page"&gt;
+    &lt;default-template&gt;
+      &lt;header/&gt;
+      &lt;footer/&gt;
+    &lt;/default-template&gt;
+  &lt;/layout-master&gt;
+  &lt;sequence master="a"&gt;
+    &lt;block&gt;
+      &lt;page-number ref-id="foo" number-format="default"/&gt;
+    &lt;/block&gt;
+    &lt;block/&gt;
+    &lt;block id="foo"&gt;⠿
+            &lt;/block&gt;
+  &lt;/sequence&gt;
+&lt;/obfl&gt;</pre>
+<h2>test_format.xprocspec\test_40-expected.pef</h2>
+<pre>
+&lt;pef version="2008-1"&gt;
+  &lt;head&gt;
+    &lt;meta&gt;
+      &lt;dc:title&gt;test_40&lt;/dc:title&gt;
+      &lt;dc:description/&gt;
+      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
+    &lt;/meta&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;volume rows="25" cols="40" rowgap="0" duplex="true"&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠼⠁&lt;/row&gt;
+          &lt;row&gt;⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+    &lt;/volume&gt;
+  &lt;/body&gt;
+&lt;/pef&gt;</pre>
+<h1 id="test_format.xprocspec\test_41-input.obfl">test_41<a href="#test_format.xprocspec\test_41-input.obfl" class="internal"> &para;</a>
+</h1>
+<p></p>
+<h2>test_format.xprocspec\test_41-input.obfl</h2>
+<pre>
+&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
+  &lt;meta&gt;
+    &lt;dc:title&gt;test_41&lt;/dc:title&gt;
     &lt;dc:description/&gt;
   &lt;/meta&gt;
   &lt;layout-master name="body" page-width="12" page-height="8" duplex="true" page-number-variable="page"&gt;
@@ -4083,12 +4171,12 @@
             &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
-<h2>test_format.xprocspec\test_40-expected.pef</h2>
+<h2>test_format.xprocspec\test_41-expected.pef</h2>
 <pre>
 &lt;pef version="2008-1"&gt;
   &lt;head&gt;
     &lt;meta&gt;
-      &lt;dc:title&gt;test_40&lt;/dc:title&gt;
+      &lt;dc:title&gt;test_41&lt;/dc:title&gt;
       &lt;dc:description/&gt;
       &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
     &lt;/meta&gt;
@@ -4108,72 +4196,6 @@
     &lt;/volume&gt;
   &lt;/body&gt;
 &lt;/pef&gt;</pre>
-<h1 id="test_format.xprocspec\test_41-input.obfl">test_41<a href="#test_format.xprocspec\test_41-input.obfl" class="internal"> &para;</a>
-</h1>
-<p></p>
-<h2>test_format.xprocspec\test_41-input.obfl</h2>
-<pre>
-&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
-  &lt;meta&gt;
-    &lt;dc:title&gt;test_41&lt;/dc:title&gt;
-    &lt;dc:description/&gt;
-  &lt;/meta&gt;
-  &lt;layout-master name="a" page-width="15" page-height="5" duplex="true" page-number-variable="page"&gt;
-    &lt;default-template&gt;
-      &lt;header/&gt;
-      &lt;footer&gt;
-        &lt;field&gt;
-          &lt;string value=""/&gt;
-        &lt;/field&gt;
-        &lt;field&gt;
-          &lt;string value=""/&gt;
-        &lt;/field&gt;
-        &lt;field&gt;
-          &lt;string value=""/&gt;
-        &lt;/field&gt;
-      &lt;/footer&gt;
-    &lt;/default-template&gt;
-  &lt;/layout-master&gt;
-  &lt;sequence master="a"&gt;
-    &lt;block&gt;⠿ &lt;/block&gt;
-    &lt;block&gt;⠿ &lt;/block&gt;
-    &lt;block&gt;⠿ &lt;/block&gt;
-    &lt;block&gt;⠿ &lt;/block&gt;
-    &lt;block&gt;⠿ &lt;/block&gt;
-    &lt;block&gt;⠿ &lt;/block&gt;
-  &lt;/sequence&gt;
-&lt;/obfl&gt;</pre>
-<h2>test_format.xprocspec\test_41-expected.pef</h2>
-<pre>
-&lt;pef version="2008-1"&gt;
-  &lt;head&gt;
-    &lt;meta&gt;
-      &lt;dc:title&gt;test_41&lt;/dc:title&gt;
-      &lt;dc:description/&gt;
-      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
-    &lt;/meta&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;volume rows="5" cols="15" rowgap="0" duplex="true"&gt;
-      &lt;section&gt;
-        &lt;page&gt;
-          &lt;row&gt;⠿&lt;/row&gt;
-          &lt;row&gt;⠿&lt;/row&gt;
-          &lt;row&gt;⠿&lt;/row&gt;
-          &lt;row&gt;⠿&lt;/row&gt;
-          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
-        &lt;/page&gt;
-        &lt;page&gt;
-          &lt;row&gt;⠿&lt;/row&gt;
-          &lt;row&gt;⠿&lt;/row&gt;
-          &lt;row/&gt;
-          &lt;row/&gt;
-          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
-        &lt;/page&gt;
-      &lt;/section&gt;
-    &lt;/volume&gt;
-  &lt;/body&gt;
-&lt;/pef&gt;</pre>
 <h1 id="test_format.xprocspec\test_42-input.obfl">test_42<a href="#test_format.xprocspec\test_42-input.obfl" class="internal"> &para;</a>
 </h1>
 <p></p>
@@ -4187,17 +4209,6 @@
   &lt;layout-master name="a" page-width="15" page-height="5" duplex="true" page-number-variable="page"&gt;
     &lt;default-template&gt;
       &lt;header/&gt;
-      &lt;footer&gt;
-        &lt;field&gt;
-          &lt;string value=""/&gt;
-        &lt;/field&gt;
-        &lt;field&gt;
-          &lt;string value=""/&gt;
-        &lt;/field&gt;
-        &lt;field&gt;
-          &lt;string value=""/&gt;
-        &lt;/field&gt;
-      &lt;/footer&gt;
       &lt;footer&gt;
         &lt;field&gt;
           &lt;string value=""/&gt;
@@ -4237,14 +4248,14 @@
           &lt;row&gt;⠿&lt;/row&gt;
           &lt;row&gt;⠿&lt;/row&gt;
           &lt;row&gt;⠿&lt;/row&gt;
-          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠿&lt;/row&gt;
           &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
         &lt;/page&gt;
         &lt;page&gt;
           &lt;row&gt;⠿&lt;/row&gt;
           &lt;row&gt;⠿&lt;/row&gt;
-          &lt;row&gt;⠿&lt;/row&gt;
-          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
+          &lt;row/&gt;
+          &lt;row/&gt;
           &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
@@ -4266,7 +4277,18 @@
       &lt;header/&gt;
       &lt;footer&gt;
         &lt;field&gt;
-          &lt;string value="⠆"/&gt;
+          &lt;string value=""/&gt;
+        &lt;/field&gt;
+        &lt;field&gt;
+          &lt;string value=""/&gt;
+        &lt;/field&gt;
+        &lt;field&gt;
+          &lt;string value=""/&gt;
+        &lt;/field&gt;
+      &lt;/footer&gt;
+      &lt;footer&gt;
+        &lt;field&gt;
+          &lt;string value=""/&gt;
         &lt;/field&gt;
         &lt;field&gt;
           &lt;string value=""/&gt;
@@ -4303,15 +4325,15 @@
           &lt;row&gt;⠿&lt;/row&gt;
           &lt;row&gt;⠿&lt;/row&gt;
           &lt;row&gt;⠿&lt;/row&gt;
-          &lt;row&gt;⠿&lt;/row&gt;
-          &lt;row&gt;⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
         &lt;/page&gt;
         &lt;page&gt;
           &lt;row&gt;⠿&lt;/row&gt;
           &lt;row&gt;⠿&lt;/row&gt;
-          &lt;row/&gt;
-          &lt;row/&gt;
-          &lt;row&gt;⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠿&lt;/row&gt;
+          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
     &lt;/volume&gt;
@@ -4330,17 +4352,6 @@
   &lt;layout-master name="a" page-width="15" page-height="5" duplex="true" page-number-variable="page"&gt;
     &lt;default-template&gt;
       &lt;header/&gt;
-      &lt;footer&gt;
-        &lt;field&gt;
-          &lt;string value=""/&gt;
-        &lt;/field&gt;
-        &lt;field&gt;
-          &lt;string value=""/&gt;
-        &lt;/field&gt;
-        &lt;field&gt;
-          &lt;string value=""/&gt;
-        &lt;/field&gt;
-      &lt;/footer&gt;
       &lt;footer&gt;
         &lt;field&gt;
           &lt;string value="⠆"/&gt;
@@ -4380,14 +4391,14 @@
           &lt;row&gt;⠿&lt;/row&gt;
           &lt;row&gt;⠿&lt;/row&gt;
           &lt;row&gt;⠿&lt;/row&gt;
-          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠿&lt;/row&gt;
           &lt;row&gt;⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
         &lt;/page&gt;
         &lt;page&gt;
           &lt;row&gt;⠿&lt;/row&gt;
           &lt;row&gt;⠿&lt;/row&gt;
-          &lt;row&gt;⠿&lt;/row&gt;
-          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
+          &lt;row/&gt;
+          &lt;row/&gt;
           &lt;row&gt;⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
@@ -4409,7 +4420,7 @@
       &lt;header/&gt;
       &lt;footer&gt;
         &lt;field&gt;
-          &lt;string value="⠆"/&gt;
+          &lt;string value=""/&gt;
         &lt;/field&gt;
         &lt;field&gt;
           &lt;string value=""/&gt;
@@ -4420,7 +4431,7 @@
       &lt;/footer&gt;
       &lt;footer&gt;
         &lt;field&gt;
-          &lt;string value="⠆⠆"/&gt;
+          &lt;string value="⠆"/&gt;
         &lt;/field&gt;
         &lt;field&gt;
           &lt;string value=""/&gt;
@@ -4457,15 +4468,15 @@
           &lt;row&gt;⠿&lt;/row&gt;
           &lt;row&gt;⠿&lt;/row&gt;
           &lt;row&gt;⠿&lt;/row&gt;
+          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
           &lt;row&gt;⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
-          &lt;row&gt;⠆⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
         &lt;/page&gt;
         &lt;page&gt;
           &lt;row&gt;⠿&lt;/row&gt;
           &lt;row&gt;⠿&lt;/row&gt;
           &lt;row&gt;⠿&lt;/row&gt;
+          &lt;row&gt;⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
           &lt;row&gt;⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
-          &lt;row&gt;⠆⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
     &lt;/volume&gt;
@@ -4556,6 +4567,83 @@
 &lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
   &lt;meta&gt;
     &lt;dc:title&gt;test_47&lt;/dc:title&gt;
+    &lt;dc:description/&gt;
+  &lt;/meta&gt;
+  &lt;layout-master name="a" page-width="15" page-height="5" duplex="true" page-number-variable="page"&gt;
+    &lt;default-template&gt;
+      &lt;header/&gt;
+      &lt;footer&gt;
+        &lt;field&gt;
+          &lt;string value="⠆"/&gt;
+        &lt;/field&gt;
+        &lt;field&gt;
+          &lt;string value=""/&gt;
+        &lt;/field&gt;
+        &lt;field&gt;
+          &lt;string value=""/&gt;
+        &lt;/field&gt;
+      &lt;/footer&gt;
+      &lt;footer&gt;
+        &lt;field&gt;
+          &lt;string value="⠆⠆"/&gt;
+        &lt;/field&gt;
+        &lt;field&gt;
+          &lt;string value=""/&gt;
+        &lt;/field&gt;
+        &lt;field&gt;
+          &lt;string value=""/&gt;
+        &lt;/field&gt;
+      &lt;/footer&gt;
+    &lt;/default-template&gt;
+  &lt;/layout-master&gt;
+  &lt;sequence master="a"&gt;
+    &lt;block&gt;⠿ &lt;/block&gt;
+    &lt;block&gt;⠿ &lt;/block&gt;
+    &lt;block&gt;⠿ &lt;/block&gt;
+    &lt;block&gt;⠿ &lt;/block&gt;
+    &lt;block&gt;⠿ &lt;/block&gt;
+    &lt;block&gt;⠿ &lt;/block&gt;
+  &lt;/sequence&gt;
+&lt;/obfl&gt;</pre>
+<h2>test_format.xprocspec\test_47-expected.pef</h2>
+<pre>
+&lt;pef version="2008-1"&gt;
+  &lt;head&gt;
+    &lt;meta&gt;
+      &lt;dc:title&gt;test_47&lt;/dc:title&gt;
+      &lt;dc:description/&gt;
+      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
+    &lt;/meta&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;volume rows="5" cols="15" rowgap="0" duplex="true"&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿&lt;/row&gt;
+          &lt;row&gt;⠿&lt;/row&gt;
+          &lt;row&gt;⠿&lt;/row&gt;
+          &lt;row&gt;⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠆⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿&lt;/row&gt;
+          &lt;row&gt;⠿&lt;/row&gt;
+          &lt;row&gt;⠿&lt;/row&gt;
+          &lt;row&gt;⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠆⠆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+    &lt;/volume&gt;
+  &lt;/body&gt;
+&lt;/pef&gt;</pre>
+<h1 id="test_format.xprocspec\test_48-input.obfl">test_48<a href="#test_format.xprocspec\test_48-input.obfl" class="internal"> &para;</a>
+</h1>
+<p></p>
+<h2>test_format.xprocspec\test_48-input.obfl</h2>
+<pre>
+&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
+  &lt;meta&gt;
+    &lt;dc:title&gt;test_48&lt;/dc:title&gt;
     &lt;dc:description/&gt;
   &lt;/meta&gt;
   &lt;layout-master name="a" page-width="20" page-height="6" duplex="true" page-number-variable="page"&gt;
@@ -4653,12 +4741,12 @@
     &lt;block&gt;⠁⠁⠁&lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
-<h2>test_format.xprocspec\test_47-expected.pef</h2>
+<h2>test_format.xprocspec\test_48-expected.pef</h2>
 <pre>
 &lt;pef version="2008-1"&gt;
   &lt;head&gt;
     &lt;meta&gt;
-      &lt;dc:title&gt;test_47&lt;/dc:title&gt;
+      &lt;dc:title&gt;test_48&lt;/dc:title&gt;
       &lt;dc:description/&gt;
       &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
     &lt;/meta&gt;
@@ -4710,14 +4798,14 @@
     &lt;/volume&gt;
   &lt;/body&gt;
 &lt;/pef&gt;</pre>
-<h1 id="test_format.xprocspec\test_48-input.obfl">test_48<a href="#test_format.xprocspec\test_48-input.obfl" class="internal"> &para;</a>
+<h1 id="test_format.xprocspec\test_49-input.obfl">test_49<a href="#test_format.xprocspec\test_49-input.obfl" class="internal"> &para;</a>
 </h1>
 <p></p>
-<h2>test_format.xprocspec\test_48-input.obfl</h2>
+<h2>test_format.xprocspec\test_49-input.obfl</h2>
 <pre>
 &lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
   &lt;meta&gt;
-    &lt;dc:title&gt;test_48&lt;/dc:title&gt;
+    &lt;dc:title&gt;test_49&lt;/dc:title&gt;
     &lt;dc:description/&gt;
   &lt;/meta&gt;
   &lt;layout-master name="main" page-width="15" page-height="5" duplex="true" page-number-variable="page"&gt;
@@ -4739,12 +4827,12 @@
             &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
-<h2>test_format.xprocspec\test_48-expected.pef</h2>
+<h2>test_format.xprocspec\test_49-expected.pef</h2>
 <pre>
 &lt;pef version="2008-1"&gt;
   &lt;head&gt;
     &lt;meta&gt;
-      &lt;dc:title&gt;test_48&lt;/dc:title&gt;
+      &lt;dc:title&gt;test_49&lt;/dc:title&gt;
       &lt;dc:description/&gt;
       &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
     &lt;/meta&gt;
@@ -4764,14 +4852,14 @@
     &lt;/volume&gt;
   &lt;/body&gt;
 &lt;/pef&gt;</pre>
-<h1 id="test_format.xprocspec\test_49-input.obfl">test_49<a href="#test_format.xprocspec\test_49-input.obfl" class="internal"> &para;</a>
+<h1 id="test_format.xprocspec\test_50-input.obfl">test_50<a href="#test_format.xprocspec\test_50-input.obfl" class="internal"> &para;</a>
 </h1>
 <p></p>
-<h2>test_format.xprocspec\test_49-input.obfl</h2>
+<h2>test_format.xprocspec\test_50-input.obfl</h2>
 <pre>
 &lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
   &lt;meta&gt;
-    &lt;dc:title&gt;test_49&lt;/dc:title&gt;
+    &lt;dc:title&gt;test_50&lt;/dc:title&gt;
     &lt;dc:description/&gt;
   &lt;/meta&gt;
   &lt;layout-master name="main" page-width="10" page-height="5" duplex="true" page-number-variable="page"&gt;
@@ -4793,12 +4881,12 @@
             &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
-<h2>test_format.xprocspec\test_49-expected.pef</h2>
+<h2>test_format.xprocspec\test_50-expected.pef</h2>
 <pre>
 &lt;pef version="2008-1"&gt;
   &lt;head&gt;
     &lt;meta&gt;
-      &lt;dc:title&gt;test_49&lt;/dc:title&gt;
+      &lt;dc:title&gt;test_50&lt;/dc:title&gt;
       &lt;dc:description/&gt;
       &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
     &lt;/meta&gt;
@@ -4930,14 +5018,14 @@
     &lt;/volume&gt;
   &lt;/body&gt;
 &lt;/pef&gt;</pre>
-<h1 id="test_format.xprocspec\test_50-input.obfl">test_50<a href="#test_format.xprocspec\test_50-input.obfl" class="internal"> &para;</a>
+<h1 id="test_format.xprocspec\test_51-input.obfl">test_51<a href="#test_format.xprocspec\test_51-input.obfl" class="internal"> &para;</a>
 </h1>
 <p></p>
-<h2>test_format.xprocspec\test_50-input.obfl</h2>
+<h2>test_format.xprocspec\test_51-input.obfl</h2>
 <pre>
 &lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
   &lt;meta&gt;
-    &lt;dc:title&gt;test_50&lt;/dc:title&gt;
+    &lt;dc:title&gt;test_51&lt;/dc:title&gt;
     &lt;dc:description/&gt;
   &lt;/meta&gt;
   &lt;layout-master name="main" page-width="10" page-height="5" duplex="true" page-number-variable="page"&gt;
@@ -4960,12 +5048,12 @@
             &lt;/block&gt;
   &lt;/sequence&gt;
 &lt;/obfl&gt;</pre>
-<h2>test_format.xprocspec\test_50-expected.pef</h2>
+<h2>test_format.xprocspec\test_51-expected.pef</h2>
 <pre>
 &lt;pef version="2008-1"&gt;
   &lt;head&gt;
     &lt;meta&gt;
-      &lt;dc:title&gt;test_50&lt;/dc:title&gt;
+      &lt;dc:title&gt;test_51&lt;/dc:title&gt;
       &lt;dc:description/&gt;
       &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
     &lt;/meta&gt;
@@ -6480,6 +6568,707 @@
           &lt;row&gt;⠤⠤⠤⠤⠀⠤⠤⠤⠤&lt;/row&gt;
           &lt;row&gt;⠤⠤⠤⠤⠀⠤⠤⠤⠤&lt;/row&gt;
           &lt;row&gt;⠤⠤⠤⠤⠀⠤⠤⠤⠤&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+    &lt;/volume&gt;
+  &lt;/body&gt;
+&lt;/pef&gt;</pre>
+<h1 id="test_obfl-to-pef.xprocspec\test_23-input.obfl">test_23<a href="#test_obfl-to-pef.xprocspec\test_23-input.obfl" class="internal"> &para;</a>
+</h1>
+<p></p>
+<h2>test_obfl-to-pef.xprocspec\test_23-input.obfl</h2>
+<pre>
+&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
+  &lt;meta&gt;
+    &lt;dc:title&gt;test_23&lt;/dc:title&gt;
+    &lt;dc:description/&gt;
+  &lt;/meta&gt;
+  &lt;layout-master name="master" duplex="true" page-number-variable="page" page-width="10" page-height="5"&gt;
+    &lt;default-template&gt;
+      &lt;header/&gt;
+      &lt;footer/&gt;
+    &lt;/default-template&gt;
+  &lt;/layout-master&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block border-top-style="solid"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block keep="all" border-top-style="solid"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block orphans="2" border-top-style="solid"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block widows="2" border-top-style="solid"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block border-bottom-style="solid"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block border-top-style="solid"&gt;
+      &lt;block border-top-style="solid"&gt;⠿⠿⠿⠿⠿⠿
+                  ⠿⠿⠿⠿⠿⠿
+                &lt;/block&gt;
+    &lt;/block&gt;
+  &lt;/sequence&gt;
+&lt;/obfl&gt;</pre>
+<h2>test_obfl-to-pef.xprocspec\test_23-expected.pef</h2>
+<pre>
+&lt;pef version="2008-1"&gt;
+  &lt;head&gt;
+    &lt;meta&gt;
+      &lt;dc:title&gt;test_23&lt;/dc:title&gt;
+      &lt;dc:description/&gt;
+      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
+    &lt;/meta&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;volume cols="10" rows="5" rowgap="0" duplex="true"&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉&lt;/row&gt;
+          &lt;row&gt;⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+    &lt;/volume&gt;
+  &lt;/body&gt;
+&lt;/pef&gt;</pre>
+<h1 id="test_obfl-to-pef.xprocspec\test_24-input.obfl">test_24<a href="#test_obfl-to-pef.xprocspec\test_24-input.obfl" class="internal"> &para;</a>
+</h1>
+<p></p>
+<h2>test_obfl-to-pef.xprocspec\test_24-input.obfl</h2>
+<pre>
+&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
+  &lt;meta&gt;
+    &lt;dc:title&gt;test_24&lt;/dc:title&gt;
+    &lt;dc:description/&gt;
+  &lt;/meta&gt;
+  &lt;layout-master name="master" duplex="true" page-number-variable="page" page-width="10" page-height="5"&gt;
+    &lt;default-template&gt;
+      &lt;header/&gt;
+      &lt;footer/&gt;
+    &lt;/default-template&gt;
+  &lt;/layout-master&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block orphans="2"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block orphans="2"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block orphans="2" border-top-style="solid"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block orphans="2" border-top-style="solid"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block widows="2"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block widows="2"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block widows="2" border-bottom-style="solid"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block widows="2" border-bottom-style="solid"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+&lt;/obfl&gt;</pre>
+<h2>test_obfl-to-pef.xprocspec\test_24-expected.pef</h2>
+<pre>
+&lt;pef version="2008-1"&gt;
+  &lt;head&gt;
+    &lt;meta&gt;
+      &lt;dc:title&gt;test_24&lt;/dc:title&gt;
+      &lt;dc:description/&gt;
+      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
+    &lt;/meta&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;volume cols="10" rows="5" rowgap="0" duplex="true"&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+    &lt;/volume&gt;
+  &lt;/body&gt;
+&lt;/pef&gt;</pre>
+<h1 id="test_obfl-to-pef.xprocspec\test_25-input.obfl">test_25<a href="#test_obfl-to-pef.xprocspec\test_25-input.obfl" class="internal"> &para;</a>
+</h1>
+<p></p>
+<h2>test_obfl-to-pef.xprocspec\test_25-input.obfl</h2>
+<pre>
+&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
+  &lt;meta&gt;
+    &lt;dc:title&gt;test_25&lt;/dc:title&gt;
+    &lt;dc:description/&gt;
+  &lt;/meta&gt;
+  &lt;layout-master name="master" duplex="true" page-number-variable="page" page-width="10" page-height="6"&gt;
+    &lt;default-template&gt;
+      &lt;header/&gt;
+      &lt;footer/&gt;
+    &lt;/default-template&gt;
+  &lt;/layout-master&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block keep="all"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block keep="all"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block keep="all"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block border-bottom-style="solid"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block keep="all"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block keep="all" border-bottom-style="solid"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block keep="all"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block orphans="2"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block keep="all"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block orphans="2"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block border-bottom-style="solid"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block orphans="2"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block keep="all" border-bottom-style="solid"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block orphans="2"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block widows="2"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block keep="all"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block widows="2"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block border-bottom-style="solid"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block widows="2"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="master"&gt;
+    &lt;block keep="all" border-bottom-style="solid"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+    &lt;block widows="2"&gt;⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+                ⠿⠿⠿⠿⠿⠿
+              &lt;/block&gt;
+  &lt;/sequence&gt;
+&lt;/obfl&gt;</pre>
+<h2>test_obfl-to-pef.xprocspec\test_25-expected.pef</h2>
+<pre>
+&lt;pef version="2008-1"&gt;
+  &lt;head&gt;
+    &lt;meta&gt;
+      &lt;dc:title&gt;test_25&lt;/dc:title&gt;
+      &lt;dc:description/&gt;
+      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
+    &lt;/meta&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;volume cols="10" rows="6" rowgap="0" duplex="true"&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠿&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
     &lt;/volume&gt;

@@ -11,8 +11,15 @@
       </default-template>
    </layout-master>
    <sequence master="a">
-      <block border-bottom-style="solid" border-bottom-align="outer"/>
-      <block border-bottom-style="solid" border-bottom-align="outer"/>
-      <block border-bottom-style="solid" border-bottom-align="outer">  </block>
+      <block/>
+      <block>⠿</block>
+      <block/>
+      <block>⠿</block>
+      <block> </block>
+      <block>⠿ </block>
+      <block/>
+      <block>⠿</block>
+      <block margin-bottom="1"/>
+      <block>⠿</block>
    </sequence>
 </obfl>

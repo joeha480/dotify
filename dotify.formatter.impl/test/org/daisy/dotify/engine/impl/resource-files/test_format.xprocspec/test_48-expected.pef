@@ -8,15 +8,58 @@
       </meta>
    </head>
    <body>
-      <volume rows="5" cols="15" rowgap="0" duplex="true">
+      <volume cols="20" rows="6" rowgap="0" duplex="true">
          <section>
+            <!-- right -->
             <page>
-               <row>⠿⠿⠿</row>
+               <!-- print page 1 -->
+               <row>⠁⠁⠁</row>
+               <row>⠁⠁⠁</row>
+               <row>⠁⠁⠁</row>
+               <row>⠁⠁⠁</row>
+               <row>⠁⠁⠁</row>
+               <row>⠼⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⠁</row> <!-- 1     ...     1 -->
             </page>
-         </section>
-         <section>
+            <!-- left -->
             <page>
-               <row>⠤⠤⠤⠀⠤⠤⠤⠀⠤⠤⠤</row>
+               <!-- print page 2 -->
+               <row>⠁⠁⠁</row>
+               <row>⠁⠁⠁</row>
+               <row>⠁⠁⠁</row>
+               <row>⠁⠁⠁</row>
+               <row>⠁⠁⠁</row>
+               <row>⠼⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</row> <!-- 2  -->
+            </page>
+            <!-- right -->
+            <page>
+               <row>⠁⠁⠁</row>
+               <row>⠁⠁⠁</row>
+               <row>⠁⠁⠁</row>
+               <row>⠁⠁⠁</row>
+               <!-- print page 3 -->
+               <row>⠁⠁⠁</row>
+               <!-- print page 4 -->
+               <row>⠼⠃⠒⠼⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⠃⠒⠼⠉</row> <!-- 2-3   ...   2-3 -->
+            </page>
+            <!-- left -->
+            <page>
+               <row>⠁⠁⠁</row>
+               <!-- print page 5 -->
+               <row>⠁⠁⠁</row>
+               <row>⠁⠁⠁</row>
+               <row>⠁⠁⠁</row>
+               <row>⠁⠁⠁</row>
+               <row>⠼⠙⠒⠼⠑⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</row> <!-- 4-5 -->
+            </page>
+            <!-- right -->
+            <page>
+               <row>⠁⠁⠁</row>
+               <row>⠁⠁⠁</row>
+               <row>⠁⠁⠁</row>
+               <row>⠁⠁⠁</row>
+               <!-- print page 6 -->
+               <row/>
+               <row>⠼⠑⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⠙⠒⠼⠑</row> <!-- 5     ...   4-5 -->
             </page>
          </section>
       </volume>

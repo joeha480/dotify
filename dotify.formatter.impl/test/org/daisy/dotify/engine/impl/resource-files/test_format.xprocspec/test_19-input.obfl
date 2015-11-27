@@ -4,49 +4,17 @@
       <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">test_19</dc:title>
       <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/"/>
    </meta>
-   <layout-master name="body" page-width="14" page-height="8" duplex="true" page-number-variable="page">
+   <layout-master name="body" page-width="40" page-height="25" duplex="true" page-number-variable="page">
       <default-template>
          <header/>
-         <footer>
-            <field>
-               <string value=""/>
-            </field>
-            <field>
-               <string value=""/>
-            </field>
-            <field>
-               <current-page number-format="default"/>
-            </field>
-         </footer>
+         <footer/>
       </default-template>
    </layout-master>
    <sequence master="body">
-      <block>⠿
-              <leader pattern="⠄" position="100%" align="right"/>
-              ⠤
-              <page-number ref-id="chapter_1" number-format="default"/>
-      </block>
-      <block>⠿⠿
-              <leader pattern="⠄" position="100%" align="right"/>
-              ⠤
-              <page-number ref-id="chapter_2" number-format="default"/>
-      </block>
-      <block>⠿⠿⠿
-              <leader pattern="⠄" position="100%" align="right"/>
-              ⠤⠤
-              <page-number ref-id="chapter_3" number-format="default"/>
-      </block>
-      <block align="center" break-before="page" id="chapter_1"><marker class="print-page" value="⠤"/>⠿
-            </block>
-      <block>⠤⠤⠤
-            </block>
-      <block align="center" break-before="page" id="chapter_2">⠿⠿
-            </block>
-      <block>⠤⠤⠤
-            </block>
-      <block align="center" break-before="page" id="chapter_3"><marker class="print-page/prev" value="⠤"/><marker class="print-page" value="⠤⠤"/>⠿⠿⠿
-            </block>
-      <block>⠤⠤⠤
-            </block>
+      <block>1 ⠤⠤⠤ </block>
+      <block>2 ⠤⠤⠤ </block>
+      <block>i ⠤⠤⠤ </block>
+      <block>ii ⠤⠤⠤ </block>
+      <block>3 ⠤⠤⠤ </block>
    </sequence>
 </obfl>
