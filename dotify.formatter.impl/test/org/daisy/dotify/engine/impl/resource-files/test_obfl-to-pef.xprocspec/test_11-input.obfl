@@ -12,9 +12,9 @@
    </layout-master>
    <sequence master="a">
       <block>⠤⠤⠤⠤<br/>
-								⠤⠤⠤⠤<br/>
-								⠤⠤⠤⠤<br/>
-								⠤⠤⠤⠤
-							</block>
+                ⠤⠤⠤⠤<br/>
+                ⠤⠤⠤⠤<br/>
+                ⠤⠤⠤⠤
+              </block>
    </sequence>
 </obfl>

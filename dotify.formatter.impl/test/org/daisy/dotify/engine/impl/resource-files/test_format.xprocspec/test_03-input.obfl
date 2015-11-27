@@ -18,10 +18,12 @@
                <string value=""/>
             </field>
             <field>
-               <marker-reference marker="running-footer" direction="backward" scope="sequence"/>
+               <marker-reference marker="running-footer" direction="forward" scope="page" text-style="def:tmp_d1729e3"/>
+               <marker-reference marker="running-footer" direction="backward" scope="sequence" text-style="ifndef:tmp_d1729e3"/>
             </field>
             <field>
-               <marker-reference marker="print-page" direction="backward" scope="sequence"/>
+               <marker-reference marker="print-page" direction="forward" scope="page" text-style="def:tmp_d1731e3"/>
+               <marker-reference marker="print-page" direction="backward" scope="sequence" text-style="ifndef:tmp_d1731e3"/>
             </field>
          </footer>
       </default-template>
@@ -31,7 +33,7 @@
             </block>
    </sequence>
    <sequence master="b">
-      <block><marker class="print-page" value="⠤"/><marker class="running-footer" value="⠤⠤"/>⠤⠤⠤
+      <block><marker class="print-page/prev" value="⠤"/><marker class="print-page" value="⠤"/><marker class="running-footer/prev" value="⠤⠤"/><marker class="running-footer" value="⠤⠤"/>⠤⠤⠤
             </block>
    </sequence>
 </obfl>

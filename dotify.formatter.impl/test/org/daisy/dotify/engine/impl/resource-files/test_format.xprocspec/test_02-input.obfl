@@ -11,7 +11,8 @@
                <string value=""/>
             </field>
             <field>
-               <marker-reference marker="running-header" direction="backward" scope="sequence"/>
+               <marker-reference marker="running-header" direction="forward" scope="page" text-style="def:tmp"/>
+               <marker-reference marker="running-header" direction="backward" scope="sequence" text-style="ifndef:tmp"/>
             </field>
             <field>
                <string value=""/>
@@ -22,10 +23,12 @@
                <string value=""/>
             </field>
             <field>
-               <marker-reference marker="running-footer" direction="backward" scope="sequence"/>
+               <marker-reference marker="running-footer" direction="forward" scope="page" text-style="def:tmp"/>
+               <marker-reference marker="running-footer" direction="backward" scope="sequence" text-style="ifndef:tmp"/>
             </field>
             <field>
-               <marker-reference marker="print-page" direction="backward" scope="sequence"/>
+               <marker-reference marker="print-page" direction="forward" scope="page" text-style="def:tmp"/>
+               <marker-reference marker="print-page" direction="backward" scope="sequence" text-style="ifndef:tmp"/>
             </field>
          </footer>
       </default-template>
@@ -35,11 +38,11 @@
             </block>
       <block break-before="page"><marker class="print-page" value="⠤"/>⠤⠤⠤
             </block>
-      <block break-before="page"><marker class="print-page" value="⠤⠤"/><marker class="running-footer" value="⠤⠤"/>⠤⠤⠤
+      <block break-before="page"><marker class="print-page/prev" value="⠤"/><marker class="print-page" value="⠤⠤"/><marker class="running-footer" value="⠤⠤"/>⠤⠤⠤
             </block>
-      <block break-before="page"><marker class="print-page" value=""/><marker class="running-header" value="⠤⠤"/>⠤⠤⠤
+      <block break-before="page"><marker class="print-page/prev" value="⠤⠤"/><marker class="print-page" value=""/><marker class="running-header" value="⠤⠤"/>⠤⠤⠤
             </block>
-      <block break-before="page"><marker class="print-page" value="⠤⠤⠤"/><marker class="running-footer" value=""/>⠤⠤⠤
+      <block break-before="page"><marker class="print-page/prev" value=""/><marker class="print-page" value="⠤⠤⠤"/><marker class="running-footer/prev" value="⠤⠤"/><marker class="running-footer" value=""/>⠤⠤⠤
             </block>
    </sequence>
 </obfl>

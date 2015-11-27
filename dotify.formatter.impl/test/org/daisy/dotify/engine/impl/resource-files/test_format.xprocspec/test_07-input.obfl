@@ -11,7 +11,20 @@
       </default-template>
    </layout-master>
    <sequence master="body">
-      <block break-before="page"><block>⠤⠤⠤</block>
+      <block><block>⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+              </block>
+         <block>⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+              </block>
+      </block>
+   </sequence>
+   <sequence master="body">
+      <block><block>⠤⠤⠤</block>
          <block>⠤⠤⠤</block>
          <block>⠤⠤⠤</block>
          <block>⠤⠤⠤</block>
@@ -20,7 +33,22 @@
          <block>⠤⠤⠤</block>
          <block>⠤⠤⠤</block>
       </block>
-      <block break-before="page"><block>⠤⠤⠤</block>
+   </sequence>
+   <sequence master="body">
+      <block><block>⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+              </block>
+         <block keep="all">⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+              </block>
+      </block>
+   </sequence>
+   <sequence master="body">
+      <block><block>⠤⠤⠤</block>
          <block>⠤⠤⠤</block>
          <block>⠤⠤⠤</block>
          <block>⠤⠤⠤</block>
@@ -30,13 +58,22 @@
             <block keep="all">⠤⠤⠤</block>
          </block>
       </block>
-      <block break-before="page"><block>⠤⠤⠤</block>
-         <block>⠤⠤⠤</block>
-         <block>⠤⠤⠤</block>
-         <block>⠤⠤⠤</block>
-         <block><block orphans="3">⠤⠤⠤<br/>⠤⠤⠤<br/>⠤⠤⠤<br/>⠤⠤⠤</block></block>
+   </sequence>
+   <sequence master="body">
+      <block><block>⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+              </block>
+         <block keep-with-next="1" keep="all">⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+              </block>
+         <block>⠤⠤⠤⠤⠤⠤⠤⠤⠤
+              </block>
       </block>
-      <block break-before="page"><block>⠤⠤⠤</block>
+   </sequence>
+   <sequence master="body">
+      <block><block>⠤⠤⠤</block>
          <block>⠤⠤⠤</block>
          <block>⠤⠤⠤</block>
          <block>⠤⠤⠤</block>
@@ -44,6 +81,32 @@
             <block keep-with-next="1" keep="all">⠤⠤⠤</block>
          </block>
          <block>⠤⠤⠤</block>
+      </block>
+   </sequence>
+   <sequence master="body">
+      <block><block>⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+              </block>
+         <block orphans="3">⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+              </block>
+      </block>
+   </sequence>
+   <sequence master="body">
+      <block><block>⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+              </block>
+         <block widows="3">⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+                ⠤⠤⠤⠤⠤⠤⠤⠤⠤
+              </block>
       </block>
    </sequence>
 </obfl>

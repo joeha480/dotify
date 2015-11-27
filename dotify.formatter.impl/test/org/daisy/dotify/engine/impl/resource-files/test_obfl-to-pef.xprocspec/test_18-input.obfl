@@ -12,7 +12,7 @@
    </layout-master>
    <sequence master="body">
       <block>⠤⠤⠤⠤⠤ ⠤⠤⠤⠤⠤ ⠤⠤⠤⠤⠤ ⠤⠤⠤⠤⠤
-            </block>
+              </block>
       <block><block keep="all" keep-with-next="1">⠤⠤⠤</block>
          <block keep="all" keep-with-next="1">⠤⠤⠤</block>
          <block keep="all" keep-with-next="1">⠤⠤⠤</block>

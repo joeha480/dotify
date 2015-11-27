@@ -12,8 +12,8 @@
    </layout-master>
    <sequence master="body">
       <block>⠤⠤⠤⠤⠤ ⠤⠤⠤⠤⠤ ⠤⠤⠤⠤⠤ ⠤⠤⠤⠤⠤
-            </block>
+              </block>
       <block keep="all">⠤⠤⠤⠤⠤ ⠤⠤⠤⠤⠤ ⠤⠤⠤⠤⠤ ⠤⠤⠤⠤⠤
-            </block>
+              </block>
    </sequence>
 </obfl>

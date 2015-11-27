@@ -11,7 +11,7 @@
       </default-template>
    </layout-master>
    <sequence master="a">
-      <block><page-number ref-id="foo" style="default"/>
+      <block><page-number ref-id="foo" number-format="default"/>
       </block>
       <block/>
       <block id="foo">⠿

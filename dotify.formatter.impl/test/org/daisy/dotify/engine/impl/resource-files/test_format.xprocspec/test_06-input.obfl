@@ -15,9 +15,10 @@
                <string value=""/>
             </field>
             <field>
-               <marker-reference marker="print-page" direction="backward" scope="sequence"/>
+               <marker-reference marker="print-page" direction="forward" scope="page" text-style="def:tmp_d2201e3"/>
+               <marker-reference marker="print-page" direction="backward" scope="sequence" text-style="ifndef:tmp_d2201e3"/>
                <string value=" "/>
-               <current-page style="default"/>
+               <current-page number-format="default"/>
             </field>
          </footer>
       </default-template>

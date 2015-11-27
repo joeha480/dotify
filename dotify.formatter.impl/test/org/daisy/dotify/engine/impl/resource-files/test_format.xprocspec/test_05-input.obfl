@@ -16,7 +16,7 @@
             </field>
             <field>
                <string value="⠏"/>
-               <current-page style="default"/>
+               <current-page number-format="default"/>
             </field>
          </footer>
       </default-template>
@@ -32,7 +32,7 @@
                <string value=""/>
             </field>
             <field>
-               <current-page style="default"/>
+               <current-page number-format="default"/>
             </field>
          </footer>
       </default-template>
@@ -48,7 +48,7 @@
                <string value=""/>
             </field>
             <field>
-               <current-page style="lower-roman"/>
+               <current-page number-format="lower-roman"/>
             </field>
          </footer>
       </default-template>

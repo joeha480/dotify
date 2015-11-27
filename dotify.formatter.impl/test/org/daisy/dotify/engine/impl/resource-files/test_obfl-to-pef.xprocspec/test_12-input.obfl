@@ -11,15 +11,16 @@
       </default-template>
    </layout-master>
    <sequence master="a">
-      <block margin-top="1" margin-bottom="1" row-spacing="2.0">⠁⠁⠁⠁⠁⠁⠁<br/>
-								⠂⠂⠂⠂⠂<br/>
+      <block row-spacing="2.0">⠁⠁⠁⠁⠁⠁⠁<br/>
+                ⠂⠂⠂⠂⠂<br/>
          <br/>
-								⠯⠗⠼⠜⠌⠄
-							</block>
-      <block margin-top="1" margin-bottom="1" row-spacing="2.0">⠤⠤⠤⠤<br/>
-								⠤⠤⠤⠤<br/>
-								⠤⠤⠤⠤<br/>
-								⠤⠤⠤⠤
-							</block>
+                ⠯⠗⠼⠜⠌⠄
+              </block>
+      <block>⠒⠒⠒</block>
+      <block row-spacing="2.0">⠤⠤⠤⠤<br/>
+                ⠤⠤⠤⠤<br/>
+                ⠤⠤⠤⠤<br/>
+                ⠤⠤⠤⠤
+              </block>
    </sequence>
 </obfl>

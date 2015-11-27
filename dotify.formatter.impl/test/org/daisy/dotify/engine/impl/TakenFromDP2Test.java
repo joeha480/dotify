@@ -19,15 +19,52 @@ public class TakenFromDP2Test extends AbstractFormatterEngineTest {
 		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_02-input.obfl",
 		        "resource-files/test_obfl-to-pef.xprocspec/test_02-expected.pef", false);
 	}
+	@Ignore // issue with cross-referencing between sequences
+	        // (https://github.com/joeha480/dotify/issues/97)
+	@Test
+	public void testObflToPef_03() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		
+		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_03-input.obfl",
+		        "resource-files/test_obfl-to-pef.xprocspec/test_03-expected.pef", false);
+	}
+	@Ignore // issue with leader (https://github.com/joeha480/obfl/issues/31)
+	@Test
+	public void testObflToPef_04() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_04-input.obfl",
+		        "resource-files/test_obfl-to-pef.xprocspec/test_04-expected.pef", false);
+	}
+	@Test
+	public void testObflToPef_05() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_05-input.obfl",
+		        "resource-files/test_obfl-to-pef.xprocspec/test_05-expected.pef", false);
+	}
 	@Test
 	public void testObflToPef_06() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_06-input.obfl",
 		        "resource-files/test_obfl-to-pef.xprocspec/test_06-expected.pef", false);
 	}
+	@Ignore // depends on a custom translator
+	@Test
+	public void testObflToPef_07() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_07-input.obfl",
+		        "resource-files/test_obfl-to-pef.xprocspec/test_07-expected.pef", false);
+	}
 	@Test
 	public void testObflToPef_08() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_08-input.obfl",
 		        "resource-files/test_obfl-to-pef.xprocspec/test_08-expected.pef", false);
+	}
+	@Test
+	public void testObflToPef_09() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_09-input.obfl",
+		        "resource-files/test_obfl-to-pef.xprocspec/test_09-expected.pef", false);
+	}
+	@Ignore // depends on org.daisy.pipeline.braille.dotify.impl.BrailleFilterFactoryImpl
+	        // (breaks lines according to css line breaking rules)
+	@Test
+	public void testObflToPef_10() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_10-input.obfl",
+		        "resource-files/test_obfl-to-pef.xprocspec/test_10-expected.pef", false);
 	}
 	@Test
 	public void testObflToPef_11() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
@@ -74,17 +111,53 @@ public class TakenFromDP2Test extends AbstractFormatterEngineTest {
 		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_19-input.obfl",
 		        "resource-files/test_obfl-to-pef.xprocspec/test_19-expected.pef", false);
 	}
-	
+	@Test
+	public void testObflToPef_20() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_20-input.obfl",
+		        "resource-files/test_obfl-to-pef.xprocspec/test_20-expected.pef", false);
+	}
+	@Test
+	public void testObflToPef_21() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_21-input.obfl",
+		        "resource-files/test_obfl-to-pef.xprocspec/test_21-expected.pef", false);
+	}
+	@Test
+	public void testObflToPef_22() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_22-input.obfl",
+		        "resource-files/test_obfl-to-pef.xprocspec/test_22-expected.pef", false);
+	}
 	@Test
 	public void testFormat_01() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/test_format.xprocspec/test_01-input.obfl",
 		        "resource-files/test_format.xprocspec/test_01-expected.pef", false);
 	}
+	@Ignore // * depends on org.daisy.pipeline.braille.dotify.impl.BrailleFilterFactoryImpl
+	        // * position of middle field of header/footer depends on width of
+	        //   fields in left and right corner, so centering is not perfect
+	        //   (not sure if this is a requirement though)
+	@Test
+	public void testFormat_02() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_format.xprocspec/test_02-input.obfl",
+		        "resource-files/test_format.xprocspec/test_02-expected.pef", false);
+	}
+	@Ignore // depends on org.daisy.pipeline.braille.dotify.impl.BrailleFilterFactoryImpl
 	@Test
 	public void testFormat_03() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/test_format.xprocspec/test_03-input.obfl",
 		        "resource-files/test_format.xprocspec/test_03-expected.pef", false);
 	}
+	@Ignore // is this a page numbering bug?
+	@Test
+	public void testFormat_04() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_format.xprocspec/test_04-input.obfl",
+		        "resource-files/test_format.xprocspec/test_04-expected.pef", false);
+	}
+	@Test
+	public void testFormat_05() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_format.xprocspec/test_05-input.obfl",
+		        "resource-files/test_format.xprocspec/test_05-expected.pef", false);
+	}
+	@Ignore // depends on org.daisy.pipeline.braille.dotify.impl.BrailleFilterFactoryImpl
 	@Test
 	public void testFormat_06() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/test_format.xprocspec/test_06-input.obfl",
@@ -104,6 +177,11 @@ public class TakenFromDP2Test extends AbstractFormatterEngineTest {
 	public void testFormat_09() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/test_format.xprocspec/test_09-input.obfl",
 		        "resource-files/test_format.xprocspec/test_09-expected.pef", false);
+	}
+	@Test
+	public void testFormat_10() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_format.xprocspec/test_10-input.obfl",
+		        "resource-files/test_format.xprocspec/test_10-expected.pef", false);
 	}
 	@Test
 	public void testFormat_11() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
@@ -144,6 +222,25 @@ public class TakenFromDP2Test extends AbstractFormatterEngineTest {
 	public void testFormat_18() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/test_format.xprocspec/test_18-input.obfl",
 		        "resource-files/test_format.xprocspec/test_18-expected.pef", false);
+	}
+	@Ignore // leader issue
+	@Test
+	public void testFormat_19() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_format.xprocspec/test_19-input.obfl",
+		        "resource-files/test_format.xprocspec/test_19-expected.pef", false);
+	}
+	@Ignore // leader issue
+	@Test
+	public void testFormat_20() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_format.xprocspec/test_20-input.obfl",
+		        "resource-files/test_format.xprocspec/test_20-expected.pef", false);
+	}
+	@Ignore // reference (<page-number ref-id="foo">) to inline element (<span id="foo">)
+	        // not sure whether this is a bug?
+	@Test
+	public void testFormat_21() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_format.xprocspec/test_21-input.obfl",
+		        "resource-files/test_format.xprocspec/test_21-expected.pef", false);
 	}
 	@Test
 	public void testFormat_22() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
@@ -196,31 +293,6 @@ public class TakenFromDP2Test extends AbstractFormatterEngineTest {
 		        "resource-files/test_format.xprocspec/test_31-expected.pef", false);
 	}
 	@Test
-	public void testFormat_39() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_39-input.obfl",
-		        "resource-files/test_format.xprocspec/test_39-expected.pef", false);
-	}
-	@Test
-	public void testFormat_40() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_40-input.obfl",
-		        "resource-files/test_format.xprocspec/test_40-expected.pef", false);
-	}
-	
-	// The following tests fail when generated from the DP2 tests, but I
-	// checked manually that they are OK (only differences are trailing blank
-	// patterns in rows), so I made the tests pass by replacing the expected
-	// results by the actual results.
-	@Test
-	public void testObflToPef_05() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_05-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_05-expected.pef", false);
-	}
-	@Test
-	public void testFormat_05() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_05-input.obfl",
-		        "resource-files/test_format.xprocspec/test_05-expected.pef", false);
-	}
-	@Test
 	public void testFormat_32() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/test_format.xprocspec/test_32-input.obfl",
 		        "resource-files/test_format.xprocspec/test_32-expected.pef", false);
@@ -256,6 +328,16 @@ public class TakenFromDP2Test extends AbstractFormatterEngineTest {
 		        "resource-files/test_format.xprocspec/test_38-expected.pef", false);
 	}
 	@Test
+	public void testFormat_39() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_format.xprocspec/test_39-input.obfl",
+		        "resource-files/test_format.xprocspec/test_39-expected.pef", false);
+	}
+	@Test
+	public void testFormat_40() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_format.xprocspec/test_40-input.obfl",
+		        "resource-files/test_format.xprocspec/test_40-expected.pef", false);
+	}
+	@Test
 	public void testFormat_41() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/test_format.xprocspec/test_41-input.obfl",
 		        "resource-files/test_format.xprocspec/test_41-expected.pef", false);
@@ -285,92 +367,26 @@ public class TakenFromDP2Test extends AbstractFormatterEngineTest {
 		testPEF("resource-files/test_format.xprocspec/test_46-input.obfl",
 		        "resource-files/test_format.xprocspec/test_46-expected.pef", false);
 	}
-	
-	@Ignore
+	@Ignore // depends on org.daisy.pipeline.braille.dotify.impl.BrailleFilterFactoryImpl
 	@Test
-	public void testObflToPef_03() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		// pending in test_obfl-to-pef.xprocspec: issue with cross-referencing
-		// between sequences (https://github.com/joeha480/dotify/issues/97)
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_03-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_03-expected.pef", false);
+	public void testFormat_47() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_format.xprocspec/test_47-input.obfl",
+		        "resource-files/test_format.xprocspec/test_47-expected.pef", false);
 	}
-	@Ignore
 	@Test
-	public void testObflToPef_04() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		// pending in test_obfl-to-pef.xprocspec: issue with leader
-		// (https://github.com/joeha480/obfl/issues/31)
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_04-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_04-expected.pef", false);
+	public void testFormat_48() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_format.xprocspec/test_48-input.obfl",
+		        "resource-files/test_format.xprocspec/test_48-expected.pef", false);
 	}
-	@Ignore
 	@Test
-	public void testObflToPef_07() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		// depends on a custom translator
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_07-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_07-expected.pef", false);
+	public void testFormat_49() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_format.xprocspec/test_49-input.obfl",
+		        "resource-files/test_format.xprocspec/test_49-expected.pef", false);
 	}
-	@Ignore
+	@Ignore // implementation does not support different target volume size
 	@Test
-	public void testObflToPef_09() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		// pending in test_obfl-to-pef.xprocspec: not sure this is the
-		// expected behavior, not clear in OBFL spec
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_09-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_09-expected.pef", false);
+	public void testFormat_50() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_format.xprocspec/test_50-input.obfl",
+		        "resource-files/test_format.xprocspec/test_50-expected.pef", false);
 	}
-	@Ignore
-	@Test
-	public void testObflToPef_10() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		// depends on translator that breaks lines according to css line breaking rules
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_10-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_10-expected.pef", false);
-	}
-	@Ignore
-	@Test
-	public void testFormat_02() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		// pending in test_format.xprocspec: centering running
-		// headers/footers. position depends on width of fields in left and
-		// right corner, so centering is not perfect (not sure if this is a
-		// requirement though)
-		testPEF("resource-files/test_format.xprocspec/test_02-input.obfl",
-		        "resource-files/test_format.xprocspec/test_02-expected.pef", false);
-	}
-	@Ignore
-	@Test
-	public void testFormat_04() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		// pending in test_format.xprocspec: is this a page numbering bug?
-		testPEF("resource-files/test_format.xprocspec/test_04-input.obfl",
-		        "resource-files/test_format.xprocspec/test_04-expected.pef", false);
-	}
-	@Ignore
-	@Test
-	public void testFormat_10() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		// pending in test_format.xprocspec: nested blocks with margins and
-		// borders: dotify.formatter.impl 1.1.3 broke something
-		testPEF("resource-files/test_format.xprocspec/test_10-input.obfl",
-		        "resource-files/test_format.xprocspec/test_10-expected.pef", false);
-	}
-	@Ignore
-	@Test
-	public void testFormat_19() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		// pending in test_format.xprocspec: leader issue
-		testPEF("resource-files/test_format.xprocspec/test_19-input.obfl",
-		        "resource-files/test_format.xprocspec/test_19-expected.pef", false);
-	}
-	@Ignore
-	@Test
-	public void testFormat_20() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		// pending in test_format.xprocspec: leader issue
-		testPEF("resource-files/test_format.xprocspec/test_20-input.obfl",
-		        "resource-files/test_format.xprocspec/test_20-expected.pef", false);
-	}
-	@Ignore
-	@Test
-	public void testFormat_21() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		// pending in test_format.xprocspec: reference (<page-number
-		// ref-id="foo">) to inline element (<span id="foo">): not sure
-		// whether this is a bug?
-		testPEF("resource-files/test_format.xprocspec/test_21-input.obfl",
-		        "resource-files/test_format.xprocspec/test_21-expected.pef", false);
-	}
-
 }

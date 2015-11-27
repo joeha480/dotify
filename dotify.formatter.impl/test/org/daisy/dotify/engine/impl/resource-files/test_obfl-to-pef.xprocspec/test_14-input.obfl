@@ -4,25 +4,31 @@
       <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">test_14</dc:title>
       <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/"/>
    </meta>
-   <layout-master name="a" duplex="true" page-width="40" page-height="25">
+   <layout-master name="a" duplex="true" page-width="40" page-height="35">
       <default-template>
          <header/>
          <footer/>
       </default-template>
    </layout-master>
    <sequence master="a">
+      <block margin-bottom="1" row-spacing="2.0">⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁<br/>
+                ⠁<br/>
+                ⠁<br/>
+                ⠁<br/>
+                ⠁
+              </block>
       <block margin-top="1" margin-bottom="1" row-spacing="2.0">⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁<br/>
-								⠁<br/>
-								⠁<br/>
-								⠁<br/>
-								⠁
-							</block>
+                ⠁<br/>
+                ⠁<br/>
+                ⠁<br/>
+                ⠁
+              </block>
       <block margin-top="1" row-spacing="1.0"><block margin-top="0" row-spacing="2.0">⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁⠁<br/>
-									⠁<br/>
-									⠁<br/>
-									⠁<br/>
-									⠁
-								</block>
+                  ⠁<br/>
+                  ⠁<br/>
+                  ⠁<br/>
+                  ⠁
+                </block>
       </block>
    </sequence>
 </obfl>

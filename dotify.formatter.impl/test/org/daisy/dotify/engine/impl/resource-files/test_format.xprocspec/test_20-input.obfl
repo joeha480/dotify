@@ -15,7 +15,7 @@
                <string value=""/>
             </field>
             <field>
-               <current-page style="default"/>
+               <current-page number-format="default"/>
             </field>
          </footer>
       </default-template>
@@ -23,11 +23,11 @@
    <sequence master="body">
       <block>⠿
               <leader pattern="⠄" position="100%" align="right"/>
-         <page-number ref-id="chapter_1" style="default"/>
+         <page-number ref-id="chapter_1" number-format="default"/>
       </block>
       <block>⠿⠿
               <leader pattern="⠄" position="100%" align="right"/>
-         <page-number ref-id="chapter_2" style="default"/>
+         <page-number ref-id="chapter_2" number-format="default"/>
       </block>
       <block break-before="page"><block id="chapter_1">⠿
               </block>
@@ -42,15 +42,15 @@
       </block>
       <block break-before="page"><block>⠤⠤⠤
                 <leader pattern="⠄" position="100%" align="right"/>
-            <page-number ref-id="x" style="default"/>
+            <page-number ref-id="x" number-format="default"/>
          </block>
          <block>⠤⠤⠤
                 <leader pattern="⠄" position="100%" align="right"/>
-            <page-number ref-id="y" style="default"/>
+            <page-number ref-id="y" number-format="default"/>
          </block>
          <block>⠤⠤⠤
                 <leader pattern="⠄" position="100%" align="right"/>
-            <page-number ref-id="z" style="default"/>
+            <page-number ref-id="z" number-format="default"/>
          </block>
       </block>
    </sequence>
