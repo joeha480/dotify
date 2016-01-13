@@ -11,20 +11,14 @@ public class MarkerIndicatorTest extends AbstractFormatterEngineTest {
 	public void testPageMargin_01() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/marker-indicator-input.obfl", "resource-files/marker-indicator-expected.pef", false);
 	}
-	
 	@Test
-	public void testFormat_55() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_55-input.obfl",
-		        "resource-files/test_format.xprocspec/test_55-expected.pef", true);
+	public void testObflToPef_27() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_27-input.obfl",
+		        "resource-files/test_obfl-to-pef.xprocspec/test_27-expected.pef", false);
 	}
 	@Test
-	public void testFormat_56() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_56-input.obfl",
-		        "resource-files/test_format.xprocspec/test_56-expected.pef", true);
-	}
-	@Test
-	public void testFormat_57() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_57-input.obfl",
-		        "resource-files/test_format.xprocspec/test_57-expected.pef", true);
+	public void testObflToPef_28() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_28-input.obfl",
+		        "resource-files/test_obfl-to-pef.xprocspec/test_28-expected.pef", false);
 	}
 }

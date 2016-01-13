@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <obfl xmlns="http://www.daisy.org/ns/2011/obfl" version="2011-1" xml:lang="und" hyphenate="false">
    <meta>
-      <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">test_28</dc:title>
+      <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">test_obfl-to-pef.xprocspec/test_28</dc:title>
       <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/"/>
    </meta>
    <layout-master name="body" page-width="15" page-height="5" duplex="true">

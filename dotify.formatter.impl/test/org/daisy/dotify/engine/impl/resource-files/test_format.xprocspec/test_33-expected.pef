@@ -2,7 +2,7 @@
 <pef xmlns="http://www.daisy.org/ns/2008/pef" version="2008-1">
    <head>
       <meta>
-         <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">test_33</dc:title>
+         <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">test_format.xprocspec/test_33</dc:title>
          <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/"/>
          <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">application/x-pef+xml</dc:format>
       </meta>
