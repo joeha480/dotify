@@ -3,7 +3,7 @@
    <head>
       <meta>
          <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">row-spacing-and-margins</dc:title>
-         <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/"/>
+         <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/">Tests combinations of row-spacing and (non-collapsed) top/bottom margins, including on nested blocks with different row-spacing.</dc:description>
          <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">application/x-pef+xml</dc:format>
       </meta>
    </head>

@@ -3,7 +3,7 @@
    <head>
       <meta>
          <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">row-spacing-nested-blocks</dc:title>
-         <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/"/>
+         <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/">Tests row-spacing on block nested in block with border bottom and default row-spacing.</dc:description>
          <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">application/x-pef+xml</dc:format>
       </meta>
    </head>

@@ -3,7 +3,7 @@
    <head>
       <meta>
          <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">nested-blocks-with-borders</dc:title>
-         <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/"/>
+         <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/">Tests nested blocks with borders and margins.</dc:description>
          <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">application/x-pef+xml</dc:format>
       </meta>
    </head>

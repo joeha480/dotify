@@ -3,7 +3,7 @@
    <head>
       <meta>
          <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">marker-reference-page-content-forward</dc:title>
-         <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/"/>
+         <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/">Tests marker-reference with scope="page-content" and direction="forward", when first element of the sequence is a marker.</dc:description>
          <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">application/x-pef+xml</dc:format>
       </meta>
    </head>
