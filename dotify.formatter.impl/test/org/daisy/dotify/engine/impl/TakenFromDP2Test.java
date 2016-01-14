@@ -10,253 +10,242 @@ import org.junit.Test;
 public class TakenFromDP2Test extends AbstractFormatterEngineTest {
 	
 	@Test
-	public void testObflToPef_02() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_02-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_02-expected.pef", false);
+	public void testPageNumber() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/page-number-input.obfl",
+		        "resource-files/dp2/page-number-expected.pef", false);
 	}
 	@Ignore // issue with cross-referencing between sequences
 	        // (https://github.com/joeha480/dotify/issues/97)
 	@Test
-	public void testObflToPef_03() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_03-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_03-expected.pef", false);
+	public void testPageNumberReferenceOtherSequence() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/page-number-reference-other-sequence-input.obfl",
+		        "resource-files/dp2/page-number-reference-other-sequence-expected.pef", false);
 	}
 	@Ignore // issue with leader (https://github.com/joeha480/obfl/issues/31)
 	@Test
-	public void testObflToPef_04() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_04-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_04-expected.pef", false);
+	public void testPageNumberFollowsLeader() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/page-number-follows-leader-input.obfl",
+		        "resource-files/dp2/page-number-follows-leader-expected.pef", false);
 	}
 	@Test
-	public void testObflToPef_05() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_05-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_05-expected.pef", false);
+	public void testNestedBlocksWithBorders() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/nested-blocks-with-borders-input.obfl",
+		        "resource-files/dp2/nested-blocks-with-borders-expected.pef", false);
 	}
 	@Test
-	public void testObflToPef_06() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_06-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_06-expected.pef", false);
+	public void testBorderAlignCenter() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/border-align-center-input.obfl",
+		        "resource-files/dp2/border-align-center-expected.pef", false);
 	}
 	@Test
-	public void testObflToPef_08() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_08-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_08-expected.pef", false);
+	public void testVerticalPositionAlignBefore() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/vertical-position-align-before-input.obfl",
+		        "resource-files/dp2/vertical-position-align-before-expected.pef", false);
 	}
 	@Test
-	public void testObflToPef_09() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_09-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_09-expected.pef", false);
+	public void testVerticalPositionAlignBeforeNestedBlocks() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/vertical-position-align-before-nested-blocks-input.obfl",
+		        "resource-files/dp2/vertical-position-align-before-nested-blocks-expected.pef", false);
 	}
 	@Test
-	public void testObflToPef_11() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_11-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_11-expected.pef", false);
+	public void testLayoutMasterRowSpacing() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/layout-master-row-spacing-input.obfl",
+		        "resource-files/dp2/layout-master-row-spacing-expected.pef", false);
 	}
 	@Test
-	public void testObflToPef_12() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_12-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_12-expected.pef", false);
+	public void testBlockRowSpacing() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/block-row-spacing-input.obfl",
+		        "resource-files/dp2/block-row-spacing-expected.pef", false);
 	}
 	@Test
-	public void testObflToPef_13() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_13-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_13-expected.pef", false);
+	public void testRowSpacingAndMargins() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/row-spacing-and-margins-input.obfl",
+		        "resource-files/dp2/row-spacing-and-margins-expected.pef", false);
 	}
 	@Test
-	public void testObflToPef_14() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_14-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_14-expected.pef", false);
+	public void testRowSpacingAndCollapsingMargins() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/row-spacing-and-collapsing-margins-input.obfl",
+		        "resource-files/dp2/row-spacing-and-collapsing-margins-expected.pef", false);
 	}
 	@Test
-	public void testObflToPef_15() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_15-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_15-expected.pef", false);
+	public void testHeaderRowSpacing() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/header-row-spacing-input.obfl",
+		        "resource-files/dp2/header-row-spacing-expected.pef", false);
 	}
 	@Test
-	public void testObflToPef_16() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_16-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_16-expected.pef", false);
+	public void testKeepAll() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/keep-all-input.obfl",
+		        "resource-files/dp2/keep-all-expected.pef", false);
 	}
 	@Test
-	public void testObflToPef_17() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_17-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_17-expected.pef", false);
+	public void testKeepWithNext() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/keep-with-next-input.obfl",
+		        "resource-files/dp2/keep-with-next-expected.pef", false);
 	}
 	@Test
-	public void testObflToPef_18() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_18-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_18-expected.pef", false);
+	public void testKeepSeveralBlocks() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/keep-several-blocks-input.obfl",
+		        "resource-files/dp2/keep-several-blocks-expected.pef", false);
 	}
 	@Test
-	public void testObflToPef_19() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_19-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_19-expected.pef", false);
+	public void testKeepWithFollowingSiblingOfParent() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/keep-with-following-sibling-of-parent-input.obfl",
+		        "resource-files/dp2/keep-with-following-sibling-of-parent-expected.pef", false);
 	}
 	@Test
-	public void testObflToPef_20() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_20-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_20-expected.pef", false);
+	public void testPreAndPostContent() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/pre-and-post-content-input.obfl",
+		        "resource-files/dp2/pre-and-post-content-expected.pef", false);
 	}
 	@Test
-	public void testObflToPef_21() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_21-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_21-expected.pef", false);
+	public void testPreContentUseWhen() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/pre-content-use-when-input.obfl",
+		        "resource-files/dp2/pre-content-use-when-expected.pef", false);
 	}
 	@Test
-	public void testObflToPef_23() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_23-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_23-expected.pef", false);
+	public void testKeepContentWithBorder() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/keep-content-with-border-input.obfl",
+		        "resource-files/dp2/keep-content-with-border-expected.pef", false);
 	}
 	@Test
-	public void testObflToPef_24() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_24-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_24-expected.pef", false);
+	public void testOrphansWidowsCountingAndBorders() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/orphans-widows-counting-and-borders-input.obfl",
+		        "resource-files/dp2/orphans-widows-counting-and-borders-expected.pef", false);
 	}
 	@Test
-	public void testObflToPef_25() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_25-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_25-expected.pef", false);
+	public void testPageBreakingAndBorders() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/page-breaking-and-borders-input.obfl",
+		        "resource-files/dp2/page-breaking-and-borders-expected.pef", false);
 	}
 	@Ignore // regression in dotify 2.0.0-SNAPSHOT?
 	@Test
-	public void testObflToPef_29() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_obfl-to-pef.xprocspec/test_29-input.obfl",
-		        "resource-files/test_obfl-to-pef.xprocspec/test_29-expected.pef", false);
+	public void testMarkerReferencePageContentForward() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/marker-reference-page-content-forward-input.obfl",
+		        "resource-files/dp2/marker-reference-page-content-forward-expected.pef", false);
 	}
 	@Test
-	public void testFormat_01() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_01-input.obfl",
-		        "resource-files/test_format.xprocspec/test_01-expected.pef", false);
+	public void testVariousPageWidths() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/various-page-widths-input.obfl",
+		        "resource-files/dp2/various-page-widths-expected.pef", false);
 	}
 	@Ignore // is this a page numbering bug?
 	@Test
-	public void testFormat_04() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_04-input.obfl",
-		        "resource-files/test_format.xprocspec/test_04-expected.pef", false);
+	public void testCurrentPageVariousPositions() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/current-page-various-positions-input.obfl",
+		        "resource-files/dp2/current-page-various-positions-expected.pef", false);
 	}
 	@Test
-	public void testFormat_05() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_05-input.obfl",
-		        "resource-files/test_format.xprocspec/test_05-expected.pef", false);
-	}
-	@Test
-	public void testFormat_16() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_16-input.obfl",
-		        "resource-files/test_format.xprocspec/test_16-expected.pef", false);
-	}
-	@Test
-	public void testFormat_17() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_17-input.obfl",
-		        "resource-files/test_format.xprocspec/test_17-expected.pef", false);
+	public void testCurrentPageVariousNumberFormats() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/current-page-various-number-formats-input.obfl",
+		        "resource-files/dp2/current-page-various-number-formats-expected.pef", false);
 	}
 	@Ignore // leader issue
 	@Test
-	public void testFormat_21() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_21-input.obfl",
-		        "resource-files/test_format.xprocspec/test_21-expected.pef", false);
+	public void testPageNumberBackwardReference() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/page-number-backward-reference-input.obfl",
+		        "resource-files/dp2/page-number-backward-reference-expected.pef", false);
 	}
 	@Ignore // reference (<page-number ref-id="foo">) to inline element (<span id="foo">)
 	        // not sure whether this is a bug?
 	@Test
-	public void testFormat_22() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_22-input.obfl",
-		        "resource-files/test_format.xprocspec/test_22-expected.pef", false);
+	public void testPageNumberReferenceSpan() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/page-number-reference-span-input.obfl",
+		        "resource-files/dp2/page-number-reference-span-expected.pef", false);
 	}
 	@Test
-	public void testFormat_25() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_25-input.obfl",
-		        "resource-files/test_format.xprocspec/test_25-expected.pef", false);
+	public void testPreHyphenation() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/pre-hyphenation-input.obfl",
+		        "resource-files/dp2/pre-hyphenation-expected.pef", false);
 	}
 	@Test
-	public void testFormat_26() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_26-input.obfl",
-		        "resource-files/test_format.xprocspec/test_26-expected.pef", false);
+	public void testCollapsingMarginsAdjacentBlocks() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/collapsing-margins-adjacent-blocks-input.obfl",
+		        "resource-files/dp2/collapsing-margins-adjacent-blocks-expected.pef", false);
 	}
 	@Test
-	public void testFormat_27() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_27-input.obfl",
-		        "resource-files/test_format.xprocspec/test_27-expected.pef", false);
+	public void testCollapsingMarginsEmptyBlock() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/collapsing-margins-empty-block-input.obfl",
+		        "resource-files/dp2/collapsing-margins-empty-block-expected.pef", false);
 	}
 	@Test
-	public void testFormat_31() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_31-input.obfl",
-		        "resource-files/test_format.xprocspec/test_31-expected.pef", false);
+	public void testRowSpacingNestedBlocks() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/row-spacing-nested-blocks-input.obfl",
+		        "resource-files/dp2/row-spacing-nested-blocks-expected.pef", false);
 	}
 	@Test
-	public void testFormat_33() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_33-input.obfl",
-		        "resource-files/test_format.xprocspec/test_33-expected.pef", false);
+	public void testSingleLineHeaderEmpty() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/single-line-header-empty-input.obfl",
+		        "resource-files/dp2/single-line-header-empty-expected.pef", false);
 	}
 	@Test
-	public void testFormat_34() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_34-input.obfl",
-		        "resource-files/test_format.xprocspec/test_34-expected.pef", false);
+	public void testMultiLineHeaderEmpty() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/multi-line-header-empty-input.obfl",
+		        "resource-files/dp2/multi-line-header-empty-expected.pef", false);
 	}
 	@Test
-	public void testFormat_35() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_35-input.obfl",
-		        "resource-files/test_format.xprocspec/test_35-expected.pef", false);
+	public void testSingleLineHeader() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/single-line-header-input.obfl",
+		        "resource-files/dp2/single-line-header-expected.pef", false);
 	}
 	@Test
-	public void testFormat_36() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_36-input.obfl",
-		        "resource-files/test_format.xprocspec/test_36-expected.pef", false);
+	public void testMultiLineHeaderPartlyEmpty() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/multi-line-header-partly-empty-input.obfl",
+		        "resource-files/dp2/multi-line-header-partly-empty-expected.pef", false);
 	}
 	@Test
-	public void testFormat_37() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_37-input.obfl",
-		        "resource-files/test_format.xprocspec/test_37-expected.pef", false);
+	public void testHeaderVaryHeightLeftRightPages() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/header-vary-height-left-right-pages-input.obfl",
+		        "resource-files/dp2/header-vary-height-left-right-pages-expected.pef", false);
 	}
 	@Test
-	public void testFormat_38() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_38-input.obfl",
-		        "resource-files/test_format.xprocspec/test_38-expected.pef", false);
+	public void testEmptyBlock() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/empty-block-input.obfl",
+		        "resource-files/dp2/empty-block-expected.pef", false);
 	}
 	@Test
-	public void testFormat_39() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_39-input.obfl",
-		        "resource-files/test_format.xprocspec/test_39-expected.pef", false);
+	public void testEmptyBlockBorder() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/empty-block-border-input.obfl",
+		        "resource-files/dp2/empty-block-border-expected.pef", false);
 	}
 	@Test
-	public void testFormat_42() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_42-input.obfl",
-		        "resource-files/test_format.xprocspec/test_42-expected.pef", false);
+	public void testSingleLineFooterEmpty() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/single-line-footer-empty-input.obfl",
+		        "resource-files/dp2/single-line-footer-empty-expected.pef", false);
 	}
 	@Test
-	public void testFormat_43() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_43-input.obfl",
-		        "resource-files/test_format.xprocspec/test_43-expected.pef", false);
+	public void testMultiLineFooterEmpty() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/multi-line-footer-empty-input.obfl",
+		        "resource-files/dp2/multi-line-footer-empty-expected.pef", false);
 	}
 	@Test
-	public void testFormat_44() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_44-input.obfl",
-		        "resource-files/test_format.xprocspec/test_44-expected.pef", false);
+	public void testSingleLineFooter() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/single-line-footer-input.obfl",
+		        "resource-files/dp2/single-line-footer-expected.pef", false);
 	}
 	@Test
-	public void testFormat_45() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_45-input.obfl",
-		        "resource-files/test_format.xprocspec/test_45-expected.pef", false);
+	public void testMultiLineFooterPartlyEmpty() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/multi-line-footer-partly-empty-input.obfl",
+		        "resource-files/dp2/multi-line-footer-partly-empty-expected.pef", false);
 	}
 	@Test
-	public void testFormat_46() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_46-input.obfl",
-		        "resource-files/test_format.xprocspec/test_46-expected.pef", false);
+	public void testMultiLineFooter() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/multi-line-footer-input.obfl",
+		        "resource-files/dp2/multi-line-footer-expected.pef", false);
 	}
 	@Test
-	public void testFormat_49() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_49-input.obfl",
-		        "resource-files/test_format.xprocspec/test_49-expected.pef", false);
+	public void testPreContent() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/pre-content-input.obfl",
+		        "resource-files/dp2/pre-content-expected.pef", false);
 	}
 	@Test
-	public void testFormat_50() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_50-input.obfl",
-		        "resource-files/test_format.xprocspec/test_50-expected.pef", false);
+	public void testSheetsInVolumeMax() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/sheets-in-volume-max-input.obfl",
+		        "resource-files/dp2/sheets-in-volume-max-expected.pef", false);
 	}
 	@Ignore // implementation does not support different target volume size
 	@Test
-	public void testFormat_51() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/test_format.xprocspec/test_51-input.obfl",
-		        "resource-files/test_format.xprocspec/test_51-expected.pef", false);
+	public void testVolumeTemplateVariousSheetsInVolumeMax() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/volume-template-various-sheets-in-volume-max-input.obfl",
+		        "resource-files/dp2/volume-template-various-sheets-in-volume-max-expected.pef", false);
 	}
 }
