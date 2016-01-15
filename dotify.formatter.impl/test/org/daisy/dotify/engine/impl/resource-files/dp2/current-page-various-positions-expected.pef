@@ -3,7 +3,7 @@
    <head>
       <meta>
          <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">current-page-various-positions</dc:title>
-         <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/">Tests current-page with different layout-masters. Sequences with different layout-masters, that each place current-page in a different position (header, footer or nowhere), follow each other. Also tests resetting page number with initial-page-number.</dc:description>
+         <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/">Tests current-page with different layout-masters. Sequences with different layout-masters, that each place current-page in a different position (header, footer or nowhere), follow each other. Also tests resetting page number with initial-page-number. Broken: page numbering bug, possibly related to https://github.com/joeha480/dotify/issues/134.</dc:description>
          <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">application/x-pef+xml</dc:format>
       </meta>
    </head>
@@ -15,7 +15,7 @@
                <row/>
                <row/>
                <row/>
-               <row>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⠁</row>
+               <row>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⠁</row> <!-- 1 -->
             </page>
          </section>
          <section>
@@ -29,7 +29,7 @@
                <row/>
                <row/>
                <row/>
-               <row>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⠑</row>
+               <row>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⠑</row> <!-- 5 -->
             </page>
          </section>
          <section>
@@ -38,19 +38,19 @@
                <row/>
                <row/>
                <row/>
-               <row>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⠁⠚</row>
+               <row>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⠁⠚</row> <!-- 10 -->
             </page>
             <page>
                <row>⠤⠤⠤</row>
                <row/>
                <row/>
                <row/>
-               <row>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⠁⠁</row>
+               <row>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⠁⠁</row> <!-- 11 -->
             </page>
          </section>
          <section>
             <page>
-               <row>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⠁⠃</row>
+               <row>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⠁⠃</row> <!-- 12 --> <!-- was: 13 -->
                <row>⠤⠤⠤</row>
             </page>
          </section>

@@ -2,7 +2,7 @@
 <obfl xmlns="http://www.daisy.org/ns/2011/obfl" version="2011-1" xml:lang="und" hyphenate="false">
    <meta>
       <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">current-page-various-positions</dc:title>
-      <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/">Tests current-page with different layout-masters. Sequences with different layout-masters, that each place current-page in a different position (header, footer or nowhere), follow each other. Also tests resetting page number with initial-page-number.</dc:description>
+      <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/">Tests current-page with different layout-masters. Sequences with different layout-masters, that each place current-page in a different position (header, footer or nowhere), follow each other. Also tests resetting page number with initial-page-number. Broken: page numbering bug, possibly related to https://github.com/joeha480/dotify/issues/134.</dc:description>
    </meta>
    <layout-master name="a" page-width="15" page-height="5" duplex="true" page-number-variable="page">
       <default-template>

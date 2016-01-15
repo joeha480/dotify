@@ -117,29 +117,96 @@ public class TakenFromDP2Test extends AbstractFormatterEngineTest {
 		testPEF("resource-files/dp2/page-breaking-and-borders-input.obfl",
 		        "resource-files/dp2/page-breaking-and-borders-expected.pef", false);
 	}
-	@Ignore // regression in dotify 2.0.0-SNAPSHOT?
+	@Ignore // see https://github.com/joeha480/dotify/issues/117
 	@Test
-	public void testMarkerReferencePageContentForward() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
-		testPEF("resource-files/dp2/marker-reference-page-content-forward-input.obfl",
-		        "resource-files/dp2/marker-reference-page-content-forward-expected.pef", false);
+	public void testWhiteSpaceNormalizationAroundMarker() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/white-space-normalization-around-marker-input.obfl",
+		        "resource-files/dp2/white-space-normalization-around-marker-expected.pef", true);
+	}
+	@Ignore // white space around comment is dropped
+	@Test
+	public void testCommentInWhiteSpace() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/comment-in-white-space-input.obfl",
+		        "resource-files/dp2/comment-in-white-space-expected.pef", true);
+	}
+	@Test
+	public void testMarkerReferenceSequenceBackward() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/marker-reference-sequence-backward-input.obfl",
+		        "resource-files/dp2/marker-reference-sequence-backward-expected.pef", false);
+	}
+	@Test
+	public void testMarkerReferencePageForwardBackward() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/marker-reference-page-forward-backward-input.obfl",
+		        "resource-files/dp2/marker-reference-page-forward-backward-expected.pef", false);
+	}
+	@Ignore // issue https://github.com/joeha480/dotify/issues/150
+	@Test
+	public void testMarkerReferencePageContentForwardBackward() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/marker-reference-page-content-forward-backward-input.obfl",
+		        "resource-files/dp2/marker-reference-page-content-forward-backward-expected.pef", true);
+	}
+	@Test
+	public void testMarkerReferenceAcrossSequenceWorkaround() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/marker-reference-across-sequence-workaround-input.obfl",
+		        "resource-files/dp2/marker-reference-across-sequence-workaround-expected.pef", false);
+	}
+	@Ignore // issue https://github.com/joeha480/dotify/issues/143
+	@Test
+	public void testMarkerReferenceSpreadAcrossSequence() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/marker-reference-spread-across-sequence-input.obfl",
+		        "resource-files/dp2/marker-reference-spread-across-sequence-expected.pef", true);
+	}
+	@Test
+	public void testMarkerReferenceSpreadAcrossVolume() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/marker-reference-spread-across-volume-input.obfl",
+		        "resource-files/dp2/marker-reference-spread-across-volume-expected.pef", false);
+	}
+	@Test
+	public void testMarkerReferenceStartOffsetFirstPage() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/marker-reference-start-offset-first-page-input.obfl",
+		        "resource-files/dp2/marker-reference-start-offset-first-page-expected.pef", false);
+	}
+	@Test
+	public void testMarkerReferencePageFirstWorkaround() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/marker-reference-page-first-workaround-input.obfl",
+		        "resource-files/dp2/marker-reference-page-first-workaround-expected.pef", false);
+	}
+	@Ignore // issue https://github.com/joeha480/dotify/issues/150
+	@Test
+	public void testMarkerReferencePageStartWorkaround() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/marker-reference-page-start-workaround-input.obfl",
+		        "resource-files/dp2/marker-reference-page-start-workaround-expected.pef", true);
+	}
+	@Ignore // issue https://github.com/joeha480/dotify/issues/150
+	        // and no spread-content scope
+	@Test
+	public void testMarkerReferenceSpreadStartWorkaround() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/marker-reference-spread-start-workaround-input.obfl",
+		        "resource-files/dp2/marker-reference-spread-start-workaround-expected.pef", true);
+	}
+	@Ignore // position of middle field of header/footer depends on width of fields in
+	        // left and right corner, so centering is not perfect
+	@Test
+	public void testFooterMiddleFieldCentering() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/footer-middle-field-centering-input.obfl",
+		        "resource-files/dp2/footer-middle-field-centering-expected.pef", true);
 	}
 	@Test
 	public void testVariousPageWidths() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/dp2/various-page-widths-input.obfl",
 		        "resource-files/dp2/various-page-widths-expected.pef", false);
 	}
-	@Ignore // is this a page numbering bug?
+	@Ignore // page numbering bug, possibly related to possibly related to https://github.com/joeha480/dotify/issues/134
 	@Test
 	public void testCurrentPageVariousPositions() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/dp2/current-page-various-positions-input.obfl",
-		        "resource-files/dp2/current-page-various-positions-expected.pef", false);
+		        "resource-files/dp2/current-page-various-positions-expected.pef", true);
 	}
 	@Test
 	public void testCurrentPageVariousNumberFormats() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/dp2/current-page-various-number-formats-input.obfl",
 		        "resource-files/dp2/current-page-various-number-formats-expected.pef", false);
 	}
-	@Ignore // leader issue
 	@Test
 	public void testPageNumberBackwardReference() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/dp2/page-number-backward-reference-input.obfl",

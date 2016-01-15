@@ -3,7 +3,7 @@
    <head>
       <meta>
          <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">page-number-reference-other-sequence</dc:title>
-         <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/">Tests page-number in one sequence referencing a block in another sequence.</dc:description>
+         <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/">Tests page-number in one sequence referencing a block in another sequence. Broken: see https://github.com/joeha480/dotify/issues/97.</dc:description>
          <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">application/x-pef+xml</dc:format>
       </meta>
    </head>

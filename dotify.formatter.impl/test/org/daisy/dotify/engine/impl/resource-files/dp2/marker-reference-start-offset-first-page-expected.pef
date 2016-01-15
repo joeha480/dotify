@@ -2,31 +2,28 @@
 <pef xmlns="http://www.daisy.org/ns/2008/pef" version="2008-1">
    <head>
       <meta>
-         <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">marker-reference-page-content-forward</dc:title>
-         <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/">Tests marker-reference with scope="page-content" and direction="forward", when first element of the sequence is a marker.</dc:description>
+         <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">marker-reference-start-offset-first-page</dc:title>
+         <dc:description xmlns:dc="http://purl.org/dc/elements/1.1/">Tests marker-reference with scope page and start-offset -1 on first page of document. Expected is that the search does not return anything. See https://github.com/joeha480/dotify/issues/144.</dc:description>
          <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">application/x-pef+xml</dc:format>
       </meta>
    </head>
    <body>
-      <volume cols="10" rows="6" rowgap="0" duplex="true">
+      <volume cols="10" rows="5" rowgap="0" duplex="true">
          <section>
             <page>
+               <row>⠁⠁⠁⠁⠁</row>
                <!-- 1 -->
                <row>⠁⠁⠁⠁⠁</row>
                <row>⠁⠁⠁⠁⠁</row>
-               <!-- 2 -->
                <row>⠁⠁⠁⠁⠁</row>
-               <row>⠁⠁⠁⠁⠁</row>
-               <row>⠁⠁⠁⠁⠁</row>
-               <row>⠼⠃⠀⠀⠀⠀⠀⠀⠀⠀</row> <!-- 2 -->
+               <row>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</row>
             </page>
             <page>
                <row>⠁⠁⠁⠁⠁</row>
-               <row>⠁⠁⠁⠁⠁</row>
                <row/>
                <row/>
                <row/>
-               <row>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀</row>
+               <row>⠼⠁⠀⠀⠀⠀⠀⠀⠀⠀</row> <!-- 1 -->
             </page>
          </section>
       </volume>
