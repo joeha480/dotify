@@ -19,6 +19,7 @@
 <test input="marker-ref-sheet-input.obfl" expected="marker-ref-sheet-expected.pef"/>
 <test input="marker-ref-spread-input.obfl" expected="marker-ref-spread-expected.pef"/>
 <test input="marker-ref-spread-sequence-input.obfl" expected="marker-ref-spread-sequence-expected.pef"/>
+<test input="marker-ref-spread-volume-input.obfl" expected="marker-ref-spread-volume-expected.pef"/>
 <test input="multi-line-footer-input.obfl" expected="multi-line-footer-expected.pef"/>
 <test input="multi-line-header-input.obfl" expected="multi-line-header-expected.pef"/>
 <test input="orphans-input.obfl" expected="orphans-expected.pef"/>
@@ -32,6 +33,16 @@
 <test input="vertical-position-dls-input.obfl" expected="vertical-position-dls-expected.pef"/>
 <test input="vertical-position-input.obfl" expected="vertical-position-expected.pef"/>
 <test input="widows-input.obfl" expected="widows-expected.pef"/>
+<test input="dp2/simple-table-input.obfl" expected="dp2/simple-table-expected.pef"/>
+<test input="dp2/table-auto-column-width-cell-wrapping-input.obfl" expected="dp2/table-auto-column-width-cell-wrapping-expected.pef"/>
+<test input="dp2/table-auto-column-width-input.obfl" expected="dp2/table-auto-column-width-expected.pef"/>
+<test input="dp2/table-col-spacing-input.obfl" expected="dp2/table-col-spacing-expected.pef"/>
+<test input="dp2/table-colspan-fill-input.obfl" expected="dp2/table-colspan-fill-expected.pef"/>
+<test input="dp2/table-colspan-input.obfl" expected="dp2/table-colspan-expected.pef"/>
+<test input="dp2/table-fixed-width-input.obfl" expected="dp2/table-fixed-width-expected.pef"/>
+<test input="dp2/table-header-repeat-input.obfl" expected="dp2/table-header-repeat-expected.pef"/>
+<test input="dp2/table-header-underline-input.obfl" expected="dp2/table-header-underline-expected.pef"/>
+<test input="dp2/table-leaders-input.obfl" expected="dp2/table-leaders-expected.pef"/>
 <test input="test_format.xprocspec\test_01-input.obfl" expected="test_format.xprocspec\test_01-expected.pef"/>
 <test input="test_format.xprocspec\test_02-input.obfl" expected="test_format.xprocspec\test_02-expected.pef"/>
 <test input="test_format.xprocspec\test_03-input.obfl" expected="test_format.xprocspec\test_03-expected.pef"/>
