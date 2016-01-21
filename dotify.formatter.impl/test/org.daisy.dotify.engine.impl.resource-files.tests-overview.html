@@ -1094,6 +1094,110 @@
     &lt;/volume&gt;
   &lt;/body&gt;
 &lt;/pef&gt;</pre>
+<h1 id="marker-ref-spread-volume-input.obfl">Marker reference spread search test<a href="#marker-ref-spread-volume-input.obfl" class="internal"> &para;</a>
+</h1>
+<p>Tests marker references within a spread limited to volume boundaries. Note that fields are different on left/right hand sides
+		due to the fact that the scope does not effect the starting point of the search. The starting point is always the
+		current page.</p>
+<h2>marker-ref-spread-volume-input.obfl</h2>
+<pre>
+&lt;obfl version="2011-1" xml:lang="en"&gt;
+  &lt;meta&gt;
+    &lt;dc:title&gt;Marker reference spread search test&lt;/dc:title&gt;
+    &lt;dc:description&gt;Tests marker references within a spread limited to volume boundaries. Note that fields are different on left/right hand sides
+		due to the fact that the scope does not effect the starting point of the search. The starting point is always the
+		current page.&lt;/dc:description&gt;
+  &lt;/meta&gt;
+  &lt;layout-master name="main" page-width="20" page-height="6" inner-margin="0" outer-margin="0" row-spacing="1" duplex="true"&gt;
+    &lt;template use-when="(= (% $page 2) 0)"&gt;
+      &lt;header&gt;
+        &lt;field&gt;
+          &lt;marker-reference marker="pagenum" direction="forward" scope="spread"/&gt;
+        &lt;/field&gt;
+        &lt;field&gt;
+          &lt;marker-reference marker="pagenum" direction="backward" scope="spread" start-offset="1"/&gt;
+        &lt;/field&gt;
+      &lt;/header&gt;
+      &lt;footer/&gt;
+    &lt;/template&gt;
+    &lt;default-template&gt;
+      &lt;header&gt;
+        &lt;field&gt;
+          &lt;marker-reference marker="pagenum" direction="forward" scope="spread" start-offset="-1"/&gt;
+        &lt;/field&gt;
+        &lt;field&gt;
+          &lt;marker-reference marker="pagenum" direction="backward" scope="spread"/&gt;
+        &lt;/field&gt;
+      &lt;/header&gt;
+      &lt;footer/&gt;
+    &lt;/default-template&gt;
+  &lt;/layout-master&gt;
+  &lt;volume-template sheets-in-volume-max="1"&gt;
+    &lt;pre-content/&gt;
+    &lt;post-content/&gt;
+  &lt;/volume-template&gt;
+  &lt;sequence master="main" initial-page-number="1"&gt;
+    &lt;block break-before="page"&gt;⠤⠤
+      &lt;marker class="pagenum" value="1"/&gt;⠤⠤
+      &lt;marker class="pagenum" value="2"/&gt;⠤⠤
+      &lt;marker class="pagenum" value="3"/&gt;
+    &lt;/block&gt;
+    &lt;block break-before="page"&gt;⠤⠤
+      &lt;marker class="pagenum" value="4"/&gt;⠤⠤
+      &lt;marker class="pagenum" value="5"/&gt;⠤⠤
+      &lt;marker class="pagenum" value="6"/&gt;
+    &lt;/block&gt;
+  &lt;/sequence&gt;
+  &lt;sequence master="main"&gt;
+    &lt;block break-before="page"&gt;⠤⠤
+      &lt;marker class="pagenum" value="7"/&gt;⠤⠤
+      &lt;marker class="pagenum" value="8"/&gt;⠤⠤
+      &lt;marker class="pagenum" value="9"/&gt;
+    &lt;/block&gt;
+    &lt;block break-before="page"&gt;⠤⠤
+      &lt;marker class="pagenum" value="10"/&gt;⠤⠤
+      &lt;marker class="pagenum" value="11"/&gt;⠤⠤
+      &lt;marker class="pagenum" value="12"/&gt;
+    &lt;/block&gt;
+  &lt;/sequence&gt;
+&lt;/obfl&gt;</pre>
+<h2>marker-ref-spread-volume-expected.pef</h2>
+<pre>
+&lt;pef version="2008-1"&gt;
+  &lt;head&gt;
+    &lt;meta&gt;
+      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
+      &lt;dc:identifier&gt;identifier?&lt;/dc:identifier&gt;
+      &lt;dc:date&gt;2015-12-16&lt;/dc:date&gt;
+    &lt;/meta&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;volume cols="20" rows="6" rowgap="0" duplex="true"&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠼⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⠉&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠤⠤⠤&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠼⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⠋&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠤⠤⠤&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+    &lt;/volume&gt;
+    &lt;volume cols="20" rows="6" rowgap="0" duplex="true"&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠼⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⠊&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠤⠤⠤&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠼⠁⠚⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠼⠁⠃&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠤⠤⠤&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+    &lt;/volume&gt;
+  &lt;/body&gt;
+&lt;/pef&gt;</pre>
 <h1 id="multi-line-footer-input.obfl">Multi line footer test<a href="#multi-line-footer-input.obfl" class="internal"> &para;</a>
 </h1>
 <p>Tests that multiple footers work.</p>
@@ -1773,6 +1877,632 @@
         &lt;page&gt;
           &lt;row&gt;⠤⠤⠀⠤⠤⠀⠤⠤&lt;/row&gt;
           &lt;row&gt;⠤⠤⠀⠤⠤⠀⠤⠤&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+    &lt;/volume&gt;
+  &lt;/body&gt;
+&lt;/pef&gt;</pre>
+<h1 id="dp2/simple-table-input.obfl">simple-table<a href="#dp2/simple-table-input.obfl" class="internal"> &para;</a>
+</h1>
+<p>Tests simple table with no cell wrapping. The table takes up the space it needs to display the table data.</p>
+<h2>dp2/simple-table-input.obfl</h2>
+<pre>
+&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
+  &lt;meta&gt;
+    &lt;dc:title&gt;simple-table&lt;/dc:title&gt;
+    &lt;dc:description&gt;Tests simple table with no cell wrapping. The table takes up the space it needs to display the table data.&lt;/dc:description&gt;
+  &lt;/meta&gt;
+  &lt;layout-master name="main" page-width="20" page-height="5" duplex="true" page-number-variable="page"&gt;
+    &lt;default-template&gt;
+      &lt;header/&gt;
+      &lt;footer/&gt;
+    &lt;/default-template&gt;
+  &lt;/layout-master&gt;
+  &lt;sequence master="main"&gt;
+    &lt;table&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠤⠤⠤&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠤⠤⠤&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠤⠤⠤&lt;/td&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠤⠤⠤&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠤⠤⠤&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/sequence&gt;
+&lt;/obfl&gt;</pre>
+<h2>dp2/simple-table-expected.pef</h2>
+<pre>
+&lt;pef version="2008-1"&gt;
+  &lt;head&gt;
+    &lt;meta&gt;
+      &lt;dc:title&gt;simple-table&lt;/dc:title&gt;
+      &lt;dc:description&gt;Tests simple table with no cell wrapping. The table takes up the space it needs to display the table data.&lt;/dc:description&gt;
+      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
+    &lt;/meta&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;volume rows="5" cols="20" rowgap="0" duplex="true"&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠤⠤⠤⠀⠿⠿⠿⠿⠤⠤⠤&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠤⠤⠤⠀⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠤⠤⠤⠀⠿⠿⠀⠀⠤⠤⠤&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+    &lt;/volume&gt;
+  &lt;/body&gt;
+&lt;/pef&gt;</pre>
+<h1 id="dp2/table-auto-column-width-cell-wrapping-input.obfl">table-auto-column-width-cell-wrapping<a href="#dp2/table-auto-column-width-cell-wrapping-input.obfl" class="internal"> &para;</a>
+</h1>
+<p>Tests table with data that can wrap multiple lines in a cell. The column widths are computed so that the total table width is equal to the specified width and the table height is minimized. Cells in the first row have a bottom border to indicate the column widths and spacing.</p>
+<h2>dp2/table-auto-column-width-cell-wrapping-input.obfl</h2>
+<pre>
+&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
+  &lt;meta&gt;
+    &lt;dc:title&gt;table-auto-column-width-cell-wrapping&lt;/dc:title&gt;
+    &lt;dc:description&gt;Tests table with data that can wrap multiple lines in a cell. The column widths are computed so that the total table width is equal to the specified width and the table height is minimized. Cells in the first row have a bottom border to indicate the column widths and spacing.&lt;/dc:description&gt;
+  &lt;/meta&gt;
+  &lt;layout-master name="main" page-width="20" page-height="5" duplex="true" page-number-variable="page"&gt;
+    &lt;default-template&gt;
+      &lt;header/&gt;
+      &lt;footer/&gt;
+    &lt;/default-template&gt;
+  &lt;/layout-master&gt;
+  &lt;sequence master="main"&gt;
+    &lt;table col-spacing="1"&gt;
+      &lt;tr&gt;
+        &lt;td border-bottom-style="solid" border-bottom-width="1" border-bottom-align="center"&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td border-bottom-style="solid" border-bottom-width="1" border-bottom-align="center"&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td border-bottom-style="solid" border-bottom-width="1" border-bottom-align="center"&gt;⠿⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿⠿⠿⠿ ⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿ ⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿ ⠿⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/sequence&gt;
+&lt;/obfl&gt;</pre>
+<h2>dp2/table-auto-column-width-cell-wrapping-expected.pef</h2>
+<pre>
+&lt;pef version="2008-1"&gt;
+  &lt;head&gt;
+    &lt;meta&gt;
+      &lt;dc:title&gt;table-auto-column-width-cell-wrapping&lt;/dc:title&gt;
+      &lt;dc:description&gt;Tests table with data that can wrap multiple lines in a cell. The column widths are computed so that the total table width is equal to the specified width and the table height is minimized. Cells in the first row have a bottom border to indicate the column widths and spacing.&lt;/dc:description&gt;
+      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
+    &lt;/meta&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;volume rows="5" cols="20" rowgap="0" duplex="true"&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠀⠀⠿⠿⠿⠀⠀⠀⠀⠀⠿⠿⠿⠀⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠒⠒⠒⠒⠀⠒⠒⠒⠒⠒⠒⠒⠀⠒⠒⠒⠒⠒⠒⠒&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠀⠀⠿⠿⠿⠿⠿⠿⠀⠀⠿⠿⠿⠀⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠀⠀⠀⠀⠀⠿⠿⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠀⠀⠿⠿⠿⠀⠀⠀⠀⠀⠿⠿⠿⠀⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+    &lt;/volume&gt;
+  &lt;/body&gt;
+&lt;/pef&gt;</pre>
+<h1 id="dp2/table-auto-column-width-input.obfl">table-auto-column-width<a href="#dp2/table-auto-column-width-input.obfl" class="internal"> &para;</a>
+</h1>
+<p>Tests simple table with no cell wrapping. Column spacing is set to 1. The column widths are computed so that the total table width is equal to the specified width and the spacing between cell data is optimal. Cells in the first row have a bottom border to indicate the column widths and spacing.</p>
+<h2>dp2/table-auto-column-width-input.obfl</h2>
+<pre>
+&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
+  &lt;meta&gt;
+    &lt;dc:title&gt;table-auto-column-width&lt;/dc:title&gt;
+    &lt;dc:description&gt;Tests simple table with no cell wrapping. Column spacing is set to 1. The column widths are computed so that the total table width is equal to the specified width and the spacing between cell data is optimal. Cells in the first row have a bottom border to indicate the column widths and spacing.&lt;/dc:description&gt;
+  &lt;/meta&gt;
+  &lt;layout-master name="main" page-width="20" page-height="5" duplex="true" page-number-variable="page"&gt;
+    &lt;default-template&gt;
+      &lt;header/&gt;
+      &lt;footer/&gt;
+    &lt;/default-template&gt;
+  &lt;/layout-master&gt;
+  &lt;sequence master="main"&gt;
+    &lt;table col-spacing="1"&gt;
+      &lt;tr&gt;
+        &lt;td border-bottom-style="solid" border-bottom-width="1" border-bottom-align="center"&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td border-bottom-style="solid" border-bottom-width="1" border-bottom-align="center"&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td border-bottom-style="solid" border-bottom-width="1" border-bottom-align="center"&gt;⠿⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿⠿⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/sequence&gt;
+&lt;/obfl&gt;</pre>
+<h2>dp2/table-auto-column-width-expected.pef</h2>
+<pre>
+&lt;pef version="2008-1"&gt;
+  &lt;head&gt;
+    &lt;meta&gt;
+      &lt;dc:title&gt;table-auto-column-width&lt;/dc:title&gt;
+      &lt;dc:description&gt;Tests simple table with no cell wrapping. Column spacing is set to 1. The column widths are computed so that the total table width is equal to the specified width and the spacing between cell data is optimal. Cells in the first row have a bottom border to indicate the column widths and spacing.&lt;/dc:description&gt;
+      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
+    &lt;/meta&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;volume rows="5" cols="20" rowgap="0" duplex="true"&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠀⠀⠀⠿⠿⠿⠀⠀⠀⠀⠀⠀⠿⠿⠿⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠒⠒⠒⠒⠒⠀⠒⠒⠒⠒⠒⠒⠒⠒⠀⠒⠒⠒⠒⠒&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠀⠀⠀⠿⠿⠿⠿⠿⠿⠿⠀⠀⠿⠿⠿⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠀⠀⠀⠿⠿⠿⠀⠀⠀⠀⠀⠀⠿⠿⠿⠀⠀&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+    &lt;/volume&gt;
+  &lt;/body&gt;
+&lt;/pef&gt;</pre>
+<h1 id="dp2/table-col-spacing-input.obfl">table-col-spacing<a href="#dp2/table-col-spacing-input.obfl" class="internal"> &para;</a>
+</h1>
+<p>Tests simple table with no cell wrapping. Column spacing is set to 1. The table takes up the space it needs to display the table data and column spacing.</p>
+<h2>dp2/table-col-spacing-input.obfl</h2>
+<pre>
+&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
+  &lt;meta&gt;
+    &lt;dc:title&gt;table-col-spacing&lt;/dc:title&gt;
+    &lt;dc:description&gt;Tests simple table with no cell wrapping. Column spacing is set to 1. The table takes up the space it needs to display the table data and column spacing.&lt;/dc:description&gt;
+  &lt;/meta&gt;
+  &lt;layout-master name="main" page-width="20" page-height="5" duplex="true" page-number-variable="page"&gt;
+    &lt;default-template&gt;
+      &lt;header/&gt;
+      &lt;footer/&gt;
+    &lt;/default-template&gt;
+  &lt;/layout-master&gt;
+  &lt;sequence master="main"&gt;
+    &lt;table col-spacing="1"&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/sequence&gt;
+&lt;/obfl&gt;</pre>
+<h2>dp2/table-col-spacing-expected.pef</h2>
+<pre>
+&lt;pef version="2008-1"&gt;
+  &lt;head&gt;
+    &lt;meta&gt;
+      &lt;dc:title&gt;table-col-spacing&lt;/dc:title&gt;
+      &lt;dc:description&gt;Tests simple table with no cell wrapping. Column spacing is set to 1. The table takes up the space it needs to display the table data and column spacing.&lt;/dc:description&gt;
+      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
+    &lt;/meta&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;volume rows="5" cols="20" rowgap="0" duplex="true"&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠀⠀⠿⠿⠿⠿⠀⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠀⠿⠿⠿⠀⠀⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠀⠀⠿⠿⠀⠀⠀⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+    &lt;/volume&gt;
+  &lt;/body&gt;
+&lt;/pef&gt;</pre>
+<h1 id="dp2/table-colspan-fill-input.obfl">table-colspan-fill<a href="#dp2/table-colspan-fill-input.obfl" class="internal"> &para;</a>
+</h1>
+<p>Tests a table cell spanning multiple columns. The cell text is centered and the remaining space in the cell filled with a pattern.</p>
+<h2>dp2/table-colspan-fill-input.obfl</h2>
+<pre>
+&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
+  &lt;meta&gt;
+    &lt;dc:title&gt;table-colspan-fill&lt;/dc:title&gt;
+    &lt;dc:description&gt;Tests a table cell spanning multiple columns. The cell text is centered and the remaining space in the cell filled with a pattern.&lt;/dc:description&gt;
+  &lt;/meta&gt;
+  &lt;layout-master name="main" page-width="20" page-height="5" duplex="true" page-number-variable="page"&gt;
+    &lt;default-template&gt;
+      &lt;header/&gt;
+      &lt;footer/&gt;
+    &lt;/default-template&gt;
+  &lt;/layout-master&gt;
+  &lt;sequence master="main"&gt;
+    &lt;table col-spacing="1"&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿⠿⠿&lt;/td&gt;
+        &lt;td col-span="4"&gt;
+                  ⠸
+          &lt;leader pattern="⠒" position="50%" align="center"/&gt;
+                  ⠿⠿⠿⠿⠿
+                  
+          &lt;leader pattern="⠒" position="50%" align="center"/&gt;⠇
+                
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/sequence&gt;
+&lt;/obfl&gt;</pre>
+<h2>dp2/table-colspan-fill-expected.pef</h2>
+<pre>
+&lt;pef version="2008-1"&gt;
+  &lt;head&gt;
+    &lt;meta&gt;
+      &lt;dc:title&gt;table-colspan-fill&lt;/dc:title&gt;
+      &lt;dc:description&gt;Tests a table cell spanning multiple columns. The cell text is centered and the remaining space in the cell filled with a pattern.&lt;/dc:description&gt;
+      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
+    &lt;/meta&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;volume rows="5" cols="20" rowgap="0" duplex="true"&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠀⠸⠒⠒⠒⠀⠿⠿⠿⠿⠿⠀⠒⠒⠒⠇&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠀⠀⠿⠿⠿⠀⠿⠿⠿⠀⠿⠿⠿⠀⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠀⠀⠿⠿⠿⠀⠿⠿⠿⠀⠿⠿⠿⠀⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+    &lt;/volume&gt;
+  &lt;/body&gt;
+&lt;/pef&gt;</pre>
+<h1 id="dp2/table-colspan-input.obfl">table-colspan<a href="#dp2/table-colspan-input.obfl" class="internal"> &para;</a>
+</h1>
+<p>Tests a table cell spanning multiple columns.</p>
+<h2>dp2/table-colspan-input.obfl</h2>
+<pre>
+&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
+  &lt;meta&gt;
+    &lt;dc:title&gt;table-colspan&lt;/dc:title&gt;
+    &lt;dc:description&gt;Tests a table cell spanning multiple columns.&lt;/dc:description&gt;
+  &lt;/meta&gt;
+  &lt;layout-master name="main" page-width="20" page-height="5" duplex="true" page-number-variable="page"&gt;
+    &lt;default-template&gt;
+      &lt;header/&gt;
+      &lt;footer/&gt;
+    &lt;/default-template&gt;
+  &lt;/layout-master&gt;
+  &lt;sequence master="main"&gt;
+    &lt;table col-spacing="1"&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿⠿⠿&lt;/td&gt;
+        &lt;td col-span="2"&gt;⠿⠿⠿⠿⠿⠿⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/sequence&gt;
+&lt;/obfl&gt;</pre>
+<h2>dp2/table-colspan-expected.pef</h2>
+<pre>
+&lt;pef version="2008-1"&gt;
+  &lt;head&gt;
+    &lt;meta&gt;
+      &lt;dc:title&gt;table-colspan&lt;/dc:title&gt;
+      &lt;dc:description&gt;Tests a table cell spanning multiple columns.&lt;/dc:description&gt;
+      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
+    &lt;/meta&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;volume rows="5" cols="20" rowgap="0" duplex="true"&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠀⠀⠀⠿⠿⠀⠿⠿⠀⠀⠀⠀⠀⠿⠿⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠀⠀⠀⠿⠿⠀⠿⠿⠀⠀⠀⠀⠀⠿⠿⠀⠀&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+    &lt;/volume&gt;
+  &lt;/body&gt;
+&lt;/pef&gt;</pre>
+<h1 id="dp2/table-fixed-width-input.obfl">table-fixed-width<a href="#dp2/table-fixed-width-input.obfl" class="internal"> &para;</a>
+</h1>
+<p>Tests simple table with no cell wrapping. Column spacing is set to 1. The column widths are computed so that the total table width is equal to the specified width. All cells have similar content, therefore all columns are equally wide. Cells in the first row have a bottom border to indicate the column widths and spacing.</p>
+<h2>dp2/table-fixed-width-input.obfl</h2>
+<pre>
+&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
+  &lt;meta&gt;
+    &lt;dc:title&gt;table-fixed-width&lt;/dc:title&gt;
+    &lt;dc:description&gt;Tests simple table with no cell wrapping. Column spacing is set to 1. The column widths are computed so that the total table width is equal to the specified width. All cells have similar content, therefore all columns are equally wide. Cells in the first row have a bottom border to indicate the column widths and spacing.&lt;/dc:description&gt;
+  &lt;/meta&gt;
+  &lt;layout-master name="main" page-width="20" page-height="5" duplex="true" page-number-variable="page"&gt;
+    &lt;default-template&gt;
+      &lt;header/&gt;
+      &lt;footer/&gt;
+    &lt;/default-template&gt;
+  &lt;/layout-master&gt;
+  &lt;sequence master="main"&gt;
+    &lt;table col-spacing="1"&gt;
+      &lt;tr&gt;
+        &lt;td border-bottom-style="solid" border-bottom-width="1" border-bottom-align="center"&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td border-bottom-style="solid" border-bottom-width="1" border-bottom-align="center"&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td border-bottom-style="solid" border-bottom-width="1" border-bottom-align="center"&gt;⠿⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/sequence&gt;
+&lt;/obfl&gt;</pre>
+<h2>dp2/table-fixed-width-expected.pef</h2>
+<pre>
+&lt;pef version="2008-1"&gt;
+  &lt;head&gt;
+    &lt;meta&gt;
+      &lt;dc:title&gt;table-fixed-width&lt;/dc:title&gt;
+      &lt;dc:description&gt;Tests simple table with no cell wrapping. Column spacing is set to 1. The column widths are computed so that the total table width is equal to the specified width. All cells have similar content, therefore all columns are equally wide. Cells in the first row have a bottom border to indicate the column widths and spacing.&lt;/dc:description&gt;
+      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
+    &lt;/meta&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;volume rows="5" cols="20" rowgap="0" duplex="true"&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠀⠀⠀⠀⠿⠿⠿⠀⠀⠀⠀⠿⠿⠿⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠒⠒⠒⠒⠒⠒⠀⠒⠒⠒⠒⠒⠒⠀⠒⠒⠒⠒⠒⠒&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠀⠀⠀⠀⠿⠿⠿⠀⠀⠀⠀⠿⠿⠿⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠀⠀⠀⠀⠿⠿⠿⠀⠀⠀⠀⠿⠿⠿⠀⠀⠀&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+    &lt;/volume&gt;
+  &lt;/body&gt;
+&lt;/pef&gt;</pre>
+<h1 id="dp2/table-header-repeat-input.obfl">table-header-repeat<a href="#dp2/table-header-repeat-input.obfl" class="internal"> &para;</a>
+</h1>
+<p>Tests repeating of table header rows on each page.</p>
+<h2>dp2/table-header-repeat-input.obfl</h2>
+<pre>
+&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
+  &lt;meta&gt;
+    &lt;dc:title&gt;table-header-repeat&lt;/dc:title&gt;
+    &lt;dc:description&gt;Tests repeating of table header rows on each page.&lt;/dc:description&gt;
+  &lt;/meta&gt;
+  &lt;layout-master name="main" page-width="20" page-height="5" duplex="true" page-number-variable="page"&gt;
+    &lt;default-template&gt;
+      &lt;header/&gt;
+      &lt;footer/&gt;
+    &lt;/default-template&gt;
+  &lt;/layout-master&gt;
+  &lt;sequence master="main"&gt;
+    &lt;table col-spacing="1"&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/sequence&gt;
+&lt;/obfl&gt;</pre>
+<h2>dp2/table-header-repeat-expected.pef</h2>
+<pre>
+&lt;pef version="2008-1"&gt;
+  &lt;head&gt;
+    &lt;meta&gt;
+      &lt;dc:title&gt;table-header-repeat&lt;/dc:title&gt;
+      &lt;dc:description&gt;Tests repeating of table header rows on each page.&lt;/dc:description&gt;
+      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
+    &lt;/meta&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;volume rows="5" cols="20" rowgap="0" duplex="true"&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠀⠀⠀⠀⠿⠿⠀⠀⠀⠀⠿⠿⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠀⠀⠀⠀⠿⠿⠀⠀⠀⠀⠿⠿⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠀⠀⠀⠀⠿⠿⠀⠀⠀⠀⠿⠿⠀⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠀⠀⠀⠀⠿⠿⠀⠀⠀⠀⠿⠿⠀⠀⠀&lt;/row&gt;
+        &lt;/page&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠀⠀⠀⠀⠿⠿⠀⠀⠀⠀⠿⠿⠀⠀⠀&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+    &lt;/volume&gt;
+  &lt;/body&gt;
+&lt;/pef&gt;</pre>
+<h1 id="dp2/table-header-underline-input.obfl">table-header-underline<a href="#dp2/table-header-underline-input.obfl" class="internal"> &para;</a>
+</h1>
+<p>Tests simple table with no cell wrapping. Column spacing is set to 1. The table takes up the space it needs to display the table data and column spacing. Cells in the first row have a bottom border.</p>
+<h2>dp2/table-header-underline-input.obfl</h2>
+<pre>
+&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
+  &lt;meta&gt;
+    &lt;dc:title&gt;table-header-underline&lt;/dc:title&gt;
+    &lt;dc:description&gt;Tests simple table with no cell wrapping. Column spacing is set to 1. The table takes up the space it needs to display the table data and column spacing. Cells in the first row have a bottom border.&lt;/dc:description&gt;
+  &lt;/meta&gt;
+  &lt;layout-master name="main" page-width="20" page-height="5" duplex="true" page-number-variable="page"&gt;
+    &lt;default-template&gt;
+      &lt;header/&gt;
+      &lt;footer/&gt;
+    &lt;/default-template&gt;
+  &lt;/layout-master&gt;
+  &lt;sequence master="main"&gt;
+    &lt;table col-spacing="1"&gt;
+      &lt;tr&gt;
+        &lt;td border-bottom-style="solid" border-bottom-width="1" border-bottom-align="center"&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td border-bottom-style="solid" border-bottom-width="1" border-bottom-align="center"&gt;⠿⠿⠿⠿&lt;/td&gt;
+        &lt;td border-bottom-style="solid" border-bottom-width="1" border-bottom-align="center"&gt;⠿⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/sequence&gt;
+&lt;/obfl&gt;</pre>
+<h2>dp2/table-header-underline-expected.pef</h2>
+<pre>
+&lt;pef version="2008-1"&gt;
+  &lt;head&gt;
+    &lt;meta&gt;
+      &lt;dc:title&gt;table-header-underline&lt;/dc:title&gt;
+      &lt;dc:description&gt;Tests simple table with no cell wrapping. Column spacing is set to 1. The table takes up the space it needs to display the table data and column spacing. Cells in the first row have a bottom border.&lt;/dc:description&gt;
+      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
+    &lt;/meta&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;volume rows="5" cols="20" rowgap="0" duplex="true"&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠀⠀⠿⠿⠿⠿⠀⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠒⠒⠒⠒⠀⠒⠒⠒⠒⠀⠒⠒⠒&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠀⠿⠿⠿⠀⠀⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠿⠀⠀⠿⠿⠀⠀⠀⠿⠿⠿&lt;/row&gt;
+        &lt;/page&gt;
+      &lt;/section&gt;
+    &lt;/volume&gt;
+  &lt;/body&gt;
+&lt;/pef&gt;</pre>
+<h1 id="dp2/table-leaders-input.obfl">table-leaders<a href="#dp2/table-leaders-input.obfl" class="internal"> &para;</a>
+</h1>
+<p>Tests leaders within table cells.</p>
+<h2>dp2/table-leaders-input.obfl</h2>
+<pre>
+&lt;obfl version="2011-1" xml:lang="und" hyphenate="false"&gt;
+  &lt;meta&gt;
+    &lt;dc:title&gt;table-leaders&lt;/dc:title&gt;
+    &lt;dc:description&gt;Tests leaders within table cells.&lt;/dc:description&gt;
+  &lt;/meta&gt;
+  &lt;layout-master name="main" page-width="20" page-height="5" duplex="true" page-number-variable="page"&gt;
+    &lt;default-template&gt;
+      &lt;header/&gt;
+      &lt;footer/&gt;
+    &lt;/default-template&gt;
+  &lt;/layout-master&gt;
+  &lt;sequence master="main"&gt;
+    &lt;table col-spacing="1"&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿⠿⠿&lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿⠿ 
+          &lt;leader pattern="⠄" position="100%" align="right"/&gt;
+        &lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿ 
+          &lt;leader pattern="⠄" position="100%" align="right"/&gt;
+        &lt;/td&gt;
+        &lt;td&gt;⠿⠿⠿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;⠿ 
+          &lt;leader pattern="⠄" position="100%" align="right"/&gt;
+        &lt;/td&gt;
+        &lt;td&gt;⠿ 
+          &lt;leader pattern="⠄" position="100%" align="right"/&gt;
+        &lt;/td&gt;
+        &lt;td&gt;⠿&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/sequence&gt;
+&lt;/obfl&gt;</pre>
+<h2>dp2/table-leaders-expected.pef</h2>
+<pre>
+&lt;pef version="2008-1"&gt;
+  &lt;head&gt;
+    &lt;meta&gt;
+      &lt;dc:title&gt;table-leaders&lt;/dc:title&gt;
+      &lt;dc:description&gt;Tests leaders within table cells.&lt;/dc:description&gt;
+      &lt;dc:format&gt;application/x-pef+xml&lt;/dc:format&gt;
+    &lt;/meta&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;volume rows="5" cols="20" rowgap="0" duplex="true"&gt;
+      &lt;section&gt;
+        &lt;page&gt;
+          &lt;row&gt;⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿⠀⠿⠿⠿⠿⠿&lt;/row&gt;
+          &lt;row&gt;⠿⠿⠀⠄⠄⠀⠿⠿⠿⠀⠄⠀⠿⠿⠿⠀⠀&lt;/row&gt;
+          &lt;row&gt;⠿⠀⠄⠄⠄⠀⠿⠀⠄⠄⠄⠀⠿⠀⠀⠀⠀&lt;/row&gt;
         &lt;/page&gt;
       &lt;/section&gt;
     &lt;/volume&gt;
