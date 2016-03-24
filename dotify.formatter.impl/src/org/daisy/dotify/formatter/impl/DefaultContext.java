@@ -3,14 +3,19 @@ package org.daisy.dotify.formatter.impl;
 import org.daisy.dotify.api.formatter.Context;
 
 class DefaultContext implements Context {
-	private final Integer currentVolume, volumeCount, currentPage, metaVolume, metaPage;
+	private final Integer currentVolume, volumeCount, currentPage, metaVolume, metaPage,
+		pagesInVolume, pagesInDocument, sheetsInVolume, sheetsInDocument;
 	
 	static class Builder {
 		private Integer	currentVolume=null, 
 						volumeCount=null,
 						currentPage=null,
 						metaVolume=null,
-						metaPage=null; 
+						metaPage=null,
+						pagesInVolume=null,
+						pagesInDocument=null,
+						sheetsInVolume=null,
+						sheetsInDocument=null;
 		
 		Builder() {
 		}
@@ -21,6 +26,10 @@ class DefaultContext implements Context {
 			this.currentPage = base.getCurrentPage();
 			this.metaVolume = base.getMetaVolume();
 			this.metaPage = base.getMetaPage();
+			this.pagesInVolume=base.getPagesInVolume();
+			this.pagesInDocument=base.getPagesInDocument();
+			this.sheetsInVolume=base.getSheetsInVolume();
+			this.sheetsInDocument=base.getSheetsInDocument();
 		}
 		
 		Builder currentVolume(Integer value) {
@@ -48,6 +57,26 @@ class DefaultContext implements Context {
 			return this;
 		}
 		
+		Builder pagesInVolume(Integer value) {
+			this.pagesInVolume = value;
+			return this;
+		}
+		
+		Builder pagesInDocument(Integer value) {
+			this.pagesInDocument = value;
+			return this;
+		}
+		
+		Builder sheetsInVolume(Integer value) {
+			this.sheetsInVolume = value;
+			return this;
+		}
+		
+		Builder sheetsInDocument(Integer value) {
+			this.sheetsInDocument = value;
+			return this;
+		}
+		
 		DefaultContext build() {
 			return new DefaultContext(this);
 		}
@@ -63,6 +92,10 @@ class DefaultContext implements Context {
 		this.currentPage = builder.currentPage;
 		this.metaVolume = builder.metaVolume;
 		this.metaPage = builder.metaPage;
+		this.pagesInVolume = builder.pagesInVolume;
+		this.pagesInDocument = builder.pagesInDocument;
+		this.sheetsInVolume = builder.sheetsInVolume;
+		this.sheetsInDocument = builder.sheetsInDocument;
 	}
 	
 	public DefaultContext(Integer currentVolume, Integer volumeCount) {
@@ -71,6 +104,10 @@ class DefaultContext implements Context {
 		this.currentPage = null;
 		this.metaVolume = null;
 		this.metaPage = null;
+		this.pagesInVolume = null;
+		this.pagesInDocument = null;
+		this.sheetsInVolume = null;
+		this.sheetsInDocument = null;
 	} 
 
 	@Override
@@ -99,6 +136,26 @@ class DefaultContext implements Context {
 	}
 
 	@Override
+	public Integer getPagesInVolume() {
+		return pagesInVolume;
+	}
+
+	@Override
+	public Integer getPagesInDocument() {
+		return pagesInDocument;
+	}
+
+	@Override
+	public Integer getSheetsInVolume() {
+		return sheetsInVolume;
+	}
+
+	@Override
+	public Integer getSheetsInDocument() {
+		return sheetsInDocument;
+	}
+	
+	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -107,6 +164,10 @@ class DefaultContext implements Context {
 		result = prime * result + ((metaPage == null) ? 0 : metaPage.hashCode());
 		result = prime * result + ((metaVolume == null) ? 0 : metaVolume.hashCode());
 		result = prime * result + ((volumeCount == null) ? 0 : volumeCount.hashCode());
+		result = prime * result + ((pagesInVolume == null) ? 0 : pagesInVolume.hashCode());
+		result = prime * result + ((pagesInDocument == null) ? 0 : pagesInDocument.hashCode());
+		result = prime * result + ((sheetsInVolume == null) ? 0 : sheetsInVolume.hashCode());
+		result = prime * result + ((sheetsInDocument == null) ? 0 : sheetsInDocument.hashCode());
 		return result;
 	}
 
@@ -157,31 +218,34 @@ class DefaultContext implements Context {
 		} else if (!volumeCount.equals(other.volumeCount)) {
 			return false;
 		}
+		if (pagesInVolume == null) {
+			if (other.pagesInVolume != null) {
+				return false;
+			}
+		} else if (!pagesInVolume.equals(other.pagesInVolume)) {
+			return false;
+		}
+		if (pagesInDocument == null) {
+			if (other.pagesInDocument != null) {
+				return false;
+			}
+		} else if (!pagesInDocument.equals(other.pagesInDocument)) {
+			return false;
+		}
+		if (sheetsInVolume == null) {
+			if (other.sheetsInVolume != null) {
+				return false;
+			}
+		} else if (!sheetsInVolume.equals(other.sheetsInVolume)) {
+			return false;
+		}
+		if (sheetsInDocument == null) {
+			if (other.sheetsInDocument != null) {
+				return false;
+			}
+		} else if (!sheetsInDocument.equals(other.sheetsInDocument)) {
+			return false;
+		}
 		return true;
 	}
-
-	@Override
-	public Integer getPagesInVolume() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Integer getPagesInDocument() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Integer getSheetsInVolume() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Integer getSheetsInDocument() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

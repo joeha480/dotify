@@ -175,8 +175,8 @@ public class FormatterImpl implements Formatter {
 				
 				Volume volume = getVolume(i);
 				ad = new ArrayList<>();
-
-				volume.setPreVolData(updateVolumeContents(i, ad, true));
+				
+				volume.setPreVolData(updateVolumeContents(i, 0, PageStruct.countSheets(ps), ad, true));
 
 				totalOverheadCount += volume.getOverhead();
 
@@ -194,7 +194,13 @@ public class FormatterImpl implements Formatter {
 							", content:" + contentSheets +
 							", overhead:" + volume.getOverhead());
 					volume.setBody(contents);					
-					volume.setPostVolData(updateVolumeContents(i, ad, false));
+					
+					// FIXME: contentSheets and contents do not include pre- and post-content
+					volume.setPostVolData(updateVolumeContents(i, contentSheets, PageStruct.countSheets(ps), ad, false));
+
+					// recompute pre-content with newly computed contentSheets
+					// FIXME: contentSheets and contents do not include pre- and post-content
+					volume.setPreVolData(updateVolumeContents(i, contentSheets, PageStruct.countSheets(ps), ad, true));
 					crh.setAnchorData(i, ad);
 
 					ret.add(volume);
@@ -236,8 +242,13 @@ public class FormatterImpl implements Formatter {
 		return ret;
 	}
 
-	private PageStruct updateVolumeContents(int volumeNumber, ArrayList<AnchorData> ad, boolean pre) {
-		DefaultContext c = new DefaultContext(volumeNumber, crh.getVariables().getVolumeCount());
+	private PageStruct updateVolumeContents(int volumeNumber, int sheetsInVolume, int sheetsInDocument, ArrayList<AnchorData> ad, boolean pre) {
+		DefaultContext c = new DefaultContext.Builder()
+						.currentVolume(volumeNumber)
+						.volumeCount(crh.getVariables().getVolumeCount())
+						.sheetsInVolume(sheetsInVolume)
+						.sheetsInDocument(sheetsInDocument)
+						.build();
 		PageStruct ret = null;
 		try {
 			ArrayList<BlockSequence> ib = new ArrayList<>();
