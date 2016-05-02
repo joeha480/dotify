@@ -12,6 +12,9 @@ public abstract class OBFLExpressionBase {
 	public final static String DEFAULT_VOLUME_COUNT_VARIABLE_NAME = "volumes";
 	public final static String DEFAULT_EVENT_VOLUME_NUMBER = "started-volume-number";
 	public final static String DEFAULT_EVENT_PAGE_NUMBER = "started-page-number";
+	public final static String DEFAULT_SHEET_COUNT_VARIABLE_NAME = "sheets-in-document";
+	public final static String DEFAULT_VOLUME_SHEET_COUNT_VARIABLE_NAME = "sheets-in-volume";
+	
 	protected final ExpressionFactory ef;
 	protected final String exp;
 
@@ -20,6 +23,8 @@ public abstract class OBFLExpressionBase {
 	protected String volumeCountVariable;
 	protected String metaVolumeNumberVariable;
 	protected String metaPageNumberVariable;
+	protected String sheetCountVariable;
+	protected String volumeSheetCountVariable;
 	
 	public OBFLExpressionBase(String exp, ExpressionFactory ef, boolean extended) {
 		this.ef = ef;
@@ -27,6 +32,8 @@ public abstract class OBFLExpressionBase {
 		this.pageNumberVariable = DEFAULT_PAGE_NUMBER_VARIABLE_NAME;
 		this.volumeNumberVariable = DEFAULT_VOLUME_NUMBER_VARIABLE_NAME;
 		this.volumeCountVariable = DEFAULT_VOLUME_COUNT_VARIABLE_NAME;
+		this.sheetCountVariable = DEFAULT_SHEET_COUNT_VARIABLE_NAME;
+		this.volumeSheetCountVariable = DEFAULT_VOLUME_SHEET_COUNT_VARIABLE_NAME;
 		if (extended) {
 			this.metaVolumeNumberVariable = DEFAULT_EVENT_VOLUME_NUMBER;
 			this.metaPageNumberVariable = DEFAULT_EVENT_PAGE_NUMBER;
@@ -92,6 +99,12 @@ public abstract class OBFLExpressionBase {
 		}
 		if (metaPageNumberVariable!=null) {
 			variables.put(metaPageNumberVariable, ""+context.getMetaPage());
+		}
+		if (sheetCountVariable!=null) {
+			variables.put(sheetCountVariable, ""+context.getSheetsInDocument());
+		}
+		if (volumeSheetCountVariable!=null) {
+			variables.put(volumeSheetCountVariable, ""+context.getSheetsInVolume());
 		}
 		return variables;
 	}

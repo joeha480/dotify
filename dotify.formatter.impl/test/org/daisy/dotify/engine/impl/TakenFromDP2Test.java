@@ -322,4 +322,9 @@ public class TakenFromDP2Test extends AbstractFormatterEngineTest {
 		testPEF("resource-files/dp2/marker-reference-spread-initial-page-number-input.obfl",
 		        "resource-files/dp2/marker-reference-spread-initial-page-number-expected.pef", false);
 	}
+	@Test
+	public void testSheetsInVolume() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/sheets-in-volume-input.obfl",
+		        "resource-files/dp2/sheets-in-volume-expected.pef", false);
+	}
 }
