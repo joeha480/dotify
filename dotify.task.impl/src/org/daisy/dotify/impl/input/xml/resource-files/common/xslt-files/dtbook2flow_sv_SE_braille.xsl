@@ -23,6 +23,7 @@
 	<xsl:param name="volume-toc" as="xs:boolean" select="true()"/>
 	<xsl:param name="show-braille-page-numbers" as="xs:boolean" select="true()"/>
 	<xsl:param name="show-print-page-numbers" as="xs:boolean" select="true()"/>
+	<xsl:param name="show-print-page-breaks" as="xs:boolean" select="true()"/>
 	<xsl:param name="matrix-table-columns-max" select="10"/>
 	<xsl:param name="staircase-table-columns-max" select="10"/>
 
@@ -127,6 +128,10 @@
 	<xsl:template match="dtb:pagenum">
 		<xsl:if test="$show-print-page-numbers">
 			<xsl:next-match/>
+		</xsl:if>
+		<xsl:if test="$show-print-page-breaks">
+			<marker class="print-page-break" value="_"/>
+			<xsl:text> ⠌⠌ </xsl:text>
 		</xsl:if>
 	</xsl:template>
 	
