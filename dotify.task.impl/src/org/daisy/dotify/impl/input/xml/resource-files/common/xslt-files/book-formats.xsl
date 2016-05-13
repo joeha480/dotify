@@ -227,7 +227,7 @@
 		<xsl:if test="$show-print-page-breaks"> <!-- and //dtb:pagenum -->
 			<margin-region align="left" width="1">
 				<indicators>
-					<marker-indicator markers="print-page-break" indicator="⠿"/>
+					<marker-indicator markers="pagenum" indicator="⠿"/>
 				</indicators>
 			</margin-region>
 		</xsl:if>
