@@ -6,6 +6,8 @@
 	<xsl:output method="xml" encoding="utf-8" indent="no"/>
 	
 	<xsl:param name="hyphenate" select="true()" as="xs:boolean"/>
+	<xsl:param name="show-print-page-numbers" as="xs:boolean" select="true()"/>
+	<xsl:param name="show-print-page-breaks" as="xs:boolean" select="true()"/>
 
 	<xsl:template match="/"><obfl version="2011-1" hyphenate="{$hyphenate}"><xsl:attribute name="xml:lang"><xsl:value-of select="/dtb:dtbook/@xml:lang"/></xsl:attribute><xsl:call-template name="insertMetadata"/><xsl:call-template name="insertLayoutMaster"/><xsl:apply-templates/></obfl></xsl:template>
 	<xsl:template match="dtb:dtbook | dtb:book"><xsl:apply-templates/></xsl:template>
@@ -71,18 +73,25 @@
 
 <!-- special / -->
 	<xsl:template match="dtb:pagenum">
-		<marker class="pagenum" value="{text()}"/>
-		<xsl:variable name="preceding-pagenum" select="preceding::dtb:pagenum[1]"/>
-		<!-- @page='normal' or $preceding-pagenum/@page='normal' -->
-		<!-- This should be true for all normal pages, but false for a sequence of "unnumbered page" or similar. -->
-		<xsl:if test="text()!=$preceding-pagenum/text()">
-			<xsl:variable name="preceding-marker">
-				<xsl:if test="not($preceding-pagenum) or generate-id($preceding-pagenum/ancestor::dtb:level1/parent::*)=
-							generate-id(ancestor::dtb:level1/parent::*)">
-					<xsl:value-of select="$preceding-pagenum"/><xsl:text>&#x2013;</xsl:text>
-				</xsl:if>
-			</xsl:variable>
-			<marker class="pagenum-turn" value="{$preceding-marker}"/>
+		<xsl:if test="$show-print-page-numbers or $show-print-page-breaks">
+			<marker class="pagenum" value="{text()}"/>
+		</xsl:if>
+		<xsl:if test="$show-print-page-numbers">
+			<xsl:variable name="preceding-pagenum" select="preceding::dtb:pagenum[1]"/>
+			<!-- @page='normal' or $preceding-pagenum/@page='normal' -->
+			<!-- This should be true for all normal pages, but false for a sequence of "unnumbered page" or similar. -->
+			<xsl:if test="text()!=$preceding-pagenum/text()">
+				<xsl:variable name="preceding-marker">
+					<xsl:if test="not($preceding-pagenum) or generate-id($preceding-pagenum/ancestor::dtb:level1/parent::*)=
+					              generate-id(ancestor::dtb:level1/parent::*)">
+						<xsl:value-of select="$preceding-pagenum"/><xsl:text>&#x2013;</xsl:text>
+					</xsl:if>
+				</xsl:variable>
+				<marker class="pagenum-turn" value="{$preceding-marker}"/>
+			</xsl:if>
+		</xsl:if>
+		<xsl:if test="$show-print-page-breaks">
+			<xsl:text> ⠌⠌ </xsl:text>
 		</xsl:if>
 	</xsl:template>
 
