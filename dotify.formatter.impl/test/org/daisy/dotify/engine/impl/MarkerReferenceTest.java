@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import org.daisy.dotify.api.engine.LayoutEngineException;
 import org.daisy.dotify.api.writer.PagedMediaWriterConfigurationException;
-import org.junit.Ignore;
 import org.junit.Test;
 public class MarkerReferenceTest extends AbstractFormatterEngineTest {
 
@@ -33,7 +32,7 @@ public class MarkerReferenceTest extends AbstractFormatterEngineTest {
 		testPEF("resource-files/marker-ref-sheet-input.obfl", "resource-files/marker-ref-sheet-expected.pef", false);
 	}
 	
-	@Test @Ignore //see https://github.com/joeha480/dotify/issues/190
+	@Test
 	public void testMarkerAfterLeader() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
 		testPEF("resource-files/marker-ref-after-leader-input.obfl", "resource-files/marker-ref-after-leader-expected.pef", false);
 	}

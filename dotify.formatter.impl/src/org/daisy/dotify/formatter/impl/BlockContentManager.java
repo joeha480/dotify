@@ -139,21 +139,13 @@ class BlockContentManager extends AbstractBlockContentManager {
 				case Marker:
 				{
 					Marker m = (Marker)s;
-					if (rows.isEmpty()) {
-						groupMarkers.add(m);
-					} else {
-						rows.peek().addMarker(m);
-					}
+					applyAfterLeader(m);
 					break;
 				}
 				case Anchor:
 				{
 					AnchorSegment as = (AnchorSegment)s;
-					if (rows.isEmpty()) {
-						groupAnchors.add(as.getReferenceID());
-					} else {
-						rows.peek().addAnchor(as.getReferenceID());
-					}
+					applyAfterLeader(as);
 					break;
 				}
 			}
@@ -170,18 +162,24 @@ class BlockContentManager extends AbstractBlockContentManager {
 		}
 	}
 	
-	private List<BrailleTranslatorResult> layoutAfterLeader = null;
+	// List of BrailleTranslatorResult or Marker or AnchorSegment
+	private List<Object> layoutOrApplyAfterLeader = null;
 	private String currentLeaderMode = null;
+	private boolean seenSegmentAfterLeader = false;
 	
 	private void layoutAfterLeader(Translatable spec, String mode) {
 		if (currentLeader!=null) {
-			if (layoutAfterLeader == null) {
-				layoutAfterLeader = new ArrayList<BrailleTranslatorResult>();
-				// use the mode of the first following segment to translate the leader pattern
-				currentLeaderMode = mode;
+			if (layoutOrApplyAfterLeader == null) {
+				layoutOrApplyAfterLeader = new ArrayList<Object>();
+				// use the mode of the first following segment to translate the leader pattern (or
+				// the mode of the first preceding segment)
+				if (!seenSegmentAfterLeader) {
+					currentLeaderMode = mode;
+					seenSegmentAfterLeader = true;
+				}
 			}
 			try {
-				layoutAfterLeader.add(fcontext.getTranslator(mode).translate(spec));
+				layoutOrApplyAfterLeader.add(fcontext.getTranslator(mode).translate(spec));
 			} catch (TranslationException e) {
 				throw new RuntimeException(e);
 			}
@@ -190,13 +188,45 @@ class BlockContentManager extends AbstractBlockContentManager {
 		}
 	}
 	
+	private void applyAfterLeader(final Marker marker) {
+		if (currentLeader!=null) {
+			if (layoutOrApplyAfterLeader == null) {
+				layoutOrApplyAfterLeader = new ArrayList<Object>();
+			}
+			layoutOrApplyAfterLeader.add(marker);
+		} else {
+			if (rows.isEmpty()) {
+				groupMarkers.add(marker);
+			} else {
+				rows.peek().addMarker(marker);
+			}
+		}
+	}
+	
+	private void applyAfterLeader(final AnchorSegment anchor) {
+		if (currentLeader!=null) {
+			if (layoutOrApplyAfterLeader == null) {
+				layoutOrApplyAfterLeader = new ArrayList<Object>();
+			}
+			layoutOrApplyAfterLeader.add(anchor);
+		} else {
+			if (rows.isEmpty()) {
+				groupAnchors.add(anchor.getReferenceID());
+			} else {
+				rows.peek().addAnchor(anchor.getReferenceID());
+			}
+		}
+	}
+	
 	private void layoutLeader() {
 		if (currentLeader!=null) {
 			// layout() sets currentLeader to null
-			if (layoutAfterLeader == null) {
+			if (layoutOrApplyAfterLeader == null) {
 				layout("", null, null);
 			} else {
-				layout(new AggregatedBrailleTranslatorResult(layoutAfterLeader), currentLeaderMode);
+				layout(new AggregatedBrailleTranslatorResult(layoutOrApplyAfterLeader), currentLeaderMode);
+				layoutOrApplyAfterLeader = null;
+				seenSegmentAfterLeader = false;
 			}
 		}
 	}
@@ -343,6 +373,11 @@ class BlockContentManager extends AbstractBlockContentManager {
 			m.row.setLeaderSpace(m.row.getLeaderSpace()+tabSpace.length());
 			rows.add(m.row);
 		}
+		if (btr instanceof AggregatedBrailleTranslatorResult) {
+			AggregatedBrailleTranslatorResult abtr = ((AggregatedBrailleTranslatorResult)btr);
+			abtr.addMarkers(m.row);
+			abtr.addAnchors(m.row);
+		}
 	}
 	
 	private static int getLeaderAlign(Leader leader, int length) {
@@ -385,33 +420,53 @@ class BlockContentManager extends AbstractBlockContentManager {
 	
 	private static class AggregatedBrailleTranslatorResult implements BrailleTranslatorResult {
 		
-		private final List<BrailleTranslatorResult> results;
-		private BrailleTranslatorResult current;
+		private final List<Object> results;
 		private int currentIndex = 0;
 		
-		public AggregatedBrailleTranslatorResult(List<BrailleTranslatorResult> results) {
+		public AggregatedBrailleTranslatorResult(List<Object> results) {
 			this.results = results;
-			this.current = results.get(0);
-			this.currentIndex = 0;
 		}
 
 		public String nextTranslatedRow(int limit, boolean force) {
 			String row = "";
+			BrailleTranslatorResult current = computeNext();
 			while (limit > row.length()) {
 				row += current.nextTranslatedRow(limit - row.length(), force);
-				if (!current.hasNext() && currentIndex + 1 < results.size()) {
-					current = results.get(++currentIndex);
-				} else {
+				current = computeNext();
+				if (current == null) {
 					break;
 				}
 			}
 			return row;
 		}
 
+		private BrailleTranslatorResult computeNext() {
+			while (currentIndex < results.size()) {
+				Object o = results.get(currentIndex);
+				if (o instanceof BrailleTranslatorResult) {
+					BrailleTranslatorResult current = ((BrailleTranslatorResult)o);
+					if (current.hasNext()) {
+						return current;
+					}
+				} else if (o instanceof Marker) {
+					pendingMarkers.add((Marker)o);
+				} else if (o instanceof AnchorSegment) {
+					pendingAnchors.add((AnchorSegment)o);
+				} else {
+					throw new RuntimeException("coding error");
+				}
+				currentIndex++;
+			}
+			return null;
+		}
+
 		public String getTranslatedRemainder() {
 			String remainder = "";
 			for (int i = currentIndex; i < results.size(); i++) {
-				remainder += results.get(i).getTranslatedRemainder();
+				Object o = results.get(i);
+				if (o instanceof BrailleTranslatorResult) {
+					remainder += ((BrailleTranslatorResult)o).getTranslatedRemainder();
+				}
 			}
 			return remainder;
 		}
@@ -419,31 +474,41 @@ class BlockContentManager extends AbstractBlockContentManager {
 		public int countRemaining() {
 			int remaining = 0;
 			for (int i = currentIndex; i < results.size(); i++) {
-				remaining += results.get(i).countRemaining();
+				Object o = results.get(i);
+				if (o instanceof BrailleTranslatorResult) {
+					remaining += ((BrailleTranslatorResult)o).countRemaining();
+				}
 			}
 			return remaining;
 		}
 
 		public boolean hasNext() {
-			if (current.hasNext()) {
-				return true;
-			} else {
-				while (currentIndex + 1 < results.size()) {
-					current = results.get(++currentIndex);
-					if (current.hasNext()) {
-						return true;
-					}
-				}
-			}
-			return false;
+			return computeNext() != null;
 		}
 		
+		List<Marker> pendingMarkers = new ArrayList<Marker>();
+		private void addMarkers(RowImpl row) {
+			for (Marker m : pendingMarkers)
+				row.addMarker(m);
+			pendingMarkers.clear();
+		}
+
+		List<AnchorSegment> pendingAnchors = new ArrayList<AnchorSegment>();
+		private void addAnchors(RowImpl row) {
+			for (AnchorSegment a : pendingAnchors)
+				row.addAnchor(a.getReferenceID());
+			pendingAnchors.clear();
+		}
+
 		public boolean supportsMetric(String metric) {
 			// since we cannot assume that the individual results of any metric can be added, we only support the following known cases
 			if (METRIC_FORCED_BREAK.equals(metric) || METRIC_HYPHEN_COUNT.equals(metric)) {
-				for (int i = 0; i <= currentIndex; i++) {
-					if (!results.get(i).supportsMetric(metric)) {
-						return false;
+				for (int i = 0; i <= currentIndex && i < results.size(); i++) {
+					Object o = results.get(i);
+					if (o instanceof BrailleTranslatorResult) {
+						if (!((BrailleTranslatorResult)o).supportsMetric(metric)) {
+							return false;
+						}
 					}
 				}
 				return true;
@@ -456,8 +521,11 @@ class BlockContentManager extends AbstractBlockContentManager {
 			// since we cannot assume that the individual results of any metric can be added, we only support the following known cases
 			if (METRIC_FORCED_BREAK.equals(metric) || METRIC_HYPHEN_COUNT.equals(metric)) {
 				int count = 0;
-				for (int i = 0; i <= currentIndex; i++) {
-					count += results.get(i).getMetric(metric);
+				for (int i = 0; i <= currentIndex && i < results.size(); i++) {
+					Object o = results.get(i);
+					if (o instanceof BrailleTranslatorResult) {
+						count += ((BrailleTranslatorResult)o).getMetric(metric);
+					}
 				}
 				return count;
 			} else {
