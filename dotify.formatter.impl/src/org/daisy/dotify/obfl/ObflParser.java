@@ -81,6 +81,7 @@ import org.daisy.dotify.api.translator.MarkerProcessorConfigurationException;
 import org.daisy.dotify.api.translator.TextAttribute;
 import org.daisy.dotify.api.translator.TextBorderConfigurationException;
 import org.daisy.dotify.api.translator.TextBorderFactory;
+import org.daisy.dotify.api.translator.TextBorderStyle;
 import org.daisy.dotify.api.writer.MetaDataItem;
 import org.daisy.dotify.api.writer.PagedMediaWriter;
 import org.daisy.dotify.common.text.FilterLocale;
@@ -926,6 +927,7 @@ public class ObflParser extends XMLParserBase {
 	private BlockProperties blockBuilder(Iterator<?> atts) {
 		BlockProperties.Builder builder = new BlockProperties.Builder();
 		HashMap<String, Object> border = new HashMap<>();
+		HashMap<String, Object> underline = new HashMap<>();
 		while (atts.hasNext()) {
 			Attribute att = (Attribute)atts.next();
 			String name = att.getName().getLocalPart();
@@ -979,6 +981,8 @@ public class ObflParser extends XMLParserBase {
 				builder.rowSpacing(Float.parseFloat(att.getValue()));
 			} else if (name.startsWith("border")) {
 				border.put(name, att.getValue());
+			} else if (name.startsWith("underline-")) {
+				underline.put(name.replaceAll("^underline", "border-bottom"), att.getValue());
 			}
 		}
 		if (!border.isEmpty()) {
@@ -987,6 +991,17 @@ public class ObflParser extends XMLParserBase {
 				builder.textBorderStyle(fm.getTextBorderFactory().newTextBorderStyle(border));
 			} catch (TextBorderConfigurationException e) {
 				logger.log(Level.WARNING, "Failed to add border to block properties: " + border, e);
+			}
+		}
+		if (!underline.isEmpty()) {
+			underline.put(TextBorderFactory.FEATURE_MODE, mode);
+			try {
+				TextBorderStyle underlineStyle = fm.getTextBorderFactory().newTextBorderStyle(underline);
+				if (underlineStyle != null) {
+					builder.underlineStyle(underlineStyle.getBottomBorder());
+				}
+			} catch (TextBorderConfigurationException e) {
+				logger.log(Level.WARNING, "Failed to add underline to block properties: " + underline, e);
 			}
 		}
 		return builder.build();

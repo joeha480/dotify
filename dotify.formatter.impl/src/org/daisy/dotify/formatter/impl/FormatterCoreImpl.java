@@ -87,6 +87,9 @@ class FormatterCoreImpl extends Stack<Block> implements FormatterCore, BlockGrou
 		rightMargin.push(new MarginComponent(rb, p.getMargin().getRightSpacing(), p.getPadding().getRightSpacing()));
 		if (propsContext.size()>0) {
 			addToBlockIndent(propsContext.peek().getBlockIndent());
+			if (propsContext.peek().getUnderlineStyle()!=null) {
+				throw new UnsupportedOperationException("No block allowed within a block with underline properties.");
+			}
 		}
 
 		RowDataProperties.Builder rdp = new RowDataProperties.Builder().
@@ -100,7 +103,8 @@ class FormatterCoreImpl extends Stack<Block> implements FormatterCore, BlockGrou
 					blockIndentParent(blockIndentParent.peek()).
 					leftMargin((Margin)leftMargin.clone()).
 					rightMargin((Margin)rightMargin.clone()).
-					outerSpaceBefore(p.getMargin().getTopSpacing());
+					outerSpaceBefore(p.getMargin().getTopSpacing()).
+					underlineStyle(p.getUnderlineStyle());
 		Block c = newBlock(blockId, rdp.build());
 		if (propsContext.size()>0) {
 			if (propsContext.peek().getListType()!=FormattingTypes.ListStyle.NONE) {

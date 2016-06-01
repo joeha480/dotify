@@ -21,6 +21,7 @@ class RowDataProperties {
 	private final int widows;
 	private final SingleLineDecoration leadingDecoration;
 	private final SingleLineDecoration trailingDecoration;
+	private final String underlineStyle;
 	
 	static class Builder {
 		private int blockIndent = 0;
@@ -39,6 +40,7 @@ class RowDataProperties {
 		private Margin rightMargin = new Margin(Type.RIGHT);
 		private SingleLineDecoration leadingDecoration = null;
 		private SingleLineDecoration trailingDecoration = null;
+		private String underlineStyle = null;
 
 		private ListItem listProps = null;
 		
@@ -64,6 +66,7 @@ class RowDataProperties {
 			this.trailingDecoration = template.trailingDecoration;
 			this.orphans = template.orphans;
 			this.widows = template.widows;
+			this.underlineStyle = template.underlineStyle;
 		}
 		
 		public Builder blockIndent(int value) {
@@ -150,6 +153,11 @@ class RowDataProperties {
 			this.widows = value;
 			return this;
 		}
+		
+		public Builder underlineStyle(String value) {
+			this.underlineStyle = value;
+			return this;
+		}
 
 		public RowDataProperties build() {
 			return new RowDataProperties(this);
@@ -175,6 +183,7 @@ class RowDataProperties {
 		this.trailingDecoration = builder.trailingDecoration;
 		this.orphans = builder.orphans;
 		this.widows = builder.widows;
+		this.underlineStyle = builder.underlineStyle;
 	}
 
 	public int getBlockIndent() {
@@ -247,6 +256,10 @@ class RowDataProperties {
 	public int getWidows() {
 		return widows;
 	}
+	
+	public String getUnderlineStyle() {
+		return underlineStyle;
+	}
 
 	@Override
 	public int hashCode() {
@@ -269,6 +282,7 @@ class RowDataProperties {
 		result = prime * result + textIndent;
 		result = prime * result + ((trailingDecoration == null) ? 0 : trailingDecoration.hashCode());
 		result = prime * result + widows;
+		result = prime * result + ((underlineStyle == null) ? 0 : underlineStyle.hashCode());
 		return result;
 	}
 
@@ -359,6 +373,13 @@ class RowDataProperties {
 		if (widows != other.widows) {
 			return false;
 		}
+		if (underlineStyle == null) {
+			if (other.underlineStyle != null) {
+				return false;
+			}
+		} else if (!underlineStyle.equals(other.underlineStyle)) {
+			return false;
+		}
 		return true;
 	}
 
@@ -370,7 +391,7 @@ class RowDataProperties {
 				+ ", rowSpacing=" + rowSpacing + ", outerSpaceBefore=" + outerSpaceBefore + ", outerSpaceAfter="
 				+ outerSpaceAfter + ", innerSpaceBefore=" + innerSpaceBefore + ", innerSpaceAfter=" + innerSpaceAfter
 				+ ", orphans=" + orphans + ", widows=" + widows + ", leadingDecoration=" + leadingDecoration
-				+ ", trailingDecoration=" + trailingDecoration + "]";
+				+ ", trailingDecoration=" + trailingDecoration + ", underlineStyle=" + underlineStyle + "]";
 	}
 
 }

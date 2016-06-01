@@ -1,5 +1,6 @@
 package org.daisy.dotify.formatter.impl;
 
+import static java.lang.Math.min;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -159,6 +160,27 @@ class BlockContentManager extends AbstractBlockContentManager {
 			groupAnchors.clear();
 			rows.get(0).addMarkers(0, groupMarkers);
 			groupMarkers.clear();
+			if (rdp.getUnderlineStyle() != null) {
+				int minLeft = flowWidth;
+				int minRight = flowWidth;
+				for (RowImpl r : rows) {
+					int width = r.getChars().length();
+					int left = r.getLeftMargin().getContent().length();
+					int right = r.getRightMargin().getContent().length();
+					int space = flowWidth - width - left - right;
+					left += r.getAlignment().getOffset(space);
+					right = flowWidth - width - left;
+					minLeft = min(minLeft, left);
+					minRight = min(minRight, right);
+				}
+				if (minLeft < leftMargin.getContent().length() || minRight < rightMargin.getContent().length()) {
+					throw new RuntimeException("coding error");
+				}
+					rows.add(new RowImpl(StringTools.fill(fcontext.getSpaceCharacter(), minLeft - leftMargin.getContent().length())
+					                     + StringTools.fill(rdp.getUnderlineStyle(), flowWidth - minLeft - minRight),
+					                     leftMargin,
+					                     rightMargin));
+			}
 		}
 	}
 	

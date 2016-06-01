@@ -332,4 +332,19 @@ public class TakenFromDP2Test extends AbstractFormatterEngineTest {
 		testPEF("resource-files/dp2/toc-sequence-in-post-content-input.obfl",
 		        "resource-files/dp2/toc-sequence-in-post-content-expected.pef", false);
 	}
+	@Test
+	public void testBlockUnderline() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/block-underline-input.obfl",
+		        "resource-files/dp2/block-underline-expected.pef", false);
+	}
+	@Test
+	public void testBlockUnderlineStyles() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/block-underline-styles-input.obfl",
+		        "resource-files/dp2/block-underline-styles-expected.pef", false);
+	}
+	@Test(expected=UnsupportedOperationException.class)
+	public void testBlockUnderlineWithChildBlock() throws LayoutEngineException, IOException, PagedMediaWriterConfigurationException {
+		testPEF("resource-files/dp2/block-underline-with-child-block-input.obfl",
+		        "resource-files/dp2/block-underline-with-child-block-expected.pef", false);
+	}
 }
