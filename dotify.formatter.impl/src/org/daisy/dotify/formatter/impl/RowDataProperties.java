@@ -155,6 +155,9 @@ class RowDataProperties {
 		}
 		
 		public Builder underlineStyle(String value) {
+			if (value != null && value.length() != 1) {
+				throw new IllegalArgumentException("Value should be either null or a single-character string, but got: " + value);
+			}
 			this.underlineStyle = value;
 			return this;
 		}

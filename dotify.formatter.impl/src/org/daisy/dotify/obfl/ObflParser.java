@@ -998,9 +998,13 @@ public class ObflParser extends XMLParserBase {
 			try {
 				TextBorderStyle underlineStyle = fm.getTextBorderFactory().newTextBorderStyle(underline);
 				if (underlineStyle != null) {
-					builder.underlineStyle(underlineStyle.getBottomBorder());
+					String pattern = underlineStyle.getBottomBorder();
+					if (pattern != null && !pattern.isEmpty()) {
+						builder.underlineStyle(pattern);
+					}
 				}
 			} catch (TextBorderConfigurationException e) {
+				// FIXME: this will show border-bottom-* properties
 				logger.log(Level.WARNING, "Failed to add underline to block properties: " + underline, e);
 			}
 		}
